@@ -1,0 +1,1 @@
+/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/roseus/ros/darknet_ros_msgs/msg/CheckForObjectsGoal.l

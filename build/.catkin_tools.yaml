@@ -1,0 +1,6 @@
+devel_space: /home/soo/object_mapping/devel
+install: false
+install_space: /home/soo/object_mapping/install
+profile: default
+source_space: /home/soo/object_mapping/src
+workspace: /home/soo/object_mapping
