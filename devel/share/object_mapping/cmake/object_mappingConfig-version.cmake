@@ -1,0 +1,1 @@
+/home/soo/object_mapping/devel/.private/object_mapping/share/object_mapping/cmake/object_mappingConfig-version.cmake

@@ -8,7 +8,6 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/soo/object_mapping/devel/.private/catkin_tools_prebuild:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH='/home/soo/FlyMeToTheHome/devel/lib:/opt/ros/melodic/lib:/usr/local/cuda-11.0/lib64'
-export PATH='/opt/ros/melodic/bin:/usr/local/cuda-11.0/bin:/usr/local/cuda-11.0/bin:/home/soo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
 export PWD='/home/soo/object_mapping/build/catkin_tools_prebuild'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/soo/object_mapping/devel/.private/catkin_tools_prebuild/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/soo/object_mapping/build/catkin_tools_prebuild:$ROS_PACKAGE_PATH"

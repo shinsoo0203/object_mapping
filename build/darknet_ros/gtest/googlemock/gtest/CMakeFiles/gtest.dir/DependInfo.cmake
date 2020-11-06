@@ -11,7 +11,6 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
   "DARKNET_FILE_PATH=\"/home/soo/object_mapping/src/darknet_ros/darknet\""
-  "GPU"
   "GTEST_CREATE_SHARED_LIBRARY=1"
   )
 

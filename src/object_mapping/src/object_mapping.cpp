@@ -27,10 +27,10 @@ const double fy = 629.163305;
 const double cx = 280.506703;
 const double cy = 229.733459;
 
-const double origin_lat_deg = 37.5413302340118;
-const double origin_lon_deg = 127.0761387792444;
 const double m_a = 6378137.0;       // semi-major axis [m]
 const double m_b = 6356752.314245;  // semi-minor axis [m]
+const double origin_lat_deg = 37.5413302340118;
+const double origin_lon_deg = 127.0761387792444;
 
 class DObjectMapping{
 
@@ -64,9 +64,10 @@ private:
   double z_gap;
 
   int obj_count;
-  darknet_ros_msgs::BoundingBoxes obj_boxes;
-  geometry_msgs::Pose _vehicle_pose;
-  geometry_msgs::Pose vehicle_pose;
+  darknet_ros_msgs::BoundingBoxes _obj_boxes;
+  darknet_ros_msgs::BoundingBoxes obj_boxes; //**
+  geometry_msgs::Pose _vehicle_pose;    //global
+  geometry_msgs::Pose vehicle_pose;     //local
 
 public:
   DObjectMapping(){
@@ -121,7 +122,7 @@ public:
       if(obj_count>0) core();
   }
   void ObjectDetectedCb(const darknet_ros_msgs::BoundingBoxesConstPtr& msg){
-      obj_boxes = *msg;
+      _obj_boxes = *msg;
   }
 
   // Definition
@@ -237,10 +238,38 @@ public:
       return ground;
   }
 
-  //
+  // Object Data Pre-processing
   void core(){
+      darknet_ros_msgs::BoundingBox obj_box;
 
+      for(int i=0; i<obj_count; i++){ //obj_boxes.bounding_boxes.size()
+          obj_box = obj_boxes.bounding_boxes[i];
+          if(obj_box.probability>0.5){
 
+          }
+      }
+/*
+      if(_yolo_object_count>0){
+        for(int i=0; i<(int)_yolo_bboxes.bounding_boxes.size(); i++){
+          darknet_ros_msgs::BoundingBox _yolo_bbox = _yolo_bboxes.bounding_boxes[i];
+          if(_yolo_bbox.Class=="person"||_yolo_bbox.Class=="bird"){ //_yolo_bbox.probability
+            geometry_msgs::Point person_pnt;
+            person_pnt.x = (_yolo_bbox.xmax+_yolo_bbox.xmin)/2;
+            person_pnt.y = (_yolo_bbox.ymax+_yolo_bbox.ymin)/2;
+            double yolo_d = sqrt(pow(pixel_point.x-person_pnt.x,2)+pow(pixel_point.y-person_pnt.y,2));
+            if(yolo_d<gap_from_object) {
+              gap_from_object = yolo_d;
+              _person_box = _yolo_bbox;
+      } } } }
+
+      if(_person_box.probability>0.1){
+        pixel_point.x= (_person_box.xmax+_person_box.xmin)/2;
+        pixel_point.y= (_person_box.ymax+_person_box.ymin)/2;
+        pointPub(); //pixel publish for openCV
+        detection_state = OPENCV;
+        ROS_INFO("[Detection] OPENCV!"); ROS_WARN("Detected!");
+      }
+*/
       obj_ground = getTransformed(obj_pixel);
       objMarker(obj_ground);
 
@@ -263,15 +292,13 @@ public:
     return d;
   }
 
-
-
   void main(){
     ros::Rate rate(10.0);
 
     while(ros::ok()){
 
         try{
-            ls.lookupTransform("map","fcu",ros::Time(0),tf_fcu);
+            ls.lookupTransform("map","vehicle",ros::Time(0),tf_fcu);
         }
         catch(tf::TransformException &ex){
             ROS_ERROR("[Transform] %s",ex.what());

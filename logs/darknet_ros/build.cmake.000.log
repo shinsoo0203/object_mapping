@@ -14,18 +14,6 @@ Not searching for unused variables given on the command line.
 [36m--[0m Detecting CXX compile features
 [36m--[0m Detecting CXX compile features - done
 [36m--[0m Darknet path dir = /home/soo/object_mapping/src/darknet_ros/darknet
-[36m--[0m Looking for pthread.h
-[36m--[0m Looking for pthread.h - found
-[36m--[0m Looking for pthread_create
-[36m--[0m Looking for pthread_create - not found
-[36m--[0m Looking for pthread_create in pthreads
-[36m--[0m Looking for pthread_create in pthreads - not found
-[36m--[0m Looking for pthread_create in pthread
-[36m--[0m Looking for pthread_create in pthread - found
-[36m--[0m Found Threads: TRUE
-[36m--[0m Found CUDA: /usr/local/cuda-11.0 (found version "11.0")
-[36m--[0m CUDA Version:
-[36m--[0m CUDA Libararies: /usr/local/cuda-11.0/lib64/libcudart_static.a;-lpthread;dl;/usr/lib/x86_64-linux-gnu/librt.so
 [36m--[0m Searching for X11...
 [36m--[0m Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
 [36m--[0m Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
@@ -42,6 +30,15 @@ Not searching for unused variables given on the command line.
 [36m--[0m Found X11: /usr/lib/x86_64-linux-gnu/libX11.so
 [36m--[0m  X11_INCLUDE_DIR: /usr/include
 [36m--[0m  X11_LIBRARIES: /usr/lib/x86_64-linux-gnu/libSM.so/usr/lib/x86_64-linux-gnu/libICE.so/usr/lib/x86_64-linux-gnu/libX11.so/usr/lib/x86_64-linux-gnu/libXext.so
+[36m--[0m Looking for pthread.h
+[36m--[0m Looking for pthread.h - found
+[36m--[0m Looking for pthread_create
+[36m--[0m Looking for pthread_create - not found
+[36m--[0m Looking for pthread_create in pthreads
+[36m--[0m Looking for pthread_create in pthreads - not found
+[36m--[0m Looking for pthread_create in pthread
+[36m--[0m Looking for pthread_create in pthread - found
+[36m--[0m Found Threads: TRUE
 [36m--[0m Boost version: 1.65.1
 [36m--[0m Found the following Boost libraries:
 [36m--[0m   thread
@@ -70,6 +67,7 @@ Not searching for unused variables given on the command line.
 [36m--[0m Checking and downloading yolov2-tiny.weights if needed ...
 [36m--[0m Checking and downloading yolov3.weights if needed ...
 [36m--[0m Checking and downloading yolov2.weights if needed ...
+[36m--[0m ... file does not exist. Downloading now ...
 [36m--[0m Configuring done
 [36m--[0m Generating done
 [36m--[0m Build files have been written to: /home/soo/object_mapping/build/darknet_ros
