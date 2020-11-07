@@ -1,0 +1,8 @@
+CMake Error at /opt/ros/melodic/share/genmsg/cmake/genmsg-extras.cmake:94 (message):
+  add_message_files() directory not found:
+  /home/soo/object_mapping/src/object_mapping/msg
+Call Stack (most recent call first):
+  CMakeLists.txt:57 (add_message_files)
+
+
+make: *** [cmake_check_build_system] Error 1

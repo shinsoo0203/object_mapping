@@ -21,6 +21,9 @@
 #include <darknet_ros_msgs/BoundingBox.h>
 #include <visualization_msgs/Marker.h>
 
+//#include <msg/ObjectPoint.h>
+//#include <msg/ObjectArray.h>
+
 //OCAM-U
 const double fx = 627.407948;
 const double fy = 629.163305;
