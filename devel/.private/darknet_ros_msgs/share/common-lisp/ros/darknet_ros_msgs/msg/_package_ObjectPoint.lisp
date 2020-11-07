@@ -7,4 +7,6 @@
           WIDTH
           HEIGHT-VAL
           HEIGHT
+          POINT-VAL
+          POINT
 ))

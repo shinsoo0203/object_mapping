@@ -61,7 +61,7 @@
    self)
   )
 
-(setf (get darknet_ros_msgs::ObjectArray :md5sum-) "7193c987d88114e069280a4723fa5977")
+(setf (get darknet_ros_msgs::ObjectArray :md5sum-) "3761b2039a2a67515ad5071a472f7d2c")
 (setf (get darknet_ros_msgs::ObjectArray :datatype-) "darknet_ros_msgs/ObjectArray")
 (setf (get darknet_ros_msgs::ObjectArray :definition-)
       "darknet_ros_msgs/ObjectPoint[] objects
@@ -72,11 +72,19 @@ string Class
 float64 probability
 int8 width
 int8 height
+geometry_msgs/Point point
+
+================================================================================
+MSG: geometry_msgs/Point
+# This contains the position of a point in free space
+float64 x
+float64 y
+float64 z
 
 ")
 
 
 
-(provide :darknet_ros_msgs/ObjectArray "7193c987d88114e069280a4723fa5977")
+(provide :darknet_ros_msgs/ObjectArray "3761b2039a2a67515ad5071a472f7d2c")
 
 

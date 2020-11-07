@@ -71,7 +71,7 @@ class ObjectArray {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '7193c987d88114e069280a4723fa5977';
+    return '3761b2039a2a67515ad5071a472f7d2c';
   }
 
   static messageDefinition() {
@@ -85,6 +85,14 @@ class ObjectArray {
     float64 probability
     int8 width
     int8 height
+    geometry_msgs/Point point
+    
+    ================================================================================
+    MSG: geometry_msgs/Point
+    # This contains the position of a point in free space
+    float64 x
+    float64 y
+    float64 z
     
     `;
   }

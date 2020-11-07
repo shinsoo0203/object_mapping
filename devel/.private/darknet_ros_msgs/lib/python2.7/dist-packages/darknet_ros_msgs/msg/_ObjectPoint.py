@@ -6,18 +6,27 @@ python3 = True if sys.hexversion > 0x03000000 else False
 import genpy
 import struct
 
+import geometry_msgs.msg
 
 class ObjectPoint(genpy.Message):
-  _md5sum = "b1c5f9b8d2aa5f8a567fa1f72efd61ed"
+  _md5sum = "67ee1f8adf25d2c6b869bd19b2901b2c"
   _type = "darknet_ros_msgs/ObjectPoint"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """string Class
 float64 probability
 int8 width
 int8 height
+geometry_msgs/Point point
+
+================================================================================
+MSG: geometry_msgs/Point
+# This contains the position of a point in free space
+float64 x
+float64 y
+float64 z
 """
-  __slots__ = ['Class','probability','width','height']
-  _slot_types = ['string','float64','int8','int8']
+  __slots__ = ['Class','probability','width','height','point']
+  _slot_types = ['string','float64','int8','int8','geometry_msgs/Point']
 
   def __init__(self, *args, **kwds):
     """
@@ -27,7 +36,7 @@ int8 height
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       Class,probability,width,height
+       Class,probability,width,height,point
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -44,11 +53,14 @@ int8 height
         self.width = 0
       if self.height is None:
         self.height = 0
+      if self.point is None:
+        self.point = geometry_msgs.msg.Point()
     else:
       self.Class = ''
       self.probability = 0.
       self.width = 0
       self.height = 0
+      self.point = geometry_msgs.msg.Point()
 
   def _get_types(self):
     """
@@ -69,7 +81,7 @@ int8 height
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_d2b().pack(_x.probability, _x.width, _x.height))
+      buff.write(_get_struct_d2b3d().pack(_x.probability, _x.width, _x.height, _x.point.x, _x.point.y, _x.point.z))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -80,6 +92,8 @@ int8 height
     """
     codecs.lookup_error("rosmsg").msg_type = self._type
     try:
+      if self.point is None:
+        self.point = geometry_msgs.msg.Point()
       end = 0
       start = end
       end += 4
@@ -92,8 +106,8 @@ int8 height
         self.Class = str[start:end]
       _x = self
       start = end
-      end += 10
-      (_x.probability, _x.width, _x.height,) = _get_struct_d2b().unpack(str[start:end])
+      end += 34
+      (_x.probability, _x.width, _x.height, _x.point.x, _x.point.y, _x.point.z,) = _get_struct_d2b3d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -113,7 +127,7 @@ int8 height
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_d2b().pack(_x.probability, _x.width, _x.height))
+      buff.write(_get_struct_d2b3d().pack(_x.probability, _x.width, _x.height, _x.point.x, _x.point.y, _x.point.z))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -125,6 +139,8 @@ int8 height
     """
     codecs.lookup_error("rosmsg").msg_type = self._type
     try:
+      if self.point is None:
+        self.point = geometry_msgs.msg.Point()
       end = 0
       start = end
       end += 4
@@ -137,8 +153,8 @@ int8 height
         self.Class = str[start:end]
       _x = self
       start = end
-      end += 10
-      (_x.probability, _x.width, _x.height,) = _get_struct_d2b().unpack(str[start:end])
+      end += 34
+      (_x.probability, _x.width, _x.height, _x.point.x, _x.point.y, _x.point.z,) = _get_struct_d2b3d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -147,9 +163,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_d2b = None
-def _get_struct_d2b():
-    global _struct_d2b
-    if _struct_d2b is None:
-        _struct_d2b = struct.Struct("<d2b")
-    return _struct_d2b
+_struct_d2b3d = None
+def _get_struct_d2b3d():
+    global _struct_d2b3d
+    if _struct_d2b3d is None:
+        _struct_d2b3d = struct.Struct("<d2b3d")
+    return _struct_d2b3d

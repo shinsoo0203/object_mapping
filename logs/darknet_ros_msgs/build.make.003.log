@@ -1,38 +1,49 @@
-[  0%] Built target actionlib_msgs_generate_messages_lisp
 [  0%] Built target std_msgs_generate_messages_lisp
-[  0%] Built target geometry_msgs_generate_messages_lisp
-[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_ObjectCount
-[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsFeedback
-[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_BoundingBoxes
-[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsGoal
+[  0%] Built target actionlib_msgs_generate_messages_lisp
 [  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionFeedback
-[  0%] Built target sensor_msgs_generate_messages_lisp
+[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsGoal
+[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_BoundingBoxes
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsFeedback
+[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_ObjectCount
 [  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionResult
+[  0%] Built target sensor_msgs_generate_messages_lisp
 [  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_ObjectArray
-[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_ObjectPoint
-[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsResult
-[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_BoundingBox
 [  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction
+[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_ObjectPoint
+[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_BoundingBox
+[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsResult
 [  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionGoal
 [  0%] Built target actionlib_msgs_generate_messages_py
 [  0%] Built target sensor_msgs_generate_messages_py
-[  0%] Built target _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionGoal
 [  0%] Built target geometry_msgs_generate_messages_py
-[  0%] Built target geometry_msgs_generate_messages_nodejs
 [  0%] Built target std_msgs_generate_messages_nodejs
 [  0%] Built target actionlib_msgs_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_nodejs
 [  0%] Built target sensor_msgs_generate_messages_nodejs
 [  0%] Built target sensor_msgs_generate_messages_cpp
 [  0%] Built target std_msgs_generate_messages_cpp
-[  0%] Built target actionlib_msgs_generate_messages_cpp
 [  0%] Built target geometry_msgs_generate_messages_cpp
-[  0%] Built target geometry_msgs_generate_messages_eus
-[  0%] Built target actionlib_msgs_generate_messages_eus
+[  0%] Built target actionlib_msgs_generate_messages_cpp
 [  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target actionlib_msgs_generate_messages_eus
 [  0%] Built target sensor_msgs_generate_messages_eus
-[ 20%] Built target darknet_ros_msgs_generate_messages_py
-[ 40%] Built target darknet_ros_msgs_generate_messages_nodejs
-[ 59%] Built target darknet_ros_msgs_generate_messages_lisp
-[ 79%] Built target darknet_ros_msgs_generate_messages_cpp
-[100%] Built target darknet_ros_msgs_generate_messages_eus
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  1%] [34m[1mGenerating Lisp code from darknet_ros_msgs/ObjectPoint.msg[0m
+[  3%] [34m[1mGenerating Javascript code from darknet_ros_msgs/ObjectPoint.msg[0m
+[  4%] [34m[1mGenerating Python from MSG darknet_ros_msgs/ObjectPoint[0m
+[  6%] [34m[1mGenerating C++ code from darknet_ros_msgs/ObjectPoint.msg[0m
+[  8%] [34m[1mGenerating Lisp code from darknet_ros_msgs/ObjectArray.msg[0m
+[  9%] [34m[1mGenerating Javascript code from darknet_ros_msgs/ObjectArray.msg[0m
+[ 25%] Built target darknet_ros_msgs_generate_messages_lisp
+[ 41%] Built target darknet_ros_msgs_generate_messages_nodejs
+[ 43%] [34m[1mGenerating Python from MSG darknet_ros_msgs/ObjectArray[0m
+[ 45%] [34m[1mGenerating C++ code from darknet_ros_msgs/ObjectArray.msg[0m
+[ 46%] [34m[1mGenerating EusLisp code from darknet_ros_msgs/ObjectPoint.msg[0m
+[ 48%] [34m[1mGenerating EusLisp code from darknet_ros_msgs/ObjectArray.msg[0m
+[ 50%] [34m[1mGenerating Python msg __init__.py for darknet_ros_msgs[0m
+[ 67%] Built target darknet_ros_msgs_generate_messages_eus
+[ 83%] Built target darknet_ros_msgs_generate_messages_cpp
+[100%] Built target darknet_ros_msgs_generate_messages_py
 [100%] Built target darknet_ros_msgs_generate_messages

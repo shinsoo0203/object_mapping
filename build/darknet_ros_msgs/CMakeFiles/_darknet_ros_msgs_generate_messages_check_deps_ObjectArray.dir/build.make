@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/soo/object_mapping/build/darknet_ros_msgs
 include CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/progress.make
 
 CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray:
-	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py darknet_ros_msgs /home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg darknet_ros_msgs/ObjectPoint
+	catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py darknet_ros_msgs /home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg darknet_ros_msgs/ObjectPoint:geometry_msgs/Point
 
 _darknet_ros_msgs_generate_messages_check_deps_ObjectArray: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray
 _darknet_ros_msgs_generate_messages_check_deps_ObjectArray: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/build.make

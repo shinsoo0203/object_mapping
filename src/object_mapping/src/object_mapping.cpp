@@ -19,8 +19,8 @@
 #include <darknet_ros_msgs/ObjectCount.h>
 #include <darknet_ros_msgs/BoundingBoxes.h>
 #include <darknet_ros_msgs/BoundingBox.h>
-//#include <darknet_ros_msgs/ObjectPoint.h>
-//#include <darknet_ros_msgs/ObjectArray.h>
+#include <darknet_ros_msgs/ObjectPoint.h>
+#include <darknet_ros_msgs/ObjectArray.h>
 
 #include <visualization_msgs/Marker.h>
 

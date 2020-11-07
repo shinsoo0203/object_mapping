@@ -11,4 +11,5 @@ export CMAKE_PREFIX_PATH="/home/soo/object_mapping/devel/.private/darknet_ros:$C
 export LD_LIBRARY_PATH="/home/soo/object_mapping/devel/.private/darknet_ros/lib:$LD_LIBRARY_PATH"
 export PKG_CONFIG_PATH="/home/soo/object_mapping/devel/.private/darknet_ros/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/soo/object_mapping/build/darknet_ros'
+export ROSLISP_PACKAGE_DIRECTORIES="/home/soo/object_mapping/devel/.private/darknet_ros/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/soo/object_mapping/src/darknet_ros/darknet_ros:$ROS_PACKAGE_PATH"

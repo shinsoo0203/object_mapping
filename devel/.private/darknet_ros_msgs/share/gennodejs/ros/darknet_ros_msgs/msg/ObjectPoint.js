@@ -11,6 +11,7 @@ const _deserializer = _ros_msg_utils.Deserialize;
 const _arrayDeserializer = _deserializer.Array;
 const _finder = _ros_msg_utils.Find;
 const _getByteLength = _ros_msg_utils.getByteLength;
+let geometry_msgs = _finder('geometry_msgs');
 
 //-----------------------------------------------------------
 
@@ -22,6 +23,7 @@ class ObjectPoint {
       this.probability = null;
       this.width = null;
       this.height = null;
+      this.point = null;
     }
     else {
       if (initObj.hasOwnProperty('Class')) {
@@ -48,6 +50,12 @@ class ObjectPoint {
       else {
         this.height = 0;
       }
+      if (initObj.hasOwnProperty('point')) {
+        this.point = initObj.point
+      }
+      else {
+        this.point = new geometry_msgs.msg.Point();
+      }
     }
   }
 
@@ -61,6 +69,8 @@ class ObjectPoint {
     bufferOffset = _serializer.int8(obj.width, buffer, bufferOffset);
     // Serialize message field [height]
     bufferOffset = _serializer.int8(obj.height, buffer, bufferOffset);
+    // Serialize message field [point]
+    bufferOffset = geometry_msgs.msg.Point.serialize(obj.point, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -76,13 +86,15 @@ class ObjectPoint {
     data.width = _deserializer.int8(buffer, bufferOffset);
     // Deserialize message field [height]
     data.height = _deserializer.int8(buffer, bufferOffset);
+    // Deserialize message field [point]
+    data.point = geometry_msgs.msg.Point.deserialize(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += object.Class.length;
-    return length + 14;
+    return length + 38;
   }
 
   static datatype() {
@@ -92,7 +104,7 @@ class ObjectPoint {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'b1c5f9b8d2aa5f8a567fa1f72efd61ed';
+    return '67ee1f8adf25d2c6b869bd19b2901b2c';
   }
 
   static messageDefinition() {
@@ -102,6 +114,14 @@ class ObjectPoint {
     float64 probability
     int8 width
     int8 height
+    geometry_msgs/Point point
+    
+    ================================================================================
+    MSG: geometry_msgs/Point
+    # This contains the position of a point in free space
+    float64 x
+    float64 y
+    float64 z
     
     `;
   }
@@ -138,6 +158,13 @@ class ObjectPoint {
     }
     else {
       resolved.height = 0
+    }
+
+    if (msg.point !== undefined) {
+      resolved.point = geometry_msgs.msg.Point.Resolve(msg.point)
+    }
+    else {
+      resolved.point = new geometry_msgs.msg.Point()
     }
 
     return resolved;

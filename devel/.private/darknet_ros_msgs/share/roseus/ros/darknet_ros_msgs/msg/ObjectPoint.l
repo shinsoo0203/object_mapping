@@ -10,11 +10,13 @@
 
 (in-package "ROS")
 ;;//! \htmlinclude ObjectPoint.msg.html
+(if (not (find-package "GEOMETRY_MSGS"))
+  (ros::roseus-add-msgs "geometry_msgs"))
 
 
 (defclass darknet_ros_msgs::ObjectPoint
   :super ros::object
-  :slots (_Class _probability _width _height ))
+  :slots (_Class _probability _width _height _point ))
 
 (defmethod darknet_ros_msgs::ObjectPoint
   (:init
@@ -23,12 +25,14 @@
     ((:probability __probability) 0.0)
     ((:width __width) 0)
     ((:height __height) 0)
+    ((:point __point) (instance geometry_msgs::Point :init))
     )
    (send-super :init)
    (setq _Class (string __Class))
    (setq _probability (float __probability))
    (setq _width (round __width))
    (setq _height (round __height))
+   (setq _point __point)
    self)
   (:Class
    (&optional __Class)
@@ -42,6 +46,13 @@
   (:height
    (&optional __height)
    (if __height (setq _height __height)) _height)
+  (:point
+   (&rest __point)
+   (if (keywordp (car __point))
+       (send* _point __point)
+     (progn
+       (if __point (setq _point (car __point)))
+       _point)))
   (:serialization-length
    ()
    (+
@@ -53,6 +64,8 @@
     1
     ;; int8 _height
     1
+    ;; geometry_msgs/Point _point
+    (send _point :serialization-length)
     ))
   (:serialize
    (&optional strm)
@@ -66,6 +79,8 @@
        (write-byte _width s)
      ;; int8 _height
        (write-byte _height s)
+     ;; geometry_msgs/Point _point
+       (send _point :serialize s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -80,22 +95,32 @@
    ;; int8 _height
      (setq _height (sys::peek buf ptr- :char)) (incf ptr- 1)
      (if (> _height 127) (setq _height (- _height 256)))
+   ;; geometry_msgs/Point _point
+     (send _point :deserialize buf ptr-) (incf ptr- (send _point :serialization-length))
    ;;
    self)
   )
 
-(setf (get darknet_ros_msgs::ObjectPoint :md5sum-) "b1c5f9b8d2aa5f8a567fa1f72efd61ed")
+(setf (get darknet_ros_msgs::ObjectPoint :md5sum-) "67ee1f8adf25d2c6b869bd19b2901b2c")
 (setf (get darknet_ros_msgs::ObjectPoint :datatype-) "darknet_ros_msgs/ObjectPoint")
 (setf (get darknet_ros_msgs::ObjectPoint :definition-)
       "string Class
 float64 probability
 int8 width
 int8 height
+geometry_msgs/Point point
+
+================================================================================
+MSG: geometry_msgs/Point
+# This contains the position of a point in free space
+float64 x
+float64 y
+float64 z
 
 ")
 
 
 
-(provide :darknet_ros_msgs/ObjectPoint "b1c5f9b8d2aa5f8a567fa1f72efd61ed")
+(provide :darknet_ros_msgs/ObjectPoint "67ee1f8adf25d2c6b869bd19b2901b2c")
 
 

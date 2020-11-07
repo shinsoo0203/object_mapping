@@ -5,4 +5,4 @@ Description: Description of object_mapping
 Version: 0.0.0
 Cflags: 
 Libs: -L${prefix}/lib 
-Requires: cv_bridge image_transport roscpp std_msgs sensor_msgs
+Requires: cv_bridge image_transport roscpp std_msgs sensor_msgs darknet_ros_msgs

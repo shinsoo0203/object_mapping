@@ -49,12 +49,12 @@ add_custom_target(_darknet_ros_msgs_generate_messages_check_deps_${_filename}
 
 get_filename_component(_filename "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg" NAME_WE)
 add_custom_target(_darknet_ros_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "darknet_ros_msgs" "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg" ""
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "darknet_ros_msgs" "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg" "geometry_msgs/Point"
 )
 
 get_filename_component(_filename "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg" NAME_WE)
 add_custom_target(_darknet_ros_msgs_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "darknet_ros_msgs" "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg" "darknet_ros_msgs/ObjectPoint"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "darknet_ros_msgs" "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg" "darknet_ros_msgs/ObjectPoint:geometry_msgs/Point"
 )
 
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionFeedback.msg" NAME_WE)
@@ -122,13 +122,13 @@ _generate_msg_cpp(darknet_ros_msgs
 _generate_msg_cpp(darknet_ros_msgs
   "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_cpp(darknet_ros_msgs
   "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_cpp(darknet_ros_msgs
@@ -243,13 +243,13 @@ _generate_msg_eus(darknet_ros_msgs
 _generate_msg_eus(darknet_ros_msgs
   "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_eus(darknet_ros_msgs
   "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_eus(darknet_ros_msgs
@@ -364,13 +364,13 @@ _generate_msg_lisp(darknet_ros_msgs
 _generate_msg_lisp(darknet_ros_msgs
   "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_lisp(darknet_ros_msgs
   "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_lisp(darknet_ros_msgs
@@ -485,13 +485,13 @@ _generate_msg_nodejs(darknet_ros_msgs
 _generate_msg_nodejs(darknet_ros_msgs
   "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_nodejs(darknet_ros_msgs
   "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_nodejs(darknet_ros_msgs
@@ -606,13 +606,13 @@ _generate_msg_py(darknet_ros_msgs
 _generate_msg_py(darknet_ros_msgs
   "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
   "${MSG_I_FLAGS}"
-  ""
+  "/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_py(darknet_ros_msgs
   "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg"
   "${MSG_I_FLAGS}"
-  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg;/opt/ros/melodic/share/geometry_msgs/cmake/../msg/Point.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_py(darknet_ros_msgs

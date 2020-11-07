@@ -12,4 +12,5 @@ export LD_LIBRARY_PATH="/home/soo/object_mapping/devel/.private/darknet_ros_msgs
 export PKG_CONFIG_PATH="/home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/soo/object_mapping/build/darknet_ros_msgs'
 export PYTHONPATH="/home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs:$ROS_PACKAGE_PATH"

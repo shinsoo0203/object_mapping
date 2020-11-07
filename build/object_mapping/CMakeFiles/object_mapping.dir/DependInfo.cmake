@@ -17,7 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/soo/FlyMeToTheHome/devel/.private/darknet_ros_msgs/include"
+  "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   "/usr/include/opencv"

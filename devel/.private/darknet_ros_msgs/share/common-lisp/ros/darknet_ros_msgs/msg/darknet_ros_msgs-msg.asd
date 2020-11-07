@@ -3,6 +3,7 @@
 
 (defsystem "darknet_ros_msgs-msg"
   :depends-on (:roslisp-msg-protocol :roslisp-utils :actionlib_msgs-msg
+               :geometry_msgs-msg
                :sensor_msgs-msg
                :std_msgs-msg
 )

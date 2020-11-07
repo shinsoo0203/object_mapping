@@ -15,6 +15,7 @@
 #include <ros/builtin_message_traits.h>
 #include <ros/message_operations.h>
 
+#include <geometry_msgs/Point.h>
 
 namespace darknet_ros_msgs
 {
@@ -27,13 +28,15 @@ struct ObjectPoint_
     : Class()
     , probability(0.0)
     , width(0)
-    , height(0)  {
+    , height(0)
+    , point()  {
     }
   ObjectPoint_(const ContainerAllocator& _alloc)
     : Class(_alloc)
     , probability(0.0)
     , width(0)
-    , height(0)  {
+    , height(0)
+    , point(_alloc)  {
   (void)_alloc;
     }
 
@@ -50,6 +53,9 @@ struct ObjectPoint_
 
    typedef int8_t _height_type;
   _height_type height;
+
+   typedef  ::geometry_msgs::Point_<ContainerAllocator>  _point_type;
+  _point_type point;
 
 
 
@@ -83,7 +89,8 @@ bool operator==(const ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator1> & lh
   return lhs.Class == rhs.Class &&
     lhs.probability == rhs.probability &&
     lhs.width == rhs.width &&
-    lhs.height == rhs.height;
+    lhs.height == rhs.height &&
+    lhs.point == rhs.point;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -140,12 +147,12 @@ struct MD5Sum< ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "b1c5f9b8d2aa5f8a567fa1f72efd61ed";
+    return "67ee1f8adf25d2c6b869bd19b2901b2c";
   }
 
   static const char* value(const ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xb1c5f9b8d2aa5f8aULL;
-  static const uint64_t static_value2 = 0x567fa1f72efd61edULL;
+  static const uint64_t static_value1 = 0x67ee1f8adf25d2c6ULL;
+  static const uint64_t static_value2 = 0xb869bd19b2901b2cULL;
 };
 
 template<class ContainerAllocator>
@@ -168,6 +175,14 @@ struct Definition< ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator> >
 "float64 probability\n"
 "int8 width\n"
 "int8 height\n"
+"geometry_msgs/Point point\n"
+"\n"
+"================================================================================\n"
+"MSG: geometry_msgs/Point\n"
+"# This contains the position of a point in free space\n"
+"float64 x\n"
+"float64 y\n"
+"float64 z\n"
 ;
   }
 
@@ -190,6 +205,7 @@ namespace serialization
       stream.next(m.probability);
       stream.next(m.width);
       stream.next(m.height);
+      stream.next(m.point);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -216,6 +232,9 @@ struct Printer< ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator> >
     Printer<int8_t>::stream(s, indent + "  ", v.width);
     s << indent << "height: ";
     Printer<int8_t>::stream(s, indent + "  ", v.height);
+    s << indent << "point: ";
+    s << std::endl;
+    Printer< ::geometry_msgs::Point_<ContainerAllocator> >::stream(s, indent + "  ", v.point);
   }
 };
 

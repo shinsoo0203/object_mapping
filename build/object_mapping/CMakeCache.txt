@@ -258,7 +258,7 @@ RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 
 //Name of the computer/site where compile is being run
-SITE:STRING=soo-MS-7C67
+SITE:STRING=soo-900X5N
 
 //LSB Distrib tag
 UBUNTU:BOOL=TRUE
@@ -297,7 +297,7 @@ cpp_common_DIR:PATH=/opt/ros/melodic/share/cpp_common/cmake
 cv_bridge_DIR:PATH=/opt/ros/melodic/share/cv_bridge/cmake
 
 //The directory containing a CMake configuration file for darknet_ros_msgs.
-darknet_ros_msgs_DIR:PATH=/home/soo/FlyMeToTheHome/devel/share/darknet_ros_msgs/cmake
+darknet_ros_msgs_DIR:PATH=/home/soo/object_mapping/devel/share/darknet_ros_msgs/cmake
 
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/melodic/share/gencpp/cmake

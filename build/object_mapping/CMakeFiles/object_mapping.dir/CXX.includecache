@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/soo/FlyMeToTheHome/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/BoundingBox.h
+/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/BoundingBox.h
 string
 -
 vector
@@ -22,7 +22,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/soo/FlyMeToTheHome/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/BoundingBoxes.h
+/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/BoundingBoxes.h
 string
 -
 vector
@@ -44,7 +44,25 @@ std_msgs/Header.h
 darknet_ros_msgs/BoundingBox.h
 -
 
-/home/soo/FlyMeToTheHome/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/ObjectCount.h
+/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/ObjectArray.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+darknet_ros_msgs/ObjectPoint.h
+-
+
+/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/ObjectCount.h
 string
 -
 vector
@@ -60,6 +78,24 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 std_msgs/Header.h
+-
+
+/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/ObjectPoint.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+geometry_msgs/Point.h
 -
 
 /home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp
@@ -90,6 +126,10 @@ darknet_ros_msgs/ObjectCount.h
 darknet_ros_msgs/BoundingBoxes.h
 -
 darknet_ros_msgs/BoundingBox.h
+-
+darknet_ros_msgs/ObjectPoint.h
+-
+darknet_ros_msgs/ObjectArray.h
 -
 visualization_msgs/Marker.h
 -
