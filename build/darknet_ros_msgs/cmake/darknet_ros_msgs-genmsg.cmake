@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "darknet_ros_msgs: 10 messages, 0 services")
+message(STATUS "darknet_ros_msgs: 12 messages, 0 services")
 
 set(MSG_I_FLAGS "-Idarknet_ros_msgs:/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg;-Idarknet_ros_msgs:/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg;-Iactionlib_msgs:/opt/ros/melodic/share/actionlib_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
 
@@ -45,6 +45,16 @@ add_custom_target(_darknet_ros_msgs_generate_messages_check_deps_${_filename}
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionResult.msg" NAME_WE)
 add_custom_target(_darknet_ros_msgs_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "darknet_ros_msgs" "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionResult.msg" "darknet_ros_msgs/CheckForObjectsResult:actionlib_msgs/GoalID:actionlib_msgs/GoalStatus:darknet_ros_msgs/BoundingBoxes:std_msgs/Header:darknet_ros_msgs/BoundingBox"
+)
+
+get_filename_component(_filename "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg" NAME_WE)
+add_custom_target(_darknet_ros_msgs_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "darknet_ros_msgs" "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg" ""
+)
+
+get_filename_component(_filename "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg" NAME_WE)
+add_custom_target(_darknet_ros_msgs_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "darknet_ros_msgs" "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg" "darknet_ros_msgs/ObjectPoint"
 )
 
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionFeedback.msg" NAME_WE)
@@ -110,6 +120,18 @@ _generate_msg_cpp(darknet_ros_msgs
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_cpp(darknet_ros_msgs
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/darknet_ros_msgs
+)
+_generate_msg_cpp(darknet_ros_msgs
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg"
+  "${MSG_I_FLAGS}"
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/darknet_ros_msgs
+)
+_generate_msg_cpp(darknet_ros_msgs
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -159,6 +181,10 @@ add_dependencies(darknet_ros_msgs_generate_messages_cpp _darknet_ros_msgs_genera
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionGoal.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_cpp _darknet_ros_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionResult.msg" NAME_WE)
+add_dependencies(darknet_ros_msgs_generate_messages_cpp _darknet_ros_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg" NAME_WE)
+add_dependencies(darknet_ros_msgs_generate_messages_cpp _darknet_ros_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_cpp _darknet_ros_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionFeedback.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_cpp _darknet_ros_msgs_generate_messages_check_deps_${_filename})
@@ -215,6 +241,18 @@ _generate_msg_eus(darknet_ros_msgs
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_eus(darknet_ros_msgs
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/darknet_ros_msgs
+)
+_generate_msg_eus(darknet_ros_msgs
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg"
+  "${MSG_I_FLAGS}"
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/darknet_ros_msgs
+)
+_generate_msg_eus(darknet_ros_msgs
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -264,6 +302,10 @@ add_dependencies(darknet_ros_msgs_generate_messages_eus _darknet_ros_msgs_genera
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionGoal.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_eus _darknet_ros_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionResult.msg" NAME_WE)
+add_dependencies(darknet_ros_msgs_generate_messages_eus _darknet_ros_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg" NAME_WE)
+add_dependencies(darknet_ros_msgs_generate_messages_eus _darknet_ros_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_eus _darknet_ros_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionFeedback.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_eus _darknet_ros_msgs_generate_messages_check_deps_${_filename})
@@ -320,6 +362,18 @@ _generate_msg_lisp(darknet_ros_msgs
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_lisp(darknet_ros_msgs
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/darknet_ros_msgs
+)
+_generate_msg_lisp(darknet_ros_msgs
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg"
+  "${MSG_I_FLAGS}"
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/darknet_ros_msgs
+)
+_generate_msg_lisp(darknet_ros_msgs
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -369,6 +423,10 @@ add_dependencies(darknet_ros_msgs_generate_messages_lisp _darknet_ros_msgs_gener
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionGoal.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_lisp _darknet_ros_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionResult.msg" NAME_WE)
+add_dependencies(darknet_ros_msgs_generate_messages_lisp _darknet_ros_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg" NAME_WE)
+add_dependencies(darknet_ros_msgs_generate_messages_lisp _darknet_ros_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_lisp _darknet_ros_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionFeedback.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_lisp _darknet_ros_msgs_generate_messages_check_deps_${_filename})
@@ -425,6 +483,18 @@ _generate_msg_nodejs(darknet_ros_msgs
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_nodejs(darknet_ros_msgs
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/darknet_ros_msgs
+)
+_generate_msg_nodejs(darknet_ros_msgs
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg"
+  "${MSG_I_FLAGS}"
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/darknet_ros_msgs
+)
+_generate_msg_nodejs(darknet_ros_msgs
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -474,6 +544,10 @@ add_dependencies(darknet_ros_msgs_generate_messages_nodejs _darknet_ros_msgs_gen
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionGoal.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_nodejs _darknet_ros_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionResult.msg" NAME_WE)
+add_dependencies(darknet_ros_msgs_generate_messages_nodejs _darknet_ros_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg" NAME_WE)
+add_dependencies(darknet_ros_msgs_generate_messages_nodejs _darknet_ros_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_nodejs _darknet_ros_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionFeedback.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_nodejs _darknet_ros_msgs_generate_messages_check_deps_${_filename})
@@ -530,6 +604,18 @@ _generate_msg_py(darknet_ros_msgs
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/darknet_ros_msgs
 )
 _generate_msg_py(darknet_ros_msgs
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/darknet_ros_msgs
+)
+_generate_msg_py(darknet_ros_msgs
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg"
+  "${MSG_I_FLAGS}"
+  "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/darknet_ros_msgs
+)
+_generate_msg_py(darknet_ros_msgs
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionFeedback.msg"
   "${MSG_I_FLAGS}"
   "/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/melodic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsFeedback.msg;/opt/ros/melodic/share/std_msgs/cmake/../msg/Header.msg"
@@ -579,6 +665,10 @@ add_dependencies(darknet_ros_msgs_generate_messages_py _darknet_ros_msgs_generat
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionGoal.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_py _darknet_ros_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionResult.msg" NAME_WE)
+add_dependencies(darknet_ros_msgs_generate_messages_py _darknet_ros_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg" NAME_WE)
+add_dependencies(darknet_ros_msgs_generate_messages_py _darknet_ros_msgs_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_py _darknet_ros_msgs_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/darknet_ros_msgs/msg/CheckForObjectsActionFeedback.msg" NAME_WE)
 add_dependencies(darknet_ros_msgs_generate_messages_py _darknet_ros_msgs_generate_messages_check_deps_${_filename})

@@ -26,6 +26,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googlemock/include"/>
@@ -49,6 +50,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googlemock/include"/>
@@ -72,6 +74,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googlemock/include"/>
@@ -95,6 +98,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googlemock/include"/>
@@ -118,6 +122,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googletest/include"/>
@@ -139,6 +144,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googletest/include"/>
@@ -160,6 +166,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googletest/include"/>
@@ -181,6 +188,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googletest/include"/>

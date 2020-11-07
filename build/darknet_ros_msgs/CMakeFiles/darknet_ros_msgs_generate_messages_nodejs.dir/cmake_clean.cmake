@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/CheckForObjectsGoal.js"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/ObjectCount.js"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/CheckForObjectsActionGoal.js"
+  "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/ObjectPoint.js"
+  "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/ObjectArray.js"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/CheckForObjectsActionFeedback.js"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/CheckForObjectsFeedback.js"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/BoundingBox.js"

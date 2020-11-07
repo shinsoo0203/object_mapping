@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/CheckForObjectsGoal.h"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/ObjectCount.h"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/CheckForObjectsActionGoal.h"
+  "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/ObjectPoint.h"
+  "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/ObjectArray.h"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/CheckForObjectsActionFeedback.h"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/CheckForObjectsFeedback.h"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/BoundingBox.h"

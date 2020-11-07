@@ -71,7 +71,7 @@ CMakeFiles/darknet_ros_msgs_genpy.dir/all: CMakeFiles/darknet_ros_msgs_generate_
 
 # Build rule for subdir invocation for target.
 CMakeFiles/darknet_ros_msgs_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 13
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/darknet_ros_msgs_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
 .PHONY : CMakeFiles/darknet_ros_msgs_genpy.dir/rule
@@ -99,11 +99,13 @@ CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/_darknet_ro
 CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/std_msgs_generate_messages_py.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsGoal.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsFeedback.dir/all
-CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectCount.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/actionlib_msgs_generate_messages_py.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionResult.dir/all
+CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction.dir/all
+CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsResult.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_BoundingBox.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionGoal.dir/all
@@ -111,12 +113,12 @@ CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/geometry_ms
 CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionFeedback.dir/all
 	$(MAKE) -f CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/build.make CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/depend
 	$(MAKE) -f CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/build.make CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=42,43,44,45,46,47,48,49,50,51,52 "Built target darknet_ros_msgs_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=50,51,52,53,54,55,56,57,58,59,60,61,62 "Built target darknet_ros_msgs_generate_messages_py"
 .PHONY : CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 13
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
 .PHONY : CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/rule
@@ -148,20 +150,22 @@ CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/all: CMakeFiles/actionl
 CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectCount.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/all: CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionResult.dir/all
+CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/all: CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction.dir/all
+CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsResult.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_BoundingBox.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionGoal.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionFeedback.dir/all
 	$(MAKE) -f CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/depend
 	$(MAKE) -f CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/build.make CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=32,33,34,35,36,37,38,39,40,41 "Built target darknet_ros_msgs_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=38,39,40,41,42,43,44,45,46,47,48,49 "Built target darknet_ros_msgs_generate_messages_nodejs"
 .PHONY : CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
 .PHONY : CMakeFiles/darknet_ros_msgs_generate_messages_nodejs.dir/rule
@@ -193,7 +197,7 @@ CMakeFiles/darknet_ros_msgs_genlisp.dir/all: CMakeFiles/darknet_ros_msgs_generat
 
 # Build rule for subdir invocation for target.
 CMakeFiles/darknet_ros_msgs_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/darknet_ros_msgs_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
 .PHONY : CMakeFiles/darknet_ros_msgs_genlisp.dir/rule
@@ -226,19 +230,21 @@ CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/all: CMakeFiles/actionlib_
 CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectCount.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/all: CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionResult.dir/all
+CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction.dir/all
+CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsResult.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_BoundingBox.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionGoal.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionFeedback.dir/all
 	$(MAKE) -f CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/build.make CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/depend
 	$(MAKE) -f CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/build.make CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target darknet_ros_msgs_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target darknet_ros_msgs_generate_messages_cpp"
 .PHONY : CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
 .PHONY : CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/rule
@@ -367,19 +373,21 @@ CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/all: CMakeFiles/sensor_msg
 CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectCount.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/all: CMakeFiles/geometry_msgs_generate_messages_eus.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionResult.dir/all
+CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction.dir/all
+CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsResult.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_BoundingBox.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionGoal.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionFeedback.dir/all
 	$(MAKE) -f CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/build.make CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/depend
 	$(MAKE) -f CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/build.make CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=11,12,13,14,15,16,17,18,19,20,21 "Built target darknet_ros_msgs_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=13,14,15,16,17,18,19,20,21,22,23,24,25 "Built target darknet_ros_msgs_generate_messages_eus"
 .PHONY : CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 13
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
 .PHONY : CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/rule
@@ -443,7 +451,7 @@ CMakeFiles/darknet_ros_msgs_gencpp.dir/all: CMakeFiles/darknet_ros_msgs_generate
 
 # Build rule for subdir invocation for target.
 CMakeFiles/darknet_ros_msgs_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/darknet_ros_msgs_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
 .PHONY : CMakeFiles/darknet_ros_msgs_gencpp.dir/rule
@@ -603,7 +611,7 @@ CMakeFiles/darknet_ros_msgs_geneus.dir/all: CMakeFiles/darknet_ros_msgs_generate
 
 # Build rule for subdir invocation for target.
 CMakeFiles/darknet_ros_msgs_geneus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 13
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/darknet_ros_msgs_geneus.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
 .PHONY : CMakeFiles/darknet_ros_msgs_geneus.dir/rule
@@ -699,7 +707,7 @@ CMakeFiles/darknet_ros_msgs_gennodejs.dir/all: CMakeFiles/darknet_ros_msgs_gener
 
 # Build rule for subdir invocation for target.
 CMakeFiles/darknet_ros_msgs_gennodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/darknet_ros_msgs_gennodejs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
 .PHONY : CMakeFiles/darknet_ros_msgs_gennodejs.dir/rule
@@ -944,38 +952,6 @@ clean: CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/sensor_msgs_generate_messages_py.dir
-
-# All Build rule for target.
-CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_py"
-.PHONY : CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sensor_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
-.PHONY : CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_py: CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_py
-
-# clean rule for target.
-CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-.PHONY : CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
 # Target rules for target CMakeFiles/actionlib_msgs_generate_messages_cpp.dir
 
 # All Build rule for target.
@@ -1147,20 +1123,22 @@ CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/all: CMakeFiles/_darknet_
 CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectCount.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/all: CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionResult.dir/all
+CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/all: CMakeFiles/sensor_msgs_generate_messages_lisp.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction.dir/all
+CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsResult.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_BoundingBox.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionGoal.dir/all
 CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/all: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionFeedback.dir/all
 	$(MAKE) -f CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/build.make CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/depend
 	$(MAKE) -f CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/build.make CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=22,23,24,25,26,27,28,29,30,31 "Built target darknet_ros_msgs_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=26,27,28,29,30,31,32,33,34,35,36,37 "Built target darknet_ros_msgs_generate_messages_lisp"
 .PHONY : CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
 .PHONY : CMakeFiles/darknet_ros_msgs_generate_messages_lisp.dir/rule
@@ -1309,6 +1287,70 @@ clean: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjects
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/sensor_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+CMakeFiles/sensor_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make CMakeFiles/sensor_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num= "Built target sensor_msgs_generate_messages_py"
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/sensor_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/sensor_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# clean rule for target.
+CMakeFiles/sensor_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+.PHONY : CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/sensor_msgs_generate_messages_py.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir
+
+# All Build rule for target.
+CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/all:
+	$(MAKE) -f CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/build.make CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/depend
+	$(MAKE) -f CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/build.make CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num= "Built target _darknet_ros_msgs_generate_messages_check_deps_ObjectArray"
+.PHONY : CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
+.PHONY : CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/rule
+
+# Convenience name for target.
+_darknet_ros_msgs_generate_messages_check_deps_ObjectArray: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/rule
+
+.PHONY : _darknet_ros_msgs_generate_messages_check_deps_ObjectArray
+
+# clean rule for target.
+CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/clean:
+	$(MAKE) -f CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/build.make CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/clean
+.PHONY : CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/doxygen.dir
 
 # All Build rule for target.
@@ -1425,7 +1467,7 @@ all: CMakeFiles/darknet_ros_msgs_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/darknet_ros_msgs_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 52
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 62
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/darknet_ros_msgs_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
 .PHONY : CMakeFiles/darknet_ros_msgs_generate_messages.dir/rule
@@ -1474,6 +1516,38 @@ CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction.
 
 # clean rule for target.
 clean: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir
+
+# All Build rule for target.
+CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/all:
+	$(MAKE) -f CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/build.make CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/depend
+	$(MAKE) -f CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/build.make CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num= "Built target _darknet_ros_msgs_generate_messages_check_deps_ObjectPoint"
+.PHONY : CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles 0
+.PHONY : CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/rule
+
+# Convenience name for target.
+_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/rule
+
+.PHONY : _darknet_ros_msgs_generate_messages_check_deps_ObjectPoint
+
+# clean rule for target.
+CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/clean:
+	$(MAKE) -f CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/build.make CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/clean
+.PHONY : CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/clean
 
 .PHONY : clean
 
@@ -1682,7 +1756,7 @@ gtest/googlemock/preinstall: gtest/googlemock/gtest/preinstall
 gtest/googlemock/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=56,57,58,59 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=66,67,68,69 "Built target gmock_main"
 .PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1714,7 +1788,7 @@ clean: gtest/googlemock/CMakeFiles/gmock_main.dir/clean
 gtest/googlemock/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=53,54,55 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=63,64,65 "Built target gmock"
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1765,7 +1839,7 @@ gtest/googlemock/gtest/preinstall:
 gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all: gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=62,63 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=72,73 "Built target gtest_main"
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1797,7 +1871,7 @@ clean: gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
 gtest/googlemock/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=60,61 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles --progress-num=70,71 "Built target gtest"
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.

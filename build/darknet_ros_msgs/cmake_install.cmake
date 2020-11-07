@@ -133,6 +133,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/BoundingBox.msg"
     "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/BoundingBoxes.msg"
     "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectCount.msg"
+    "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectPoint.msg"
+    "/home/soo/object_mapping/src/darknet_ros/darknet_ros_msgs/msg/ObjectArray.msg"
     )
 endif()
 

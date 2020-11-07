@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_CheckForObjectsGoal.py"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_ObjectCount.py"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_CheckForObjectsActionGoal.py"
+  "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_ObjectPoint.py"
+  "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_ObjectArray.py"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_CheckForObjectsActionFeedback.py"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_CheckForObjectsFeedback.py"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_BoundingBox.py"

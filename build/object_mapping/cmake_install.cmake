@@ -129,13 +129,6 @@ file(INSTALL DESTINATION "/home/soo/object_mapping/install" TYPE FILE FILES "/ho
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/object_mapping/msg" TYPE FILE FILES
-    "/home/soo/object_mapping/src/object_mapping/msg/ObjectPoint.msg"
-    "/home/soo/object_mapping/src/object_mapping/msg/ObjectArray.msg"
-    )
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/soo/object_mapping/build/object_mapping/catkin_generated/installspace/object_mapping.pc")
 endif()
 

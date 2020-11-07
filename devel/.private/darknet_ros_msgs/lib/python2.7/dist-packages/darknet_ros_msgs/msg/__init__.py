@@ -7,4 +7,6 @@ from ._CheckForObjectsActionResult import *
 from ._CheckForObjectsFeedback import *
 from ._CheckForObjectsGoal import *
 from ._CheckForObjectsResult import *
+from ._ObjectArray import *
 from ._ObjectCount import *
+from ._ObjectPoint import *

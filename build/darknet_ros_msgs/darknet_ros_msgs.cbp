@@ -327,16 +327,6 @@
 					<DistClean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="sensor_msgs_generate_messages_py">
-				<Option working_dir="/home/soo/object_mapping/build/darknet_ros_msgs"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 sensor_msgs_generate_messages_py"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
 			<Target title="actionlib_msgs_generate_messages_cpp">
 				<Option working_dir="/home/soo/object_mapping/build/darknet_ros_msgs"/>
 				<Option type="4"/>
@@ -437,6 +427,26 @@
 					<DistClean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="sensor_msgs_generate_messages_py">
+				<Option working_dir="/home/soo/object_mapping/build/darknet_ros_msgs"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 sensor_msgs_generate_messages_py"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="_darknet_ros_msgs_generate_messages_check_deps_ObjectArray">
+				<Option working_dir="/home/soo/object_mapping/build/darknet_ros_msgs"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 _darknet_ros_msgs_generate_messages_check_deps_ObjectArray"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="install/local">
 				<Option working_dir="/home/soo/object_mapping/build/darknet_ros_msgs"/>
 				<Option type="4"/>
@@ -502,6 +512,16 @@
 				<Option type="4"/>
 				<MakeCommands>
 					<Build command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint">
+				<Option working_dir="/home/soo/object_mapping/build/darknet_ros_msgs"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 _darknet_ros_msgs_generate_messages_check_deps_ObjectPoint"/>
 					<CompileFile command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros_msgs/Makefile&quot;  VERBOSE=1 clean"/>

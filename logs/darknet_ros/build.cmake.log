@@ -1,5 +1,7 @@
 Not searching for unused variables given on the command line.
 [36m--[0m Darknet path dir = /home/soo/object_mapping/src/darknet_ros/darknet
+[36m--[0m CUDA Version:
+[36m--[0m CUDA Libararies: /usr/local/cuda-11.0/lib64/libcudart_static.a;-lpthread;dl;/usr/lib/x86_64-linux-gnu/librt.so
 [36m--[0m Searching for X11...
 [36m--[0m  X11_INCLUDE_DIR: /usr/include
 [36m--[0m  X11_LIBRARIES: /usr/lib/x86_64-linux-gnu/libSM.so/usr/lib/x86_64-linux-gnu/libICE.so/usr/lib/x86_64-linux-gnu/libX11.so/usr/lib/x86_64-linux-gnu/libXext.so

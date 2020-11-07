@@ -29,7 +29,6 @@
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/run_tests.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir
-/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/sensor_msgs_generate_messages_py.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectCount.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir
@@ -40,6 +39,8 @@
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/actionlib_msgs_generate_messages_py.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionResult.dir
+/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/sensor_msgs_generate_messages_py.dir
+/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/install/local.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/doxygen.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
@@ -47,6 +48,7 @@
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/darknet_ros_msgs_generate_messages.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction.dir
+/home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsResult.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_BoundingBox.dir
 /home/soo/object_mapping/build/darknet_ros_msgs/CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionGoal.dir

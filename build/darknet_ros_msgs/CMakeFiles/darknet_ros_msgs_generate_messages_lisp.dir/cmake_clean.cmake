@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/CheckForObjectsGoal.lisp"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/ObjectCount.lisp"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/CheckForObjectsActionGoal.lisp"
+  "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/ObjectPoint.lisp"
+  "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/ObjectArray.lisp"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/CheckForObjectsActionFeedback.lisp"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/CheckForObjectsFeedback.lisp"
   "/home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/BoundingBox.lisp"

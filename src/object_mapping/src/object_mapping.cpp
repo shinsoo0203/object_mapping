@@ -19,10 +19,10 @@
 #include <darknet_ros_msgs/ObjectCount.h>
 #include <darknet_ros_msgs/BoundingBoxes.h>
 #include <darknet_ros_msgs/BoundingBox.h>
-#include <visualization_msgs/Marker.h>
+//#include <darknet_ros_msgs/ObjectPoint.h>
+//#include <darknet_ros_msgs/ObjectArray.h>
 
-//#include <msg/ObjectPoint.h>
-//#include <msg/ObjectArray.h>
+#include <visualization_msgs/Marker.h>
 
 //OCAM-U
 const double fx = 627.407948;

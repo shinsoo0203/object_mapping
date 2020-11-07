@@ -1,0 +1,20 @@
+obj_msgs
+/home/soo/object_mapping/devel/.private/obj_msgs/cmake.lock /home/soo/object_mapping/devel/./cmake.lock
+/home/soo/object_mapping/devel/.private/obj_msgs/share/common-lisp/ros/obj_msgs/msg/ObjectPoint.lisp /home/soo/object_mapping/devel/share/common-lisp/ros/obj_msgs/msg/ObjectPoint.lisp
+/home/soo/object_mapping/devel/.private/obj_msgs/share/common-lisp/ros/obj_msgs/msg/_package.lisp /home/soo/object_mapping/devel/share/common-lisp/ros/obj_msgs/msg/_package.lisp
+/home/soo/object_mapping/devel/.private/obj_msgs/share/common-lisp/ros/obj_msgs/msg/_package_ObjectPoint.lisp /home/soo/object_mapping/devel/share/common-lisp/ros/obj_msgs/msg/_package_ObjectPoint.lisp
+/home/soo/object_mapping/devel/.private/obj_msgs/share/common-lisp/ros/obj_msgs/msg/obj_msgs-msg.asd /home/soo/object_mapping/devel/share/common-lisp/ros/obj_msgs/msg/obj_msgs-msg.asd
+/home/soo/object_mapping/devel/.private/obj_msgs/share/gennodejs/ros/obj_msgs/_index.js /home/soo/object_mapping/devel/share/gennodejs/ros/obj_msgs/_index.js
+/home/soo/object_mapping/devel/.private/obj_msgs/share/gennodejs/ros/obj_msgs/msg/_index.js /home/soo/object_mapping/devel/share/gennodejs/ros/obj_msgs/msg/_index.js
+/home/soo/object_mapping/devel/.private/obj_msgs/share/gennodejs/ros/obj_msgs/msg/ObjectPoint.js /home/soo/object_mapping/devel/share/gennodejs/ros/obj_msgs/msg/ObjectPoint.js
+/home/soo/object_mapping/devel/.private/obj_msgs/share/obj_msgs/cmake/obj_msgsConfig-version.cmake /home/soo/object_mapping/devel/share/obj_msgs/cmake/obj_msgsConfig-version.cmake
+/home/soo/object_mapping/devel/.private/obj_msgs/share/obj_msgs/cmake/obj_msgs-msg-paths.cmake /home/soo/object_mapping/devel/share/obj_msgs/cmake/obj_msgs-msg-paths.cmake
+/home/soo/object_mapping/devel/.private/obj_msgs/share/obj_msgs/cmake/obj_msgs-msg-extras.cmake /home/soo/object_mapping/devel/share/obj_msgs/cmake/obj_msgs-msg-extras.cmake
+/home/soo/object_mapping/devel/.private/obj_msgs/share/obj_msgs/cmake/obj_msgsConfig.cmake /home/soo/object_mapping/devel/share/obj_msgs/cmake/obj_msgsConfig.cmake
+/home/soo/object_mapping/devel/.private/obj_msgs/share/roseus/ros/obj_msgs/manifest.l /home/soo/object_mapping/devel/share/roseus/ros/obj_msgs/manifest.l
+/home/soo/object_mapping/devel/.private/obj_msgs/share/roseus/ros/obj_msgs/msg/ObjectPoint.l /home/soo/object_mapping/devel/share/roseus/ros/obj_msgs/msg/ObjectPoint.l
+/home/soo/object_mapping/devel/.private/obj_msgs/include/obj_msgs/ObjectPoint.h /home/soo/object_mapping/devel/include/obj_msgs/ObjectPoint.h
+/home/soo/object_mapping/devel/.private/obj_msgs/lib/python2.7/dist-packages/obj_msgs/__init__.py /home/soo/object_mapping/devel/lib/python2.7/dist-packages/obj_msgs/__init__.py
+/home/soo/object_mapping/devel/.private/obj_msgs/lib/python2.7/dist-packages/obj_msgs/msg/__init__.py /home/soo/object_mapping/devel/lib/python2.7/dist-packages/obj_msgs/msg/__init__.py
+/home/soo/object_mapping/devel/.private/obj_msgs/lib/python2.7/dist-packages/obj_msgs/msg/_ObjectPoint.py /home/soo/object_mapping/devel/lib/python2.7/dist-packages/obj_msgs/msg/_ObjectPoint.py
+/home/soo/object_mapping/devel/.private/obj_msgs/lib/pkgconfig/obj_msgs.pc /home/soo/object_mapping/devel/lib/pkgconfig/obj_msgs.pc

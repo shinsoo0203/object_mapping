@@ -8,7 +8,9 @@ e23439bd2c74f9d014cf31527d4af3ab /home/soo/object_mapping/devel/.private/darknet
 f71ee59bbc73766fc8be3a40e05841bf /home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/CheckForObjectsFeedback.h
 00d588d2a606dc78b962fb01d3e43eb2 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/CheckForObjectsGoal.h
 79a0b7decf55bec90fb190b341902206 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/CheckForObjectsResult.h
+e9e43dc428b88695cbc06376c1fba091 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/ObjectArray.h
 f31e3870263138fe559bb9d0868eca10 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/ObjectCount.h
+91db637b48415cc09a42ac5588ce0af8 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/include/darknet_ros_msgs/ObjectPoint.h
 f29654563c0f7f4c3982aaeb9e071f42 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_BoundingBox.py
 3e1331bf0273081c1de8c6e80e7c949a /home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_BoundingBoxes.py
 0137e4ed1c22df1f9373e77c7f837d03 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_CheckForObjectsAction.py
@@ -18,7 +20,9 @@ da6bc00e74119cb2648f1a98ea000ac5 /home/soo/object_mapping/devel/.private/darknet
 6ba1063bb61c0935506de22c51a9f347 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_CheckForObjectsFeedback.py
 6ea23a755f5b45f087e45971f0d47d4b /home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_CheckForObjectsGoal.py
 3d5d063b2c9349d35e5f64d1067147d1 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_CheckForObjectsResult.py
+82a7f782728e49c98f638dd1cd1083b4 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_ObjectArray.py
 1c8951229b65e875b7175561861b4f34 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_ObjectCount.py
+5aa9339c666be470b7ba4ee5e19adc2d /home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/_ObjectPoint.py
 41850a86959828fa97e6756c5a886e1b /home/soo/object_mapping/devel/.private/darknet_ros_msgs/lib/python2.7/dist-packages/darknet_ros_msgs/msg/__init__.py
 46f96f2ba0ed5822dafc15e33117d73b /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/BoundingBox.lisp
 36996aca7e82b331c05cd874883c7648 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/BoundingBoxes.lisp
@@ -29,7 +33,9 @@ af43c2b5a8712d1a69d8440af9dedcf9 /home/soo/object_mapping/devel/.private/darknet
 45b607db3deb503ccf038925b2751b37 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/CheckForObjectsFeedback.lisp
 4feffaae9d521e1ffe9ec3776357c6cc /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/CheckForObjectsGoal.lisp
 7c4567eba533519d10381540afe8cc62 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/CheckForObjectsResult.lisp
+c7492d8412229c6fda2de1e6f56e227f /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/ObjectArray.lisp
 3749ac139d1c075a573507b46009d38c /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/ObjectCount.lisp
+90d252f5d3d6643a6ee1b99db3b9634f /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/common-lisp/ros/darknet_ros_msgs/msg/ObjectPoint.lisp
 98fb32a21a3ef5688bda1ac188b4d1ea /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/BoundingBox.js
 db834998bcd881ebdab61936c97ac5c4 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/BoundingBoxes.js
 878b9bf3ff2a56acdfa8746e60ac56e2 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/CheckForObjectsAction.js
@@ -39,7 +45,9 @@ db834998bcd881ebdab61936c97ac5c4 /home/soo/object_mapping/devel/.private/darknet
 93f39eff6bfd2f0388a3c2185f8457b7 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/CheckForObjectsFeedback.js
 7c9da71eb44172bc1912e0ff0dcfaf3a /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/CheckForObjectsGoal.js
 66364b46324bb0eab6aec9e1bf8e1f70 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/CheckForObjectsResult.js
+19e7f484663ca6eb3b065288e3c2207e /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/ObjectArray.js
 ffd64ee28959aedf0d66698deb83dae6 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/ObjectCount.js
+8914fb5f62344d199571c0724245f8d9 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/gennodejs/ros/darknet_ros_msgs/msg/ObjectPoint.js
 ad5b3b8cc35ccc57733c1c2ddaacc008 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/roseus/ros/darknet_ros_msgs/manifest.l
 81828c34590bc82f60dd8b31dc683648 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/roseus/ros/darknet_ros_msgs/msg/BoundingBox.l
 e524f939b259d1120d99c8561c03bce3 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/roseus/ros/darknet_ros_msgs/msg/BoundingBoxes.l
@@ -50,7 +58,9 @@ c29b879271655b4061a6a1d7c256de38 /home/soo/object_mapping/devel/.private/darknet
 e29e1dee5a99e46bf5e6e7c32239b58b /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/roseus/ros/darknet_ros_msgs/msg/CheckForObjectsFeedback.l
 f13e71dd74c46313814ff98645d344d8 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/roseus/ros/darknet_ros_msgs/msg/CheckForObjectsGoal.l
 a4f6ea9ec0d1d0780dbbb75983feecc9 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/roseus/ros/darknet_ros_msgs/msg/CheckForObjectsResult.l
+1d23725668bd05bb75fde04fc2778834 /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/roseus/ros/darknet_ros_msgs/msg/ObjectArray.l
 fb49fef7f5d0a47611a7f709747a6c7e /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/roseus/ros/darknet_ros_msgs/msg/ObjectCount.l
+97f8f37f314bade020cda851f8e1725f /home/soo/object_mapping/devel/.private/darknet_ros_msgs/share/roseus/ros/darknet_ros_msgs/msg/ObjectPoint.l
 e013265231da16306f0379c2b63ca6ab CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_BoundingBox
 172e6ae1072e46decf2414ded2a866ec CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_BoundingBoxes
 c36482366b08fb7714e03ea24aab788b CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction
@@ -60,7 +70,9 @@ c36482366b08fb7714e03ea24aab788b CMakeFiles/_darknet_ros_msgs_generate_messages_
 31e7608efe1e30ecdec730345e02fe34 CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsFeedback
 e495d425257b672fb53ff08beb32f323 CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsGoal
 f23ae5cd666cd9f4abc176ca4dbaac8a CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsResult
+baeba53e85b332421f13684071c9d5c5 CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray
 d8829b65d97ae865a25e260cbeb8956f CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectCount
+63623d9970243bf0faeca4a5a509604d CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint
 217757e44d52c7c11aa57dc6fcaf1880 CMakeFiles/clean_test_results
 c918dfce87c165c128a0af46ccc3989d CMakeFiles/darknet_ros_msgs_generate_messages_cpp
 c918dfce87c165c128a0af46ccc3989d CMakeFiles/darknet_ros_msgs_generate_messages_eus

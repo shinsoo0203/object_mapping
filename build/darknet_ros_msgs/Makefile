@@ -506,19 +506,6 @@ std_msgs_generate_messages_cpp/fast:
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_py
-
-# Build rule for target.
-sensor_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-#=============================================================================
 # Target rules for targets named actionlib_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -649,6 +636,32 @@ _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionResult/fast:
 .PHONY : _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionResult/fast
 
 #=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_py
+
+# Build rule for target.
+sensor_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	$(MAKE) -f CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named _darknet_ros_msgs_generate_messages_check_deps_ObjectArray
+
+# Build rule for target.
+_darknet_ros_msgs_generate_messages_check_deps_ObjectArray: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _darknet_ros_msgs_generate_messages_check_deps_ObjectArray
+.PHONY : _darknet_ros_msgs_generate_messages_check_deps_ObjectArray
+
+# fast build rule for target.
+_darknet_ros_msgs_generate_messages_check_deps_ObjectArray/fast:
+	$(MAKE) -f CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/build.make CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectArray.dir/build
+.PHONY : _darknet_ros_msgs_generate_messages_check_deps_ObjectArray/fast
+
+#=============================================================================
 # Target rules for targets named doxygen
 
 # Build rule for target.
@@ -712,6 +725,19 @@ _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction: cmake_chec
 _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction/fast:
 	$(MAKE) -f CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction.dir/build.make CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction.dir/build
 .PHONY : _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction/fast
+
+#=============================================================================
+# Target rules for targets named _darknet_ros_msgs_generate_messages_check_deps_ObjectPoint
+
+# Build rule for target.
+_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _darknet_ros_msgs_generate_messages_check_deps_ObjectPoint
+.PHONY : _darknet_ros_msgs_generate_messages_check_deps_ObjectPoint
+
+# fast build rule for target.
+_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint/fast:
+	$(MAKE) -f CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/build.make CMakeFiles/_darknet_ros_msgs_generate_messages_check_deps_ObjectPoint.dir/build
+.PHONY : _darknet_ros_msgs_generate_messages_check_deps_ObjectPoint/fast
 
 #=============================================================================
 # Target rules for targets named _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsResult
@@ -867,7 +893,6 @@ help:
 	@echo "... actionlib_msgs_generate_messages_nodejs"
 	@echo "... run_tests"
 	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... _darknet_ros_msgs_generate_messages_check_deps_ObjectCount"
 	@echo "... geometry_msgs_generate_messages_eus"
@@ -878,6 +903,8 @@ help:
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionResult"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... _darknet_ros_msgs_generate_messages_check_deps_ObjectArray"
 	@echo "... install/local"
 	@echo "... doxygen"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -885,6 +912,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... darknet_ros_msgs_generate_messages"
 	@echo "... _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsAction"
+	@echo "... _darknet_ros_msgs_generate_messages_check_deps_ObjectPoint"
 	@echo "... _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsResult"
 	@echo "... _darknet_ros_msgs_generate_messages_check_deps_BoundingBox"
 	@echo "... _darknet_ros_msgs_generate_messages_check_deps_CheckForObjectsActionGoal"

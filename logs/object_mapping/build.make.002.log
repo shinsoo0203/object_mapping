@@ -11,24 +11,24 @@
 [  0%] Built target actionlib_msgs_generate_messages_lisp
 [  0%] Built target actionlib_msgs_generate_messages_eus
 [  0%] Built target actionlib_msgs_generate_messages_cpp
-[  0%] Built target actionlib_generate_messages_py
 [  0%] Built target actionlib_generate_messages_nodejs
+[  0%] Built target actionlib_generate_messages_py
 [  0%] Built target actionlib_generate_messages_lisp
 [  0%] Built target actionlib_generate_messages_eus
 [  0%] Built target darknet_ros_msgs_generate_messages_nodejs
 [  0%] Built target rosgraph_msgs_generate_messages_nodejs
 [  0%] Built target rosgraph_msgs_generate_messages_py
 [  0%] Built target std_msgs_generate_messages_eus
-[  0%] Built target rosgraph_msgs_generate_messages_lisp
-[  0%] Built target rosgraph_msgs_generate_messages_eus
 [  0%] Built target tf_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
 [  0%] Built target rosgraph_msgs_generate_messages_cpp
 [  0%] Built target roscpp_generate_messages_py
 [  0%] Built target std_msgs_generate_messages_py
-[  0%] Built target geometry_msgs_generate_messages_eus
 [  0%] Built target roscpp_generate_messages_nodejs
-[  0%] Built target roscpp_generate_messages_eus
 [  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_eus
 [  0%] Built target tf_generate_messages_lisp
 [  0%] Built target actionlib_msgs_generate_messages_nodejs
 [  0%] Built target std_msgs_generate_messages_cpp
@@ -36,19 +36,27 @@
 [  0%] Built target geometry_msgs_generate_messages_nodejs
 [  0%] Built target tf_generate_messages_py
 [  0%] Built target sensor_msgs_generate_messages_py
-[  0%] Built target tf_generate_messages_nodejs
 [  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target tf_generate_messages_nodejs
 [  0%] Built target sensor_msgs_generate_messages_cpp
-[  0%] Built target sensor_msgs_generate_messages_eus
 [  0%] Built target tf_generate_messages_cpp
-[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target sensor_msgs_generate_messages_eus
 [  0%] Built target sensor_msgs_generate_messages_lisp
-[  0%] Built target roscpp_generate_messages_cpp
 [  0%] Built target actionlib_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target roscpp_generate_messages_cpp
 [  0%] Built target sensor_msgs_generate_messages_nodejs
 [  0%] Built target geometry_msgs_generate_messages_cpp
 [  0%] Built target geometry_msgs_generate_messages_lisp
 [35m[1mScanning dependencies of target object_mapping[0m
 [ 50%] [32mBuilding CXX object CMakeFiles/object_mapping.dir/src/object_mapping.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/soo/object_mapping/devel/.private/object_mapping/lib/object_mapping/object_mapping[0m
-[100%] Built target object_mapping
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:23:10:[m[K [01;31m[Kfatal error: [m[Kdarknet_ros_msgs/ObjectArray.h: No such file or directory
+ #include [01;31m[K<darknet_ros_msgs/ObjectArray.h>[m[K
+          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+CMakeFiles/object_mapping.dir/build.make:62: recipe for target 'CMakeFiles/object_mapping.dir/src/object_mapping.cpp.o' failed
+CMakeFiles/Makefile2:116: recipe for target 'CMakeFiles/object_mapping.dir/all' failed
+Makefile:140: recipe for target 'all' failed
+make[2]: *** [CMakeFiles/object_mapping.dir/src/object_mapping.cpp.o] Error 1
+make[1]: *** [CMakeFiles/object_mapping.dir/all] Error 2
+make: *** [all] Error 2
