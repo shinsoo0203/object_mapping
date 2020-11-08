@@ -9,7 +9,7 @@ import struct
 import geometry_msgs.msg
 
 class ObjectPoint(genpy.Message):
-  _md5sum = "9bf661606dbc57bb3d728bb020605f6c"
+  _md5sum = "fca3293a4884471fb4cb602c6345cc82"
   _type = "darknet_ros_msgs/ObjectPoint"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """string Class
@@ -17,7 +17,7 @@ float64 probability
 geometry_msgs/Point point
 int8 width
 int8 height
-
+float64 distance
 
 ================================================================================
 MSG: geometry_msgs/Point
@@ -26,8 +26,8 @@ float64 x
 float64 y
 float64 z
 """
-  __slots__ = ['Class','probability','point','width','height']
-  _slot_types = ['string','float64','geometry_msgs/Point','int8','int8']
+  __slots__ = ['Class','probability','point','width','height','distance']
+  _slot_types = ['string','float64','geometry_msgs/Point','int8','int8','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -37,7 +37,7 @@ float64 z
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       Class,probability,point,width,height
+       Class,probability,point,width,height,distance
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -56,12 +56,15 @@ float64 z
         self.width = 0
       if self.height is None:
         self.height = 0
+      if self.distance is None:
+        self.distance = 0.
     else:
       self.Class = ''
       self.probability = 0.
       self.point = geometry_msgs.msg.Point()
       self.width = 0
       self.height = 0
+      self.distance = 0.
 
   def _get_types(self):
     """
@@ -82,7 +85,7 @@ float64 z
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_4d2b().pack(_x.probability, _x.point.x, _x.point.y, _x.point.z, _x.width, _x.height))
+      buff.write(_get_struct_4d2bd().pack(_x.probability, _x.point.x, _x.point.y, _x.point.z, _x.width, _x.height, _x.distance))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -107,8 +110,8 @@ float64 z
         self.Class = str[start:end]
       _x = self
       start = end
-      end += 34
-      (_x.probability, _x.point.x, _x.point.y, _x.point.z, _x.width, _x.height,) = _get_struct_4d2b().unpack(str[start:end])
+      end += 42
+      (_x.probability, _x.point.x, _x.point.y, _x.point.z, _x.width, _x.height, _x.distance,) = _get_struct_4d2bd().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -128,7 +131,7 @@ float64 z
         length = len(_x)
       buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
       _x = self
-      buff.write(_get_struct_4d2b().pack(_x.probability, _x.point.x, _x.point.y, _x.point.z, _x.width, _x.height))
+      buff.write(_get_struct_4d2bd().pack(_x.probability, _x.point.x, _x.point.y, _x.point.z, _x.width, _x.height, _x.distance))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -154,8 +157,8 @@ float64 z
         self.Class = str[start:end]
       _x = self
       start = end
-      end += 34
-      (_x.probability, _x.point.x, _x.point.y, _x.point.z, _x.width, _x.height,) = _get_struct_4d2b().unpack(str[start:end])
+      end += 42
+      (_x.probability, _x.point.x, _x.point.y, _x.point.z, _x.width, _x.height, _x.distance,) = _get_struct_4d2bd().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -164,9 +167,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_4d2b = None
-def _get_struct_4d2b():
-    global _struct_4d2b
-    if _struct_4d2b is None:
-        _struct_4d2b = struct.Struct("<4d2b")
-    return _struct_4d2b
+_struct_4d2bd = None
+def _get_struct_4d2bd():
+    global _struct_4d2bd
+    if _struct_4d2bd is None:
+        _struct_4d2bd = struct.Struct("<4d2bd")
+    return _struct_4d2bd

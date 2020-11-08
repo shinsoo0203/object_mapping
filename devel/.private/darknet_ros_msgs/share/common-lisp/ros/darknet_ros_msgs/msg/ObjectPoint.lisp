@@ -31,7 +31,12 @@
     :reader height
     :initarg :height
     :type cl:fixnum
-    :initform 0))
+    :initform 0)
+   (distance
+    :reader distance
+    :initarg :distance
+    :type cl:float
+    :initform 0.0))
 )
 
 (cl:defclass ObjectPoint (<ObjectPoint>)
@@ -66,6 +71,11 @@
 (cl:defmethod height-val ((m <ObjectPoint>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader darknet_ros_msgs-msg:height-val is deprecated.  Use darknet_ros_msgs-msg:height instead.")
   (height m))
+
+(cl:ensure-generic-function 'distance-val :lambda-list '(m))
+(cl:defmethod distance-val ((m <ObjectPoint>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader darknet_ros_msgs-msg:distance-val is deprecated.  Use darknet_ros_msgs-msg:distance instead.")
+  (distance m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <ObjectPoint>) ostream)
   "Serializes a message object of type '<ObjectPoint>"
   (cl:let ((__ros_str_len (cl:length (cl:slot-value msg 'Class))))
@@ -90,6 +100,15 @@
   (cl:let* ((signed (cl:slot-value msg 'height)) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 256) signed)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
     )
+  (cl:let ((bits (roslisp-utils:encode-double-float-bits (cl:slot-value msg 'distance))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 32) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <ObjectPoint>) istream)
   "Deserializes a message object of type '<ObjectPoint>"
@@ -118,6 +137,16 @@
     (cl:let ((unsigned 0))
       (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
       (cl:setf (cl:slot-value msg 'height) (cl:if (cl:< unsigned 128) unsigned (cl:- unsigned 256))))
+    (cl:let ((bits 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 32) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 40) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
+    (cl:setf (cl:slot-value msg 'distance) (roslisp-utils:decode-double-float-bits bits)))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<ObjectPoint>)))
@@ -128,16 +157,16 @@
   "darknet_ros_msgs/ObjectPoint")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<ObjectPoint>)))
   "Returns md5sum for a message object of type '<ObjectPoint>"
-  "9bf661606dbc57bb3d728bb020605f6c")
+  "fca3293a4884471fb4cb602c6345cc82")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'ObjectPoint)))
   "Returns md5sum for a message object of type 'ObjectPoint"
-  "9bf661606dbc57bb3d728bb020605f6c")
+  "fca3293a4884471fb4cb602c6345cc82")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ObjectPoint>)))
   "Returns full string definition for message of type '<ObjectPoint>"
-  (cl:format cl:nil "string Class~%float64 probability~%geometry_msgs/Point point~%int8 width~%int8 height~%~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%~%"))
+  (cl:format cl:nil "string Class~%float64 probability~%geometry_msgs/Point point~%int8 width~%int8 height~%float64 distance~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ObjectPoint)))
   "Returns full string definition for message of type 'ObjectPoint"
-  (cl:format cl:nil "string Class~%float64 probability~%geometry_msgs/Point point~%int8 width~%int8 height~%~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%~%"))
+  (cl:format cl:nil "string Class~%float64 probability~%geometry_msgs/Point point~%int8 width~%int8 height~%float64 distance~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ObjectPoint>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'Class))
@@ -145,6 +174,7 @@
      (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'point))
      1
      1
+     8
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <ObjectPoint>))
   "Converts a ROS message object to a list"
@@ -154,4 +184,5 @@
     (cl:cons ':point (point msg))
     (cl:cons ':width (width msg))
     (cl:cons ':height (height msg))
+    (cl:cons ':distance (distance msg))
 ))

@@ -58,16 +58,16 @@
   "darknet_ros_msgs/ObjectArray")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<ObjectArray>)))
   "Returns md5sum for a message object of type '<ObjectArray>"
-  "a1b4d468b5d39ee39134cb84f393ad77")
+  "d6f2aabe531b975e415559a57a1142fd")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'ObjectArray)))
   "Returns md5sum for a message object of type 'ObjectArray"
-  "a1b4d468b5d39ee39134cb84f393ad77")
+  "d6f2aabe531b975e415559a57a1142fd")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ObjectArray>)))
   "Returns full string definition for message of type '<ObjectArray>"
-  (cl:format cl:nil "darknet_ros_msgs/ObjectPoint[] objects~%~%================================================================================~%MSG: darknet_ros_msgs/ObjectPoint~%string Class~%float64 probability~%geometry_msgs/Point point~%int8 width~%int8 height~%~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%~%"))
+  (cl:format cl:nil "darknet_ros_msgs/ObjectPoint[] objects~%~%================================================================================~%MSG: darknet_ros_msgs/ObjectPoint~%string Class~%float64 probability~%geometry_msgs/Point point~%int8 width~%int8 height~%float64 distance~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ObjectArray)))
   "Returns full string definition for message of type 'ObjectArray"
-  (cl:format cl:nil "darknet_ros_msgs/ObjectPoint[] objects~%~%================================================================================~%MSG: darknet_ros_msgs/ObjectPoint~%string Class~%float64 probability~%geometry_msgs/Point point~%int8 width~%int8 height~%~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%~%"))
+  (cl:format cl:nil "darknet_ros_msgs/ObjectPoint[] objects~%~%================================================================================~%MSG: darknet_ros_msgs/ObjectPoint~%string Class~%float64 probability~%geometry_msgs/Point point~%int8 width~%int8 height~%float64 distance~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ObjectArray>))
   (cl:+ 0
      4 (cl:reduce #'cl:+ (cl:slot-value msg 'objects) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ (roslisp-msg-protocol:serialization-length ele))))

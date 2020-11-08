@@ -29,14 +29,16 @@ struct ObjectPoint_
     , probability(0.0)
     , point()
     , width(0)
-    , height(0)  {
+    , height(0)
+    , distance(0.0)  {
     }
   ObjectPoint_(const ContainerAllocator& _alloc)
     : Class(_alloc)
     , probability(0.0)
     , point(_alloc)
     , width(0)
-    , height(0)  {
+    , height(0)
+    , distance(0.0)  {
   (void)_alloc;
     }
 
@@ -56,6 +58,9 @@ struct ObjectPoint_
 
    typedef int8_t _height_type;
   _height_type height;
+
+   typedef double _distance_type;
+  _distance_type distance;
 
 
 
@@ -90,7 +95,8 @@ bool operator==(const ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator1> & lh
     lhs.probability == rhs.probability &&
     lhs.point == rhs.point &&
     lhs.width == rhs.width &&
-    lhs.height == rhs.height;
+    lhs.height == rhs.height &&
+    lhs.distance == rhs.distance;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -147,12 +153,12 @@ struct MD5Sum< ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "9bf661606dbc57bb3d728bb020605f6c";
+    return "fca3293a4884471fb4cb602c6345cc82";
   }
 
   static const char* value(const ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x9bf661606dbc57bbULL;
-  static const uint64_t static_value2 = 0x3d728bb020605f6cULL;
+  static const uint64_t static_value1 = 0xfca3293a4884471fULL;
+  static const uint64_t static_value2 = 0xb4cb602c6345cc82ULL;
 };
 
 template<class ContainerAllocator>
@@ -176,7 +182,7 @@ struct Definition< ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator> >
 "geometry_msgs/Point point\n"
 "int8 width\n"
 "int8 height\n"
-"\n"
+"float64 distance\n"
 "\n"
 "================================================================================\n"
 "MSG: geometry_msgs/Point\n"
@@ -207,6 +213,7 @@ namespace serialization
       stream.next(m.point);
       stream.next(m.width);
       stream.next(m.height);
+      stream.next(m.distance);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -236,6 +243,8 @@ struct Printer< ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator> >
     Printer<int8_t>::stream(s, indent + "  ", v.width);
     s << indent << "height: ";
     Printer<int8_t>::stream(s, indent + "  ", v.height);
+    s << indent << "distance: ";
+    Printer<double>::stream(s, indent + "  ", v.distance);
   }
 };
 

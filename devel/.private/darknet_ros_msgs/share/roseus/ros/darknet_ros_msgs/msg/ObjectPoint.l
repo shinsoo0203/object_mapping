@@ -16,7 +16,7 @@
 
 (defclass darknet_ros_msgs::ObjectPoint
   :super ros::object
-  :slots (_Class _probability _point _width _height ))
+  :slots (_Class _probability _point _width _height _distance ))
 
 (defmethod darknet_ros_msgs::ObjectPoint
   (:init
@@ -26,6 +26,7 @@
     ((:point __point) (instance geometry_msgs::Point :init))
     ((:width __width) 0)
     ((:height __height) 0)
+    ((:distance __distance) 0.0)
     )
    (send-super :init)
    (setq _Class (string __Class))
@@ -33,6 +34,7 @@
    (setq _point __point)
    (setq _width (round __width))
    (setq _height (round __height))
+   (setq _distance (float __distance))
    self)
   (:Class
    (&optional __Class)
@@ -53,6 +55,9 @@
   (:height
    (&optional __height)
    (if __height (setq _height __height)) _height)
+  (:distance
+   (&optional __distance)
+   (if __distance (setq _distance __distance)) _distance)
   (:serialization-length
    ()
    (+
@@ -66,6 +71,8 @@
     1
     ;; int8 _height
     1
+    ;; float64 _distance
+    8
     ))
   (:serialize
    (&optional strm)
@@ -81,6 +88,8 @@
        (write-byte _width s)
      ;; int8 _height
        (write-byte _height s)
+     ;; float64 _distance
+       (sys::poke _distance (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
@@ -97,11 +106,13 @@
    ;; int8 _height
      (setq _height (sys::peek buf ptr- :char)) (incf ptr- 1)
      (if (> _height 127) (setq _height (- _height 256)))
+   ;; float64 _distance
+     (setq _distance (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;;
    self)
   )
 
-(setf (get darknet_ros_msgs::ObjectPoint :md5sum-) "9bf661606dbc57bb3d728bb020605f6c")
+(setf (get darknet_ros_msgs::ObjectPoint :md5sum-) "fca3293a4884471fb4cb602c6345cc82")
 (setf (get darknet_ros_msgs::ObjectPoint :datatype-) "darknet_ros_msgs/ObjectPoint")
 (setf (get darknet_ros_msgs::ObjectPoint :definition-)
       "string Class
@@ -109,7 +120,7 @@ float64 probability
 geometry_msgs/Point point
 int8 width
 int8 height
-
+float64 distance
 
 ================================================================================
 MSG: geometry_msgs/Point
@@ -122,6 +133,6 @@ float64 z
 
 
 
-(provide :darknet_ros_msgs/ObjectPoint "9bf661606dbc57bb3d728bb020605f6c")
+(provide :darknet_ros_msgs/ObjectPoint "fca3293a4884471fb4cb602c6345cc82")
 
 

@@ -9,4 +9,6 @@
           WIDTH
           HEIGHT-VAL
           HEIGHT
+          DISTANCE-VAL
+          DISTANCE
 ))

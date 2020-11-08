@@ -24,6 +24,7 @@ class ObjectPoint {
       this.point = null;
       this.width = null;
       this.height = null;
+      this.distance = null;
     }
     else {
       if (initObj.hasOwnProperty('Class')) {
@@ -56,6 +57,12 @@ class ObjectPoint {
       else {
         this.height = 0;
       }
+      if (initObj.hasOwnProperty('distance')) {
+        this.distance = initObj.distance
+      }
+      else {
+        this.distance = 0.0;
+      }
     }
   }
 
@@ -71,6 +78,8 @@ class ObjectPoint {
     bufferOffset = _serializer.int8(obj.width, buffer, bufferOffset);
     // Serialize message field [height]
     bufferOffset = _serializer.int8(obj.height, buffer, bufferOffset);
+    // Serialize message field [distance]
+    bufferOffset = _serializer.float64(obj.distance, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -88,13 +97,15 @@ class ObjectPoint {
     data.width = _deserializer.int8(buffer, bufferOffset);
     // Deserialize message field [height]
     data.height = _deserializer.int8(buffer, bufferOffset);
+    // Deserialize message field [distance]
+    data.distance = _deserializer.float64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += object.Class.length;
-    return length + 38;
+    return length + 46;
   }
 
   static datatype() {
@@ -104,7 +115,7 @@ class ObjectPoint {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '9bf661606dbc57bb3d728bb020605f6c';
+    return 'fca3293a4884471fb4cb602c6345cc82';
   }
 
   static messageDefinition() {
@@ -115,7 +126,7 @@ class ObjectPoint {
     geometry_msgs/Point point
     int8 width
     int8 height
-    
+    float64 distance
     
     ================================================================================
     MSG: geometry_msgs/Point
@@ -166,6 +177,13 @@ class ObjectPoint {
     }
     else {
       resolved.height = 0
+    }
+
+    if (msg.distance !== undefined) {
+      resolved.distance = msg.distance;
+    }
+    else {
+      resolved.distance = 0.0
     }
 
     return resolved;

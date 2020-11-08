@@ -47,10 +47,10 @@ private:
 
   tf::TransformBroadcaster br;
   tf::TransformListener ls;
-  tf::StampedTransform tf_fcu;
-  tf::Transform tf_cam;
 
-  tf::Quaternion q_fcu;
+  tf::StampedTransform tf_gps; //gps
+  tf::Transform tf_cam;
+  tf::Quaternion q_gps;
   tf::Quaternion q_cam;
   tf::Vector3 t;
   cv::Mat R, T;
@@ -65,11 +65,11 @@ private:
 
   int obj_count;
   darknet_ros_msgs::BoundingBoxes _obj_boxes;
-  darknet_ros_msgs::BoundingBoxes obj_boxes; //**
-  geometry_msgs::Pose _vehicle_pose;    //global
-  geometry_msgs::Pose vehicle_pose;     //local
+  darknet_ros_msgs::ObjectArray obj_boxes; //**
+  geometry_msgs::Pose _vehicle_pose;         //global
+  geometry_msgs::Pose vehicle_pose;          //local
 
-  darknet_ros_msgs::ObjectArray objects;//transformed
+  darknet_ros_msgs::ObjectArray objects;     //transformed
 
 public:
   DObjectMapping(){
@@ -150,14 +150,14 @@ public:
   // Coordinate Transform
   void getTFvalue(){
       //camera location from gps
-      t[0] = tf_fcu.getOrigin().x() + x_gap;
-      t[1] = tf_fcu.getOrigin().y() + y_gap;
-      t[2] = tf_fcu.getOrigin().z() + z_gap;
+      t[0] = tf_gps.getOrigin().x() + x_gap;
+      t[1] = tf_gps.getOrigin().y() + y_gap;
+      t[2] = tf_gps.getOrigin().z() + z_gap;
 
-      q_fcu[0] = tf_fcu.getRotation().x();
-      q_fcu[1] = tf_fcu.getRotation().y();
-      q_fcu[2] = tf_fcu.getRotation().z();
-      q_fcu[3] = tf_fcu.getRotation().w();
+      q_gps[0] = tf_gps.getRotation().x();
+      q_gps[1] = tf_gps.getRotation().y();
+      q_gps[2] = tf_gps.getRotation().z();
+      q_gps[3] = tf_gps.getRotation().w();
   }
   tf::Vector3 getRPY(tf::Quaternion q){
       tf::Vector3 rpy;
@@ -178,12 +178,8 @@ public:
   }
   void Quaternion2RotMat(){
 
-      q_cam.setRPY(0,60*d2r,0); //RPY
-
       tf::Quaternion q;
-      q = q_fcu*q_cam; //q.normalize();
-      tf::Vector3 yaw_r = getRPY(q); //relate yaw
-      q.setRPY(0, 60*d2r, yaw_r[2]);
+      q = q_gps;
 
       tf_cam.setOrigin(t);
       tf_cam.setRotation(q);
@@ -207,7 +203,8 @@ public:
       //camera.z = 0;   //Pixel2Camera
 
       //normal coordinate to ned
-      _normal = (cv::Mat_<double>(3,1) << normal.z, -normal.x, -normal.y);
+      //_normal = (cv::Mat_<double>(3,1) << normal.z, -normal.x, -normal.y);
+      _normal = (cv::Mat_<double>(3,1) << normal.x, -normal.y, -normal.z);
       return _normal;
   }
   geometry_msgs::Point Dimension_transform(cv::Mat _normal){
@@ -239,6 +236,10 @@ public:
       //ground_point_pub.publish(ground);
       return ground;
   }
+  double getDistance(geometry_msgs::Point prev, geometry_msgs::Point cur){
+    double d = sqrt(pow(cur.x-prev.x,2)+pow(cur.y-prev.y,2));
+    return d;
+  }
 
   // Object Data Pre-processing
   void core(){
@@ -248,34 +249,22 @@ public:
       darknet_ros_msgs::ObjectPoint obj;     //add objects
 
       for(int i=0; i<obj_count; i++){ //obj_boxes.bounding_boxes.size()
-          obj_box = obj_boxes.bounding_boxes[i];
+          obj_box = _obj_boxes.bounding_boxes[i];
           if(obj_box.probability>0.5){
               obj_pixel.x = (obj_box.xmin + obj_box.xmax)/2;
               obj_pixel.y = (obj_box.ymin + obj_box.ymax)/2;
               obj_ground = getTransformed(obj_pixel);
+              objMarker(obj_ground);
 
               obj.Class = obj_box.Class;
               obj.probability = obj_box.probability;
-              //width, height via Class
               obj.point = obj_ground;
+              //decision width, height via Class
+              obj.distance = getDistance(vehicle_pose.position, obj.point);
+              std::cout<<obj<<std::endl;
+              obj_boxes.objects.push_back(obj);
           }
       }
-/*
-      if(_yolo_object_count>0){
-        for(int i=0; i<(int)_yolo_bboxes.bounding_boxes.size(); i++){
-          darknet_ros_msgs::BoundingBox _yolo_bbox = _yolo_bboxes.bounding_boxes[i];
-          if(_yolo_bbox.Class=="person"||_yolo_bbox.Class=="bird"){ //_yolo_bbox.probability
-            geometry_msgs::Point person_pnt;
-            person_pnt.x = (_yolo_bbox.xmax+_yolo_bbox.xmin)/2;
-            person_pnt.y = (_yolo_bbox.ymax+_yolo_bbox.ymin)/2;
-            double yolo_d = sqrt(pow(pixel_point.x-person_pnt.x,2)+pow(pixel_point.y-person_pnt.y,2));
-            if(yolo_d<gap_from_object) {
-              gap_from_object = yolo_d;
-              _person_box = _yolo_bbox;
-      } } } }
-*/
-      obj_ground = getTransformed(obj_pixel);
-      objMarker(obj_ground);
 
       msgPub(obj_ground);
   }
@@ -291,10 +280,7 @@ public:
       map_obj_pose_pub.publish(human_pose);
   }
 
-  double getDistance(geometry_msgs::Point prev, geometry_msgs::Point cur){
-    double d = sqrt(pow(cur.x-prev.x,2)+pow(cur.y-prev.y,2));
-    return d;
-  }
+
 
   void main(){
     ros::Rate rate(10.0);
@@ -302,7 +288,7 @@ public:
     while(ros::ok()){
 
         try{
-            ls.lookupTransform("map","vehicle",ros::Time(0),tf_fcu);
+            ls.lookupTransform("map","vehicle",ros::Time(0),tf_gps);
         }
         catch(tf::TransformException &ex){
             ROS_ERROR("[Transform] %s",ex.what());

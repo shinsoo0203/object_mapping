@@ -10,7 +10,7 @@ import darknet_ros_msgs.msg
 import geometry_msgs.msg
 
 class ObjectArray(genpy.Message):
-  _md5sum = "a1b4d468b5d39ee39134cb84f393ad77"
+  _md5sum = "d6f2aabe531b975e415559a57a1142fd"
   _type = "darknet_ros_msgs/ObjectArray"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """darknet_ros_msgs/ObjectPoint[] objects
@@ -22,7 +22,7 @@ float64 probability
 geometry_msgs/Point point
 int8 width
 int8 height
-
+float64 distance
 
 ================================================================================
 MSG: geometry_msgs/Point
@@ -83,7 +83,7 @@ float64 z
         _x = _v1
         buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
         _x = val1
-        buff.write(_get_struct_2b().pack(_x.width, _x.height))
+        buff.write(_get_struct_2bd().pack(_x.width, _x.height, _x.distance))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -122,8 +122,8 @@ float64 z
         (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
         _x = val1
         start = end
-        end += 2
-        (_x.width, _x.height,) = _get_struct_2b().unpack(str[start:end])
+        end += 10
+        (_x.width, _x.height, _x.distance,) = _get_struct_2bd().unpack(str[start:end])
         self.objects.append(val1)
       return self
     except struct.error as e:
@@ -152,7 +152,7 @@ float64 z
         _x = _v3
         buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
         _x = val1
-        buff.write(_get_struct_2b().pack(_x.width, _x.height))
+        buff.write(_get_struct_2bd().pack(_x.width, _x.height, _x.distance))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -192,8 +192,8 @@ float64 z
         (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
         _x = val1
         start = end
-        end += 2
-        (_x.width, _x.height,) = _get_struct_2b().unpack(str[start:end])
+        end += 10
+        (_x.width, _x.height, _x.distance,) = _get_struct_2bd().unpack(str[start:end])
         self.objects.append(val1)
       return self
     except struct.error as e:
@@ -203,12 +203,12 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_2b = None
-def _get_struct_2b():
-    global _struct_2b
-    if _struct_2b is None:
-        _struct_2b = struct.Struct("<2b")
-    return _struct_2b
+_struct_2bd = None
+def _get_struct_2bd():
+    global _struct_2bd
+    if _struct_2bd is None:
+        _struct_2bd = struct.Struct("<2bd")
+    return _struct_2bd
 _struct_3d = None
 def _get_struct_3d():
     global _struct_3d

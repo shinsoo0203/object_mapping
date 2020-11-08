@@ -71,7 +71,7 @@ class ObjectArray {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'a1b4d468b5d39ee39134cb84f393ad77';
+    return 'd6f2aabe531b975e415559a57a1142fd';
   }
 
   static messageDefinition() {
@@ -86,7 +86,7 @@ class ObjectArray {
     geometry_msgs/Point point
     int8 width
     int8 height
-    
+    float64 distance
     
     ================================================================================
     MSG: geometry_msgs/Point
