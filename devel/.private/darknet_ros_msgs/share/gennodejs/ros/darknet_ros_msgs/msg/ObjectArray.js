@@ -71,7 +71,7 @@ class ObjectArray {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '3761b2039a2a67515ad5071a472f7d2c';
+    return 'a1b4d468b5d39ee39134cb84f393ad77';
   }
 
   static messageDefinition() {
@@ -83,9 +83,10 @@ class ObjectArray {
     MSG: darknet_ros_msgs/ObjectPoint
     string Class
     float64 probability
+    geometry_msgs/Point point
     int8 width
     int8 height
-    geometry_msgs/Point point
+    
     
     ================================================================================
     MSG: geometry_msgs/Point

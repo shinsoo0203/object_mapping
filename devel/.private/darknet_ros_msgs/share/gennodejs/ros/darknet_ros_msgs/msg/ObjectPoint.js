@@ -21,9 +21,9 @@ class ObjectPoint {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.Class = null;
       this.probability = null;
+      this.point = null;
       this.width = null;
       this.height = null;
-      this.point = null;
     }
     else {
       if (initObj.hasOwnProperty('Class')) {
@@ -38,6 +38,12 @@ class ObjectPoint {
       else {
         this.probability = 0.0;
       }
+      if (initObj.hasOwnProperty('point')) {
+        this.point = initObj.point
+      }
+      else {
+        this.point = new geometry_msgs.msg.Point();
+      }
       if (initObj.hasOwnProperty('width')) {
         this.width = initObj.width
       }
@@ -50,12 +56,6 @@ class ObjectPoint {
       else {
         this.height = 0;
       }
-      if (initObj.hasOwnProperty('point')) {
-        this.point = initObj.point
-      }
-      else {
-        this.point = new geometry_msgs.msg.Point();
-      }
     }
   }
 
@@ -65,12 +65,12 @@ class ObjectPoint {
     bufferOffset = _serializer.string(obj.Class, buffer, bufferOffset);
     // Serialize message field [probability]
     bufferOffset = _serializer.float64(obj.probability, buffer, bufferOffset);
+    // Serialize message field [point]
+    bufferOffset = geometry_msgs.msg.Point.serialize(obj.point, buffer, bufferOffset);
     // Serialize message field [width]
     bufferOffset = _serializer.int8(obj.width, buffer, bufferOffset);
     // Serialize message field [height]
     bufferOffset = _serializer.int8(obj.height, buffer, bufferOffset);
-    // Serialize message field [point]
-    bufferOffset = geometry_msgs.msg.Point.serialize(obj.point, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -82,12 +82,12 @@ class ObjectPoint {
     data.Class = _deserializer.string(buffer, bufferOffset);
     // Deserialize message field [probability]
     data.probability = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [point]
+    data.point = geometry_msgs.msg.Point.deserialize(buffer, bufferOffset);
     // Deserialize message field [width]
     data.width = _deserializer.int8(buffer, bufferOffset);
     // Deserialize message field [height]
     data.height = _deserializer.int8(buffer, bufferOffset);
-    // Deserialize message field [point]
-    data.point = geometry_msgs.msg.Point.deserialize(buffer, bufferOffset);
     return data;
   }
 
@@ -104,7 +104,7 @@ class ObjectPoint {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '67ee1f8adf25d2c6b869bd19b2901b2c';
+    return '9bf661606dbc57bb3d728bb020605f6c';
   }
 
   static messageDefinition() {
@@ -112,9 +112,10 @@ class ObjectPoint {
     return `
     string Class
     float64 probability
+    geometry_msgs/Point point
     int8 width
     int8 height
-    geometry_msgs/Point point
+    
     
     ================================================================================
     MSG: geometry_msgs/Point
@@ -146,6 +147,13 @@ class ObjectPoint {
       resolved.probability = 0.0
     }
 
+    if (msg.point !== undefined) {
+      resolved.point = geometry_msgs.msg.Point.Resolve(msg.point)
+    }
+    else {
+      resolved.point = new geometry_msgs.msg.Point()
+    }
+
     if (msg.width !== undefined) {
       resolved.width = msg.width;
     }
@@ -158,13 +166,6 @@ class ObjectPoint {
     }
     else {
       resolved.height = 0
-    }
-
-    if (msg.point !== undefined) {
-      resolved.point = geometry_msgs.msg.Point.Resolve(msg.point)
-    }
-    else {
-      resolved.point = new geometry_msgs.msg.Point()
     }
 
     return resolved;

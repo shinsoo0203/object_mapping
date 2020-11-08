@@ -27,16 +27,16 @@ struct ObjectPoint_
   ObjectPoint_()
     : Class()
     , probability(0.0)
+    , point()
     , width(0)
-    , height(0)
-    , point()  {
+    , height(0)  {
     }
   ObjectPoint_(const ContainerAllocator& _alloc)
     : Class(_alloc)
     , probability(0.0)
+    , point(_alloc)
     , width(0)
-    , height(0)
-    , point(_alloc)  {
+    , height(0)  {
   (void)_alloc;
     }
 
@@ -48,14 +48,14 @@ struct ObjectPoint_
    typedef double _probability_type;
   _probability_type probability;
 
+   typedef  ::geometry_msgs::Point_<ContainerAllocator>  _point_type;
+  _point_type point;
+
    typedef int8_t _width_type;
   _width_type width;
 
    typedef int8_t _height_type;
   _height_type height;
-
-   typedef  ::geometry_msgs::Point_<ContainerAllocator>  _point_type;
-  _point_type point;
 
 
 
@@ -88,9 +88,9 @@ bool operator==(const ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator1> & lh
 {
   return lhs.Class == rhs.Class &&
     lhs.probability == rhs.probability &&
+    lhs.point == rhs.point &&
     lhs.width == rhs.width &&
-    lhs.height == rhs.height &&
-    lhs.point == rhs.point;
+    lhs.height == rhs.height;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -147,12 +147,12 @@ struct MD5Sum< ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "67ee1f8adf25d2c6b869bd19b2901b2c";
+    return "9bf661606dbc57bb3d728bb020605f6c";
   }
 
   static const char* value(const ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x67ee1f8adf25d2c6ULL;
-  static const uint64_t static_value2 = 0xb869bd19b2901b2cULL;
+  static const uint64_t static_value1 = 0x9bf661606dbc57bbULL;
+  static const uint64_t static_value2 = 0x3d728bb020605f6cULL;
 };
 
 template<class ContainerAllocator>
@@ -173,9 +173,10 @@ struct Definition< ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator> >
   {
     return "string Class\n"
 "float64 probability\n"
+"geometry_msgs/Point point\n"
 "int8 width\n"
 "int8 height\n"
-"geometry_msgs/Point point\n"
+"\n"
 "\n"
 "================================================================================\n"
 "MSG: geometry_msgs/Point\n"
@@ -203,9 +204,9 @@ namespace serialization
     {
       stream.next(m.Class);
       stream.next(m.probability);
+      stream.next(m.point);
       stream.next(m.width);
       stream.next(m.height);
-      stream.next(m.point);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -228,13 +229,13 @@ struct Printer< ::darknet_ros_msgs::ObjectPoint_<ContainerAllocator> >
     Printer<std::basic_string<char, std::char_traits<char>, typename ContainerAllocator::template rebind<char>::other > >::stream(s, indent + "  ", v.Class);
     s << indent << "probability: ";
     Printer<double>::stream(s, indent + "  ", v.probability);
+    s << indent << "point: ";
+    s << std::endl;
+    Printer< ::geometry_msgs::Point_<ContainerAllocator> >::stream(s, indent + "  ", v.point);
     s << indent << "width: ";
     Printer<int8_t>::stream(s, indent + "  ", v.width);
     s << indent << "height: ";
     Printer<int8_t>::stream(s, indent + "  ", v.height);
-    s << indent << "point: ";
-    s << std::endl;
-    Printer< ::geometry_msgs::Point_<ContainerAllocator> >::stream(s, indent + "  ", v.point);
   }
 };
 

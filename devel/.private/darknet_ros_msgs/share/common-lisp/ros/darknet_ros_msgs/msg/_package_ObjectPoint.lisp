@@ -3,10 +3,10 @@
           CLASS
           PROBABILITY-VAL
           PROBABILITY
+          POINT-VAL
+          POINT
           WIDTH-VAL
           WIDTH
           HEIGHT-VAL
           HEIGHT
-          POINT-VAL
-          POINT
 ))

@@ -10,7 +10,7 @@ import darknet_ros_msgs.msg
 import geometry_msgs.msg
 
 class ObjectArray(genpy.Message):
-  _md5sum = "3761b2039a2a67515ad5071a472f7d2c"
+  _md5sum = "a1b4d468b5d39ee39134cb84f393ad77"
   _type = "darknet_ros_msgs/ObjectArray"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """darknet_ros_msgs/ObjectPoint[] objects
@@ -19,9 +19,10 @@ class ObjectArray(genpy.Message):
 MSG: darknet_ros_msgs/ObjectPoint
 string Class
 float64 probability
+geometry_msgs/Point point
 int8 width
 int8 height
-geometry_msgs/Point point
+
 
 ================================================================================
 MSG: geometry_msgs/Point
@@ -76,11 +77,13 @@ float64 z
           _x = _x.encode('utf-8')
           length = len(_x)
         buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
-        _x = val1
-        buff.write(_get_struct_d2b().pack(_x.probability, _x.width, _x.height))
+        _x = val1.probability
+        buff.write(_get_struct_d().pack(_x))
         _v1 = val1.point
         _x = _v1
         buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
+        _x = val1
+        buff.write(_get_struct_2b().pack(_x.width, _x.height))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -109,15 +112,18 @@ float64 z
           val1.Class = str[start:end].decode('utf-8', 'rosmsg')
         else:
           val1.Class = str[start:end]
-        _x = val1
         start = end
-        end += 10
-        (_x.probability, _x.width, _x.height,) = _get_struct_d2b().unpack(str[start:end])
+        end += 8
+        (val1.probability,) = _get_struct_d().unpack(str[start:end])
         _v2 = val1.point
         _x = _v2
         start = end
         end += 24
         (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
+        _x = val1
+        start = end
+        end += 2
+        (_x.width, _x.height,) = _get_struct_2b().unpack(str[start:end])
         self.objects.append(val1)
       return self
     except struct.error as e:
@@ -140,11 +146,13 @@ float64 z
           _x = _x.encode('utf-8')
           length = len(_x)
         buff.write(struct.Struct('<I%ss'%length).pack(length, _x))
-        _x = val1
-        buff.write(_get_struct_d2b().pack(_x.probability, _x.width, _x.height))
+        _x = val1.probability
+        buff.write(_get_struct_d().pack(_x))
         _v3 = val1.point
         _x = _v3
         buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
+        _x = val1
+        buff.write(_get_struct_2b().pack(_x.width, _x.height))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -174,15 +182,18 @@ float64 z
           val1.Class = str[start:end].decode('utf-8', 'rosmsg')
         else:
           val1.Class = str[start:end]
-        _x = val1
         start = end
-        end += 10
-        (_x.probability, _x.width, _x.height,) = _get_struct_d2b().unpack(str[start:end])
+        end += 8
+        (val1.probability,) = _get_struct_d().unpack(str[start:end])
         _v4 = val1.point
         _x = _v4
         start = end
         end += 24
         (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
+        _x = val1
+        start = end
+        end += 2
+        (_x.width, _x.height,) = _get_struct_2b().unpack(str[start:end])
         self.objects.append(val1)
       return self
     except struct.error as e:
@@ -192,15 +203,21 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
+_struct_2b = None
+def _get_struct_2b():
+    global _struct_2b
+    if _struct_2b is None:
+        _struct_2b = struct.Struct("<2b")
+    return _struct_2b
 _struct_3d = None
 def _get_struct_3d():
     global _struct_3d
     if _struct_3d is None:
         _struct_3d = struct.Struct("<3d")
     return _struct_3d
-_struct_d2b = None
-def _get_struct_d2b():
-    global _struct_d2b
-    if _struct_d2b is None:
-        _struct_d2b = struct.Struct("<d2b")
-    return _struct_d2b
+_struct_d = None
+def _get_struct_d():
+    global _struct_d
+    if _struct_d is None:
+        _struct_d = struct.Struct("<d")
+    return _struct_d

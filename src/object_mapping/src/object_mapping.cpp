@@ -45,9 +45,6 @@ private:
   ros::Publisher map_obj_pose_pub;
   ros::Publisher obj_marker_pub;
 
-  geometry_msgs::Point obj_pixel;
-  geometry_msgs::Point obj_ground;
-
   tf::TransformBroadcaster br;
   tf::TransformListener ls;
   tf::StampedTransform tf_fcu;
@@ -71,6 +68,8 @@ private:
   darknet_ros_msgs::BoundingBoxes obj_boxes; //**
   geometry_msgs::Pose _vehicle_pose;    //global
   geometry_msgs::Pose vehicle_pose;     //local
+
+  darknet_ros_msgs::ObjectArray objects;//transformed
 
 public:
   DObjectMapping(){
@@ -243,12 +242,22 @@ public:
 
   // Object Data Pre-processing
   void core(){
-      darknet_ros_msgs::BoundingBox obj_box;
+      geometry_msgs::Point obj_pixel;
+      geometry_msgs::Point obj_ground;
+      darknet_ros_msgs::BoundingBox obj_box; //yolo
+      darknet_ros_msgs::ObjectPoint obj;     //add objects
 
       for(int i=0; i<obj_count; i++){ //obj_boxes.bounding_boxes.size()
           obj_box = obj_boxes.bounding_boxes[i];
           if(obj_box.probability>0.5){
+              obj_pixel.x = (obj_box.xmin + obj_box.xmax)/2;
+              obj_pixel.y = (obj_box.ymin + obj_box.ymax)/2;
+              obj_ground = getTransformed(obj_pixel);
 
+              obj.Class = obj_box.Class;
+              obj.probability = obj_box.probability;
+              //width, height via Class
+              obj.point = obj_ground;
           }
       }
 /*
@@ -264,14 +273,6 @@ public:
               gap_from_object = yolo_d;
               _person_box = _yolo_bbox;
       } } } }
-
-      if(_person_box.probability>0.1){
-        pixel_point.x= (_person_box.xmax+_person_box.xmin)/2;
-        pixel_point.y= (_person_box.ymax+_person_box.ymin)/2;
-        pointPub(); //pixel publish for openCV
-        detection_state = OPENCV;
-        ROS_INFO("[Detection] OPENCV!"); ROS_WARN("Detected!");
-      }
 */
       obj_ground = getTransformed(obj_pixel);
       objMarker(obj_ground);

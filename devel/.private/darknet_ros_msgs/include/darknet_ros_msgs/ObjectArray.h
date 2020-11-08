@@ -123,12 +123,12 @@ struct MD5Sum< ::darknet_ros_msgs::ObjectArray_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "3761b2039a2a67515ad5071a472f7d2c";
+    return "a1b4d468b5d39ee39134cb84f393ad77";
   }
 
   static const char* value(const ::darknet_ros_msgs::ObjectArray_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x3761b2039a2a6751ULL;
-  static const uint64_t static_value2 = 0x5ad5071a472f7d2cULL;
+  static const uint64_t static_value1 = 0xa1b4d468b5d39ee3ULL;
+  static const uint64_t static_value2 = 0x9134cb84f393ad77ULL;
 };
 
 template<class ContainerAllocator>
@@ -153,9 +153,10 @@ struct Definition< ::darknet_ros_msgs::ObjectArray_<ContainerAllocator> >
 "MSG: darknet_ros_msgs/ObjectPoint\n"
 "string Class\n"
 "float64 probability\n"
+"geometry_msgs/Point point\n"
 "int8 width\n"
 "int8 height\n"
-"geometry_msgs/Point point\n"
+"\n"
 "\n"
 "================================================================================\n"
 "MSG: geometry_msgs/Point\n"
