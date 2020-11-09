@@ -28,28 +28,28 @@ The CXX compiler identification is GNU, found in "/home/soo/object_mapping/build
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_42430/fast"
-/usr/bin/make -f CMakeFiles/cmTC_42430.dir/build.make CMakeFiles/cmTC_42430.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_42430.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_42430.dir/testCCompiler.c.o   -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_42430
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_42430.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_42430.dir/testCCompiler.c.o  -o cmTC_42430 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
+Run Build Command:"/usr/bin/make" "cmTC_951ee/fast"
+/usr/bin/make -f CMakeFiles/cmTC_951ee.dir/build.make CMakeFiles/cmTC_951ee.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_951ee.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_951ee.dir/testCCompiler.c.o   -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_951ee
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_951ee.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_951ee.dir/testCCompiler.c.o  -o cmTC_951ee 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_edfd6/fast"
-/usr/bin/make -f CMakeFiles/cmTC_edfd6.dir/build.make CMakeFiles/cmTC_edfd6.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_edfd6.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_edfd6.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_edfd6
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_edfd6.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_edfd6.dir/CMakeCCompilerABI.c.o  -o cmTC_edfd6 
+Run Build Command:"/usr/bin/make" "cmTC_c8e3f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c8e3f.dir/build.make CMakeFiles/cmTC_c8e3f.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c8e3f.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_c8e3f.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_c8e3f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8e3f.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_c8e3f.dir/CMakeCCompilerABI.c.o  -o cmTC_c8e3f 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -61,24 +61,24 @@ Thread model: posix
 gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_edfd6' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2MKmOV.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_edfd6 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_edfd6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_edfd6' '-mtune=generic' '-march=x86-64'
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_c8e3f' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaX6K7c.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_c8e3f /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_c8e3f.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_c8e3f' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_edfd6/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_edfd6.dir/build.make CMakeFiles/cmTC_edfd6.dir/build]
-  ignore line: [make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감]
-  ignore line: [Building C object CMakeFiles/cmTC_edfd6.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_edfd6.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_edfd6]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_edfd6.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_edfd6.dir/CMakeCCompilerABI.c.o  -o cmTC_edfd6 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_c8e3f/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_c8e3f.dir/build.make CMakeFiles/cmTC_c8e3f.dir/build]
+  ignore line: [make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_c8e3f.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_c8e3f.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_c8e3f]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8e3f.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_c8e3f.dir/CMakeCCompilerABI.c.o  -o cmTC_c8e3f ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -90,13 +90,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_edfd6' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc2MKmOV.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_edfd6 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_edfd6.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_c8e3f' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaX6K7c.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_c8e3f /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_c8e3f.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc2MKmOV.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccaX6K7c.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -115,7 +115,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_edfd6] ==> ignore
+    arg [cmTC_c8e3f] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -127,7 +127,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_edfd6.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_c8e3f.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -159,15 +159,15 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3fcf4/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3fcf4.dir/build.make CMakeFiles/cmTC_3fcf4.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_3fcf4.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_3fcf4.dir/feature_tests.c.o   -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/feature_tests.c
-Linking C executable cmTC_3fcf4
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3fcf4.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_3fcf4.dir/feature_tests.c.o  -o cmTC_3fcf4 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
+Run Build Command:"/usr/bin/make" "cmTC_a9551/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a9551.dir/build.make CMakeFiles/cmTC_a9551.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a9551.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_a9551.dir/feature_tests.c.o   -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/feature_tests.c
+Linking C executable cmTC_a9551
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a9551.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a9551.dir/feature_tests.c.o  -o cmTC_a9551 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -179,15 +179,15 @@ make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMa
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0faee/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0faee.dir/build.make CMakeFiles/cmTC_0faee.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_0faee.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_0faee.dir/feature_tests.c.o   -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/feature_tests.c
-Linking C executable cmTC_0faee
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0faee.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_0faee.dir/feature_tests.c.o  -o cmTC_0faee 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
+Run Build Command:"/usr/bin/make" "cmTC_9bbf4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9bbf4.dir/build.make CMakeFiles/cmTC_9bbf4.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9bbf4.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_9bbf4.dir/feature_tests.c.o   -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/feature_tests.c
+Linking C executable cmTC_9bbf4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9bbf4.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_9bbf4.dir/feature_tests.c.o  -o cmTC_9bbf4 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -199,15 +199,15 @@ make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMa
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_b8194/fast"
-/usr/bin/make -f CMakeFiles/cmTC_b8194.dir/build.make CMakeFiles/cmTC_b8194.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_b8194.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_b8194.dir/feature_tests.c.o   -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/feature_tests.c
-Linking C executable cmTC_b8194
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b8194.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_b8194.dir/feature_tests.c.o  -o cmTC_b8194 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
+Run Build Command:"/usr/bin/make" "cmTC_8cc89/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8cc89.dir/build.make CMakeFiles/cmTC_8cc89.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8cc89.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_8cc89.dir/feature_tests.c.o   -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/feature_tests.c
+Linking C executable cmTC_8cc89
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8cc89.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_8cc89.dir/feature_tests.c.o  -o cmTC_8cc89 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -217,28 +217,28 @@ make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMa
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_19bb2/fast"
-/usr/bin/make -f CMakeFiles/cmTC_19bb2.dir/build.make CMakeFiles/cmTC_19bb2.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building CXX object CMakeFiles/cmTC_19bb2.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_19bb2.dir/testCXXCompiler.cxx.o -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_19bb2
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_19bb2.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_19bb2.dir/testCXXCompiler.cxx.o  -o cmTC_19bb2 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
+Run Build Command:"/usr/bin/make" "cmTC_b9933/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b9933.dir/build.make CMakeFiles/cmTC_b9933.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b9933.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_b9933.dir/testCXXCompiler.cxx.o -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_b9933
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9933.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_b9933.dir/testCXXCompiler.cxx.o  -o cmTC_b9933 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2e301/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2e301.dir/build.make CMakeFiles/cmTC_2e301.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building CXX object CMakeFiles/cmTC_2e301.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_2e301.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_2e301
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e301.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_2e301.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_2e301 
+Run Build Command:"/usr/bin/make" "cmTC_5ae63/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5ae63.dir/build.make CMakeFiles/cmTC_5ae63.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_5ae63.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_5ae63.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_5ae63
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ae63.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_5ae63.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_5ae63 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -250,24 +250,24 @@ Thread model: posix
 gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_2e301' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccosdTwh.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_2e301 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_2e301.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_2e301' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_5ae63' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVnEwdn.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_5ae63 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_5ae63.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_5ae63' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_2e301/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_2e301.dir/build.make CMakeFiles/cmTC_2e301.dir/build]
-  ignore line: [make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감]
-  ignore line: [Building CXX object CMakeFiles/cmTC_2e301.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_2e301.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_2e301]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e301.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_2e301.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_2e301 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_5ae63/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_5ae63.dir/build.make CMakeFiles/cmTC_5ae63.dir/build]
+  ignore line: [make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_5ae63.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_5ae63.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_5ae63]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ae63.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_5ae63.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_5ae63 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -279,13 +279,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_2e301' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccosdTwh.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_2e301 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_2e301.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_5ae63' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccVnEwdn.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_5ae63 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_5ae63.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccosdTwh.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccVnEwdn.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -304,7 +304,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_2e301] ==> ignore
+    arg [cmTC_5ae63] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -316,7 +316,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_2e301.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_5ae63.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -344,15 +344,15 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_716eb/fast"
-/usr/bin/make -f CMakeFiles/cmTC_716eb.dir/build.make CMakeFiles/cmTC_716eb.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building CXX object CMakeFiles/cmTC_716eb.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_716eb.dir/feature_tests.cxx.o -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_716eb
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_716eb.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_716eb.dir/feature_tests.cxx.o  -o cmTC_716eb 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
+Run Build Command:"/usr/bin/make" "cmTC_50d4f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_50d4f.dir/build.make CMakeFiles/cmTC_50d4f.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_50d4f.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_50d4f.dir/feature_tests.cxx.o -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_50d4f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50d4f.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_50d4f.dir/feature_tests.cxx.o  -o cmTC_50d4f 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -417,15 +417,15 @@ make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMa
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_8433e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8433e.dir/build.make CMakeFiles/cmTC_8433e.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building CXX object CMakeFiles/cmTC_8433e.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_8433e.dir/feature_tests.cxx.o -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_8433e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8433e.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_8433e.dir/feature_tests.cxx.o  -o cmTC_8433e 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
+Run Build Command:"/usr/bin/make" "cmTC_b6de3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b6de3.dir/build.make CMakeFiles/cmTC_b6de3.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b6de3.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_b6de3.dir/feature_tests.cxx.o -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_b6de3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b6de3.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_b6de3.dir/feature_tests.cxx.o  -o cmTC_b6de3 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -490,15 +490,15 @@ make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMa
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_3b8bb/fast"
-/usr/bin/make -f CMakeFiles/cmTC_3b8bb.dir/build.make CMakeFiles/cmTC_3b8bb.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building CXX object CMakeFiles/cmTC_3b8bb.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_3b8bb.dir/feature_tests.cxx.o -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_3b8bb
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b8bb.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_3b8bb.dir/feature_tests.cxx.o  -o cmTC_3b8bb 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
+Run Build Command:"/usr/bin/make" "cmTC_53b9f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_53b9f.dir/build.make CMakeFiles/cmTC_53b9f.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_53b9f.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_53b9f.dir/feature_tests.cxx.o -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_53b9f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53b9f.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_53b9f.dir/feature_tests.cxx.o  -o cmTC_53b9f 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -563,15 +563,15 @@ make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMa
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_9a755/fast"
-/usr/bin/make -f CMakeFiles/cmTC_9a755.dir/build.make CMakeFiles/cmTC_9a755.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building CXX object CMakeFiles/cmTC_9a755.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_9a755.dir/feature_tests.cxx.o -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_9a755
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a755.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_9a755.dir/feature_tests.cxx.o  -o cmTC_9a755 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
+Run Build Command:"/usr/bin/make" "cmTC_3197f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3197f.dir/build.make CMakeFiles/cmTC_3197f.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_3197f.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_3197f.dir/feature_tests.cxx.o -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_3197f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3197f.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_3197f.dir/feature_tests.cxx.o  -o cmTC_3197f 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -631,115 +631,115 @@ make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMa
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
-Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
-Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_f4764/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f4764.dir/build.make CMakeFiles/cmTC_f4764.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_f4764.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_f4764.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_f4764
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f4764.dir/link.txt --verbose=1
-/usr/bin/cc -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=XOpenDisplay    -rdynamic CMakeFiles/cmTC_f4764.dir/CheckFunctionExists.c.o  -o cmTC_f4764 /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
-
-
-Determining if the function gethostbyname exists passed with the following output:
-Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_5d498/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5d498.dir/build.make CMakeFiles/cmTC_5d498.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_5d498.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_5d498.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_5d498
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5d498.dir/link.txt --verbose=1
-/usr/bin/cc -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=gethostbyname    -rdynamic CMakeFiles/cmTC_5d498.dir/CheckFunctionExists.c.o  -o cmTC_5d498 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
-
-
-Determining if the function connect exists passed with the following output:
-Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_98052/fast"
-/usr/bin/make -f CMakeFiles/cmTC_98052.dir/build.make CMakeFiles/cmTC_98052.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_98052.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_98052.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_98052
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_98052.dir/link.txt --verbose=1
-/usr/bin/cc -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=connect    -rdynamic CMakeFiles/cmTC_98052.dir/CheckFunctionExists.c.o  -o cmTC_98052 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
-
-
-Determining if the function remove exists passed with the following output:
-Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_7ecf3/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7ecf3.dir/build.make CMakeFiles/cmTC_7ecf3.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_7ecf3.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_7ecf3.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_7ecf3
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ecf3.dir/link.txt --verbose=1
-/usr/bin/cc -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=remove    -rdynamic CMakeFiles/cmTC_7ecf3.dir/CheckFunctionExists.c.o  -o cmTC_7ecf3 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
-
-
-Determining if the function shmat exists passed with the following output:
-Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_bd2d7/fast"
-/usr/bin/make -f CMakeFiles/cmTC_bd2d7.dir/build.make CMakeFiles/cmTC_bd2d7.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_bd2d7.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_bd2d7.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_bd2d7
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd2d7.dir/link.txt --verbose=1
-/usr/bin/cc -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=shmat    -rdynamic CMakeFiles/cmTC_bd2d7.dir/CheckFunctionExists.c.o  -o cmTC_bd2d7 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
-
-
-Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
-Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
-
-Run Build Command:"/usr/bin/make" "cmTC_8e785/fast"
-/usr/bin/make -f CMakeFiles/cmTC_8e785.dir/build.make CMakeFiles/cmTC_8e785.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_8e785.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_8e785.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_8e785
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8e785.dir/link.txt --verbose=1
-/usr/bin/cc -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    -rdynamic CMakeFiles/cmTC_8e785.dir/CheckFunctionExists.c.o  -o cmTC_8e785 -lICE 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
-
-
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5f333/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5f333.dir/build.make CMakeFiles/cmTC_5f333.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_5f333.dir/CheckIncludeFile.c.o
-/usr/bin/cc   -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC     -o CMakeFiles/cmTC_5f333.dir/CheckIncludeFile.c.o   -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_5f333
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f333.dir/link.txt --verbose=1
-/usr/bin/cc -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC      -rdynamic CMakeFiles/cmTC_5f333.dir/CheckIncludeFile.c.o  -o cmTC_5f333 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
+Run Build Command:"/usr/bin/make" "cmTC_93aa5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_93aa5.dir/build.make CMakeFiles/cmTC_93aa5.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_93aa5.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -fPIC    -o CMakeFiles/cmTC_93aa5.dir/CheckIncludeFile.c.o   -c /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_93aa5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93aa5.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC     -rdynamic CMakeFiles/cmTC_93aa5.dir/CheckIncludeFile.c.o  -o cmTC_93aa5 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6ad8e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_6ad8e.dir/build.make CMakeFiles/cmTC_6ad8e.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_6ad8e.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_6ad8e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_6ad8e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6ad8e.dir/link.txt --verbose=1
-/usr/bin/cc -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_6ad8e.dir/CheckFunctionExists.c.o  -o cmTC_6ad8e -lpthread 
-make[1]: 디렉터리 '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp' 나감
+Run Build Command:"/usr/bin/make" "cmTC_eb275/fast"
+/usr/bin/make -f CMakeFiles/cmTC_eb275.dir/build.make CMakeFiles/cmTC_eb275.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eb275.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_eb275.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_eb275
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eb275.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_eb275.dir/CheckFunctionExists.c.o  -o cmTC_eb275 -lpthread 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+
+
+Determining if the function XOpenDisplay exists in the /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so passed with the following output:
+Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_03678/fast"
+/usr/bin/make -f CMakeFiles/cmTC_03678.dir/build.make CMakeFiles/cmTC_03678.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_03678.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=XOpenDisplay   -o CMakeFiles/cmTC_03678.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_03678
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_03678.dir/link.txt --verbose=1
+/usr/bin/cc -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=XOpenDisplay    -rdynamic CMakeFiles/cmTC_03678.dir/CheckFunctionExists.c.o  -o cmTC_03678 /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+
+
+Determining if the function gethostbyname exists passed with the following output:
+Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_67a83/fast"
+/usr/bin/make -f CMakeFiles/cmTC_67a83.dir/build.make CMakeFiles/cmTC_67a83.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_67a83.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=gethostbyname   -o CMakeFiles/cmTC_67a83.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_67a83
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_67a83.dir/link.txt --verbose=1
+/usr/bin/cc -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=gethostbyname    -rdynamic CMakeFiles/cmTC_67a83.dir/CheckFunctionExists.c.o  -o cmTC_67a83 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+
+
+Determining if the function connect exists passed with the following output:
+Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e37fd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e37fd.dir/build.make CMakeFiles/cmTC_e37fd.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e37fd.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=connect   -o CMakeFiles/cmTC_e37fd.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e37fd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e37fd.dir/link.txt --verbose=1
+/usr/bin/cc -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=connect    -rdynamic CMakeFiles/cmTC_e37fd.dir/CheckFunctionExists.c.o  -o cmTC_e37fd 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+
+
+Determining if the function remove exists passed with the following output:
+Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a75bc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a75bc.dir/build.make CMakeFiles/cmTC_a75bc.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a75bc.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=remove   -o CMakeFiles/cmTC_a75bc.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a75bc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a75bc.dir/link.txt --verbose=1
+/usr/bin/cc -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=remove    -rdynamic CMakeFiles/cmTC_a75bc.dir/CheckFunctionExists.c.o  -o cmTC_a75bc 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+
+
+Determining if the function shmat exists passed with the following output:
+Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_13ec4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_13ec4.dir/build.make CMakeFiles/cmTC_13ec4.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_13ec4.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=shmat   -o CMakeFiles/cmTC_13ec4.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_13ec4
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13ec4.dir/link.txt --verbose=1
+/usr/bin/cc -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=shmat    -rdynamic CMakeFiles/cmTC_13ec4.dir/CheckFunctionExists.c.o  -o cmTC_13ec4 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+
+
+Determining if the function IceConnectionNumber exists in the ICE passed with the following output:
+Change Dir: /home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8ea08/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8ea08.dir/build.make CMakeFiles/cmTC_8ea08.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8ea08.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber   -o CMakeFiles/cmTC_8ea08.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8ea08
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ea08.dir/link.txt --verbose=1
+/usr/bin/cc -Wall -Wno-unused-result -Wno-unknown-pragmas -Wno-unused-variable -Wfatal-errors -fPIC  -DCHECK_FUNCTION_EXISTS=IceConnectionNumber    -rdynamic CMakeFiles/cmTC_8ea08.dir/CheckFunctionExists.c.o  -o cmTC_8ea08 -lICE 
+make[1]: Leaving directory '/home/soo/object_mapping/build/darknet_ros/CMakeFiles/CMakeTmp'
 
 

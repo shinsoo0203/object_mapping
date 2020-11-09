@@ -141,10 +141,10 @@ void YoloObjectDetector::init() {
 
   imageSubscriber_ = imageTransport_.subscribe(cameraTopicName, cameraQueueSize, &YoloObjectDetector::cameraCallback, this);
   objectPublisher_ =
-      nodeHandle_.advertise<darknet_ros_msgs::ObjectCount>("/detection/yolo_object_count", 10);
+      nodeHandle_.advertise<darknet_ros_msgs::ObjectCount>("/darknet_ros/yolo_object_count", 10);
       //(objectDetectorTopicName, objectDetectorQueueSize, objectDetectorLatch);
   boundingBoxesPublisher_ =
-      nodeHandle_.advertise<darknet_ros_msgs::BoundingBoxes>("/detection/yolo_object_bboxes", 10);
+      nodeHandle_.advertise<darknet_ros_msgs::BoundingBoxes>("/darknet_ros/yolo_object_bboxes", 10);
       //(boundingBoxesTopicName, boundingBoxesQueueSize, boundingBoxesLatch);
   detectionImagePublisher_ =
       nodeHandle_.advertise<sensor_msgs::Image>(detectionImageTopicName, detectionImageQueueSize, detectionImageLatch);

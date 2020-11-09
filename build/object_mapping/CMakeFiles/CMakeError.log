@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/soo/object_mapping/build/object_mapping/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_1c6c1/fast"
-/usr/bin/make -f CMakeFiles/cmTC_1c6c1.dir/build.make CMakeFiles/cmTC_1c6c1.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/object_mapping/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_1c6c1.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_1c6c1.dir/CheckSymbolExists.c.o   -c /home/soo/object_mapping/build/object_mapping/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_1c6c1
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c6c1.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_1c6c1.dir/CheckSymbolExists.c.o  -o cmTC_1c6c1 
-CMakeFiles/cmTC_1c6c1.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_9e187/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9e187.dir/build.make CMakeFiles/cmTC_9e187.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/object_mapping/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9e187.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_9e187.dir/CheckSymbolExists.c.o   -c /home/soo/object_mapping/build/object_mapping/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_9e187
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e187.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_9e187.dir/CheckSymbolExists.c.o  -o cmTC_9e187 
+CMakeFiles/cmTC_9e187.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_1c6c1.dir/build.make:97: recipe for target 'cmTC_1c6c1' failed
-make[1]: *** [cmTC_1c6c1] Error 1
-make[1]: 디렉터리 '/home/soo/object_mapping/build/object_mapping/CMakeFiles/CMakeTmp' 나감
-Makefile:126: recipe for target 'cmTC_1c6c1/fast' failed
-make: *** [cmTC_1c6c1/fast] Error 2
+CMakeFiles/cmTC_9e187.dir/build.make:97: recipe for target 'cmTC_9e187' failed
+make[1]: *** [cmTC_9e187] Error 1
+make[1]: Leaving directory '/home/soo/object_mapping/build/object_mapping/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_9e187/fast' failed
+make: *** [cmTC_9e187/fast] Error 2
 
 File /home/soo/object_mapping/build/object_mapping/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -36,20 +36,20 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/soo/object_mapping/build/object_mapping/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_38377/fast"
-/usr/bin/make -f CMakeFiles/cmTC_38377.dir/build.make CMakeFiles/cmTC_38377.dir/build
-make[1]: 디렉터리 '/home/soo/object_mapping/build/object_mapping/CMakeFiles/CMakeTmp' 들어감
-Building C object CMakeFiles/cmTC_38377.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_38377.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_38377
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_38377.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_38377.dir/CheckFunctionExists.c.o  -o cmTC_38377 -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_e418f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e418f.dir/build.make CMakeFiles/cmTC_e418f.dir/build
+make[1]: Entering directory '/home/soo/object_mapping/build/object_mapping/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e418f.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_e418f.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_e418f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e418f.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_e418f.dir/CheckFunctionExists.c.o  -o cmTC_e418f -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_38377.dir/build.make:97: recipe for target 'cmTC_38377' failed
-make[1]: *** [cmTC_38377] Error 1
-make[1]: 디렉터리 '/home/soo/object_mapping/build/object_mapping/CMakeFiles/CMakeTmp' 나감
-Makefile:126: recipe for target 'cmTC_38377/fast' failed
-make: *** [cmTC_38377/fast] Error 2
+CMakeFiles/cmTC_e418f.dir/build.make:97: recipe for target 'cmTC_e418f' failed
+make[1]: *** [cmTC_e418f] Error 1
+make[1]: Leaving directory '/home/soo/object_mapping/build/object_mapping/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_e418f/fast' failed
+make: *** [cmTC_e418f/fast] Error 2
 
 

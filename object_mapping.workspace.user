@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.9.2, 2020-11-08T21:11:09. -->
+<!-- Written by QtCreator 4.9.2, 2020-11-08T22:35:24. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{a3eda1b4-e2f5-45ec-9372-97b470829a49}</value>
+  <value type="QByteArray">{4d5c195a-4f6e-4bff-ae8c-0a45ec69ba22}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -64,7 +64,7 @@
   <valuemap type="QVariantMap">
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{44b0f0d5-f8e4-4b76-8bea-468d392a53e6}</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{75bfb2eb-2c54-4e1e-9f0d-597712a27e2b}</value>
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
@@ -113,11 +113,10 @@
     <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges">
      <value type="QString">CMAKE_PREFIX_PATH=/home/soo/object_mapping/devel:/home/soo/FlyMeToTheHome/devel:/opt/ros/melodic</value>
      <value type="QString">LD_LIBRARY_PATH=/home/soo/object_mapping/devel/lib:/home/soo/FlyMeToTheHome/devel/lib:/opt/ros/melodic/lib</value>
-     <value type="QString">PATH=/opt/ros/melodic/bin:/home/soo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin</value>
+     <value type="QString">PATH=/opt/ros/melodic/bin:/usr/local/cuda-11.0/bin:/home/soo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin</value>
      <value type="QString">PKG_CONFIG_PATH=/home/soo/object_mapping/devel/lib/pkgconfig:/home/soo/FlyMeToTheHome/devel/lib/pkgconfig:/opt/ros/melodic/lib/pkgconfig</value>
      <value type="QString">PWD=/home/soo/object_mapping</value>
      <value type="QString">PYTHONPATH=/home/soo/object_mapping/devel/lib/python2.7/dist-packages:/home/soo/FlyMeToTheHome/devel/lib/python2.7/dist-packages:/opt/ros/melodic/lib/python2.7/dist-packages</value>
-     <value type="QString">ROSLISP_PACKAGE_DIRECTORIES=/home/soo/object_mapping/devel/share/common-lisp:/home/soo/FlyMeToTheHome/devel/share/common-lisp</value>
      <value type="QString">ROS_DISTRO=melodic</value>
      <value type="QString">ROS_ETC_DIR=/opt/ros/melodic/etc/ros</value>
      <value type="QString">ROS_MASTER_URI=http://localhost:11311</value>
@@ -125,7 +124,7 @@
      <value type="QString">ROS_PYTHON_VERSION=2</value>
      <value type="QString">ROS_ROOT=/opt/ros/melodic/share/ros</value>
      <value type="QString">ROS_VERSION=1</value>
-     <value type="QString">SHLVL=4</value>
+     <value type="QString">SHLVL=18</value>
      <value type="QString">TERM=xterm</value>
      <value type="QString">_=/usr/bin/env</value>
     </valuelist>

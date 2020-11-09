@@ -95,6 +95,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
 					<Add option="-DROS_PACKAGE_NAME=&quot;darknet_ros&quot;"/>
 					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
@@ -108,6 +109,7 @@
 					<Add directory="/opt/ros/melodic/include"/>
 					<Add directory="/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
 					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/local/cuda-11.0/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros/Makefile&quot;  VERBOSE=1 darknet_ros"/>
@@ -124,6 +126,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
 					<Add option="-DROS_PACKAGE_NAME=&quot;darknet_ros&quot;"/>
 					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
@@ -137,6 +140,7 @@
 					<Add directory="/opt/ros/melodic/include"/>
 					<Add directory="/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
 					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/local/cuda-11.0/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros/Makefile&quot;  VERBOSE=1 darknet_ros/fast"/>
@@ -283,6 +287,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
 					<Add option="-DROS_PACKAGE_NAME=&quot;darknet_ros&quot;"/>
 					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
@@ -296,6 +301,7 @@
 					<Add directory="/opt/ros/melodic/include"/>
 					<Add directory="/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
 					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/local/cuda-11.0/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros/Makefile&quot;  VERBOSE=1 darknet_ros_lib"/>
@@ -312,6 +318,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
 					<Add option="-DROS_PACKAGE_NAME=&quot;darknet_ros&quot;"/>
 					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
@@ -325,6 +332,7 @@
 					<Add directory="/opt/ros/melodic/include"/>
 					<Add directory="/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
 					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/local/cuda-11.0/include"/>
 				</Compiler>
 				<MakeCommands>
 					<Build command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/darknet_ros/Makefile&quot;  VERBOSE=1 darknet_ros_lib/fast"/>
@@ -621,6 +629,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
 					<Add option="-DROS_PACKAGE_NAME=&quot;darknet_ros&quot;"/>
 					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
@@ -634,6 +643,7 @@
 					<Add directory="/opt/ros/melodic/include"/>
 					<Add directory="/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
 					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/local/cuda-11.0/include"/>
 					<Add directory="/usr/src/googletest/googletest/include"/>
 				</Compiler>
 				<MakeCommands>
@@ -651,6 +661,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
 					<Add option="-DROS_PACKAGE_NAME=&quot;darknet_ros&quot;"/>
 					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
@@ -664,6 +675,7 @@
 					<Add directory="/opt/ros/melodic/include"/>
 					<Add directory="/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
 					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/local/cuda-11.0/include"/>
 					<Add directory="/usr/src/googletest/googletest/include"/>
 				</Compiler>
 				<MakeCommands>
@@ -792,6 +804,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googlemock/include"/>
@@ -815,6 +828,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googlemock/include"/>
@@ -838,6 +852,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googlemock/include"/>
@@ -861,6 +876,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googlemock/include"/>
@@ -884,6 +900,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googletest/include"/>
@@ -905,6 +922,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googletest/include"/>
@@ -926,6 +944,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googletest/include"/>
@@ -947,6 +966,7 @@
 				<Compiler>
 					<Add option="-DGTEST_CREATE_SHARED_LIBRARY=1"/>
 					<Add option="-DDARKNET_FILE_PATH=&quot;/home/soo/object_mapping/src/darknet_ros/darknet&quot;"/>
+					<Add option="-DGPU"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/local/include/opencv"/>
 					<Add directory="/usr/src/googletest/googletest/include"/>
@@ -960,6 +980,36 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/soo/object_mapping/build/darknet_ros/CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_activation_kernels.cu.o">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/build/darknet_ros/CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_avgpool_layer_kernels.cu.o">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/build/darknet_ros/CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_blas_kernels.cu.o">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/build/darknet_ros/CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_col2im_kernels.cu.o">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/build/darknet_ros/CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_convolutional_kernels.cu.o">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/build/darknet_ros/CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_crop_layer_kernels.cu.o">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/build/darknet_ros/CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_deconvolutional_kernels.cu.o">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/build/darknet_ros/CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_dropout_layer_kernels.cu.o">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/build/darknet_ros/CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_im2col_kernels.cu.o">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/build/darknet_ros/CMakeFiles/darknet_ros_lib.dir/__/darknet/src/darknet_ros_lib_generated_maxpool_layer_kernels.cu.o">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/examples/art.c">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
@@ -1011,6 +1061,9 @@
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/examples/yolo.c">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
+		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/activation_kernels.cu">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/activation_layer.c">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
@@ -1029,6 +1082,9 @@
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/avgpool_layer.h">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
+		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/avgpool_layer_kernels.cu">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/batchnorm_layer.c">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
@@ -1039,6 +1095,9 @@
 			<Option target="darknet_ros_lib"/>
 		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/blas.h">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/blas_kernels.cu">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/box.c">
@@ -1053,10 +1112,16 @@
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/col2im.h">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
+		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/col2im_kernels.cu">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/connected_layer.c">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/connected_layer.h">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/convolutional_kernels.cu">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/convolutional_layer.c">
@@ -1083,6 +1148,9 @@
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/crop_layer.h">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
+		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/crop_layer_kernels.cu">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/cuda.c">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
@@ -1093,6 +1161,9 @@
 			<Option target="darknet_ros_lib"/>
 		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/data.h">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/deconvolutional_kernels.cu">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/deconvolutional_layer.c">
@@ -1119,6 +1190,9 @@
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/dropout_layer.h">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
+		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/dropout_layer_kernels.cu">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/gemm.c">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
@@ -1135,6 +1209,9 @@
 			<Option target="darknet_ros_lib"/>
 		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/im2col.h">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/im2col_kernels.cu">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/image.c">
@@ -1189,6 +1266,9 @@
 			<Option target="darknet_ros_lib"/>
 		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/maxpool_layer.h">
+			<Option target="darknet_ros_lib"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/maxpool_layer_kernels.cu">
 			<Option target="darknet_ros_lib"/>
 		</Unit>
 		<Unit filename="/home/soo/object_mapping/src/darknet_ros/darknet/src/network.c">

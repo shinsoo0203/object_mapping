@@ -14,7 +14,6 @@
 
 #include <tf/transform_broadcaster.h>
 #include <tf/transform_listener.h>
-
 #include <sensor_msgs/NavSatFix.h>
 #include <darknet_ros_msgs/ObjectCount.h>
 #include <darknet_ros_msgs/BoundingBoxes.h>
@@ -40,7 +39,6 @@ class DObjectMapping{
 private:
   ros::NodeHandle nh;
   ros::Subscriber vehicle_pose_sub;
-  ros::Subscriber obj_counted_sub;
   ros::Subscriber obj_detected_sub;
   ros::Publisher map_obj_pose_pub;
   ros::Publisher obj_marker_pub;
@@ -60,10 +58,9 @@ private:
   double origin_lon_rad;
   double d2r = M_PI/180; //degree to radian
   double x_gap = 1;
-  double y_gap;
-  double z_gap;
+  double y_gap = 0;
+  double z_gap = 0.5;
 
-  int obj_count;
   darknet_ros_msgs::BoundingBoxes _obj_boxes;
   darknet_ros_msgs::ObjectArray obj_boxes; //**
   geometry_msgs::Pose _vehicle_pose;         //global
@@ -75,8 +72,6 @@ public:
   DObjectMapping(){
       vehicle_pose_sub = nh.subscribe<sensor_msgs::NavSatFix>\
               ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this);
-      obj_counted_sub = nh.subscribe<darknet_ros_msgs::ObjectCount>\
-              ("/darknet_ros/yolo_object_count", 10,&DObjectMapping::ObjectCountedCb, this);
       obj_detected_sub = nh.subscribe<darknet_ros_msgs::BoundingBoxes>\
               ("/darknet_ros/yolo_object_bboxes", 10, &DObjectMapping::ObjectDetectedCb, this);
 
@@ -119,12 +114,9 @@ public:
       tf::poseMsgToTF(vehicle_pose, transform);
       br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "vehicle"));
   }
-  void ObjectCountedCb(const darknet_ros_msgs::ObjectCountConstPtr& msg){
-      obj_count = msg->count;
-      if(obj_count>0) core();
-  }
   void ObjectDetectedCb(const darknet_ros_msgs::BoundingBoxesConstPtr& msg){
       _obj_boxes = *msg;
+      core();
   }
 
   // Definition
@@ -180,7 +172,6 @@ public:
 
       tf::Quaternion q;
       q = q_gps;
-
       tf_cam.setOrigin(t);
       tf_cam.setRotation(q);
 
@@ -248,7 +239,7 @@ public:
       darknet_ros_msgs::BoundingBox obj_box; //yolo
       darknet_ros_msgs::ObjectPoint obj;     //add objects
 
-      for(int i=0; i<obj_count; i++){ //obj_boxes.bounding_boxes.size()
+      for(int i=0; i<_obj_boxes.bounding_boxes.size(); i++){ //obj_boxes.bounding_boxes.size()
           obj_box = _obj_boxes.bounding_boxes[i];
           if(obj_box.probability>0.5){
               obj_pixel.x = (obj_box.xmin + obj_box.xmax)/2;
