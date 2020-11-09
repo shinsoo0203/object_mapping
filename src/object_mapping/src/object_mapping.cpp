@@ -31,9 +31,13 @@ const double cy = 229.733459;
 
 const double m_a = 6378137.0;       // semi-major axis [m]
 const double m_b = 6356752.314245;  // semi-minor axis [m]
-const double origin_lat_deg = 37.5413302340118;
-const double origin_lon_deg = 127.0761387792444;
+//konkuk reference
+//const double origin_lat_deg = 37.5413302340118;
+//const double origin_lon_deg = 127.0761387792444;
 
+//starting_point
+const double origin_lat_deg = 37.54239766728354;
+const double origin_lon_deg = 127.0761425478289;
 class DObjectMapping{
 
 private:
@@ -50,6 +54,7 @@ private:
   tf::Transform tf_cam;
   tf::Quaternion q_gps;
   tf::Quaternion q_cam;
+  tf::Quaternion q;
   tf::Vector3 t;
   cv::Mat R, T;
 
@@ -59,7 +64,7 @@ private:
   double d2r = M_PI/180; //degree to radian
   double x_gap = 1;
   double y_gap = 0;
-  double z_gap = 0.5;
+  double z_gap = 0;
 
   darknet_ros_msgs::BoundingBoxes _obj_boxes;
   darknet_ros_msgs::ObjectArray obj_boxes; //**
@@ -112,6 +117,8 @@ public:
       vehicle_pose = enuConversion(_vehicle_pose);
       tf::Transform transform;
       tf::poseMsgToTF(vehicle_pose, transform);
+
+      getTFvalue();
       br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "vehicle"));
   }
   void ObjectDetectedCb(const darknet_ros_msgs::BoundingBoxesConstPtr& msg){
@@ -150,6 +157,11 @@ public:
       q_gps[1] = tf_gps.getRotation().y();
       q_gps[2] = tf_gps.getRotation().z();
       q_gps[3] = tf_gps.getRotation().w();
+
+      q = q_gps;
+      tf_cam.setOrigin(t);
+      tf_cam.setRotation(q);
+      br.sendTransform(tf::StampedTransform(tf_cam, ros::Time::now(), "map", "camera"));
   }
   tf::Vector3 getRPY(tf::Quaternion q){
       tf::Vector3 rpy;
@@ -169,20 +181,12 @@ public:
       return rpy;
   }
   void Quaternion2RotMat(){
-
-      tf::Quaternion q;
-      q = q_gps;
-      tf_cam.setOrigin(t);
-      tf_cam.setRotation(q);
-
       //homogeneous
       R = (cv::Mat_<double>(3,3)
            <<pow(q[3],2)+pow(q[0],2)-pow(q[1],2)-pow(q[2],2), 2*(q[0]*q[1]-q[3]*q[2]), 2*(q[3]*q[1]+q[0]*q[2]),
              2*(q[3]*q[2]+q[0]*q[1]), pow(q[3],2)-pow(q[0],2)+pow(q[1],2)-pow(q[2],2), 2*(q[1]*q[2]-q[3]*q[0]),
              2*(q[0]*q[2]-q[3]*q[1]), 2*(q[3]*q[0]+q[1]*q[2]), pow(q[3],2)-pow(q[0],2)-pow(q[1],2)+pow(q[2],2));
       T = (cv::Mat_<double>(3,1) << t[0], t[1], t[2]);
-
-      br.sendTransform(tf::StampedTransform(tf_cam, ros::Time::now(), "map", "camera"));
   }
   cv::Mat Pixel2Normal(geometry_msgs::Point pixel){//Normal
       geometry_msgs::Point normal;
@@ -195,7 +199,7 @@ public:
 
       //normal coordinate to ned
       //_normal = (cv::Mat_<double>(3,1) << normal.z, -normal.x, -normal.y);
-      _normal = (cv::Mat_<double>(3,1) << normal.x, -normal.y, -normal.z);
+      _normal = (cv::Mat_<double>(3,1) << normal.z, normal.x, normal.y);
       return _normal;
   }
   geometry_msgs::Point Dimension_transform(cv::Mat _normal){
@@ -203,7 +207,6 @@ public:
       cv::Mat camera_cam = (cv::Mat_<double>(3, 1) << 0, 0, 0); //Cc
       geometry_msgs::Point ground;
 
-      getTFvalue();
       Quaternion2RotMat();
 
       cv::Mat world_point = R*_normal+T;                        //Pw
@@ -254,10 +257,9 @@ public:
               obj.distance = getDistance(vehicle_pose.position, obj.point);
               std::cout<<obj<<std::endl;
               obj_boxes.objects.push_back(obj);
+              msgPub(obj.point);
           }
       }
-
-      msgPub(obj_ground);
   }
 
   void msgPub(geometry_msgs::Point human_ground){
@@ -270,8 +272,6 @@ public:
 
       map_obj_pose_pub.publish(human_pose);
   }
-
-
 
   void main(){
     ros::Rate rate(10.0);
