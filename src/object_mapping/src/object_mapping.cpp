@@ -56,10 +56,8 @@ private:
 
   tf::StampedTransform tf_gps; //gps
   tf::Transform tf_cam;
-  tf::Quaternion q_gps;
-  tf::Quaternion q_cam;
-  tf::Quaternion q;
-  tf::Vector3 t;
+  tf::Quaternion q;     //camera
+  tf::Vector3 t;        //camera
   cv::Mat R, T;
 
   bool vehicle_pose_exist = false;
@@ -139,9 +137,13 @@ public:
       vehicle_pose = enuConversion(_vehicle_pose);
       tf::Transform transform;
       tf::poseMsgToTF(vehicle_pose, transform);
-
-      getTFvalue();
       br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "vehicle"));
+
+      getTFvalue(heading);
+      tf_cam.setOrigin(t);
+      tf_cam.setRotation(q);
+      br.sendTransform(tf::StampedTransform(tf_cam, ros::Time::now(), "map", "camera"));
+
   }
   void ObjectDetectedCb(const darknet_ros_msgs::BoundingBoxesConstPtr& msg){
       _obj_boxes = *msg;
@@ -170,21 +172,16 @@ public:
   }
 
   // Coordinate Transform
-  void getTFvalue(){
+  void getTFvalue(double heading){
       //camera location from gps
-      t[0] = tf_gps.getOrigin().x() + x_gap;
-      t[1] = tf_gps.getOrigin().y() + y_gap;
+      t[0] = tf_gps.getOrigin().x() + (x_gap * sin(heading));
+      t[1] = tf_gps.getOrigin().y() + (y_gap * cos(heading));
       t[2] = tf_gps.getOrigin().z() + z_gap;
 
-      q_gps[0] = tf_gps.getRotation().x();
-      q_gps[1] = tf_gps.getRotation().y();
-      q_gps[2] = tf_gps.getRotation().z();
-      q_gps[3] = tf_gps.getRotation().w();
-
-      q = q_gps;
-      tf_cam.setOrigin(t);
-      tf_cam.setRotation(q);
-      br.sendTransform(tf::StampedTransform(tf_cam, ros::Time::now(), "map", "camera"));
+      q[0] = tf_gps.getRotation().x();
+      q[1] = tf_gps.getRotation().y();
+      q[2] = tf_gps.getRotation().z();
+      q[3] = tf_gps.getRotation().w();
   }
   tf::Vector3 getRPY(tf::Quaternion q){
       tf::Vector3 rpy;
