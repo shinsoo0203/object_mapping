@@ -15,6 +15,7 @@
 #include <tf/transform_broadcaster.h>
 #include <tf/transform_listener.h>
 #include <sensor_msgs/NavSatFix.h>
+#include <ublox_msgs/NavPVT.h>
 #include <darknet_ros_msgs/ObjectCount.h>
 #include <darknet_ros_msgs/BoundingBoxes.h>
 #include <darknet_ros_msgs/BoundingBox.h>
@@ -31,6 +32,7 @@ const double cy = 229.733459;
 
 const double m_a = 6378137.0;       // semi-major axis [m]
 const double m_b = 6356752.314245;  // semi-minor axis [m]
+
 //konkuk reference
 //const double origin_lat_deg = 37.5413302340118;
 //const double origin_lon_deg = 127.0761387792444;
@@ -38,11 +40,13 @@ const double m_b = 6356752.314245;  // semi-minor axis [m]
 //starting_point
 const double origin_lat_deg = 37.54239766728354;
 const double origin_lon_deg = 127.0761425478289;
+
 class DObjectMapping{
 
 private:
   ros::NodeHandle nh;
-  ros::Subscriber vehicle_pose_sub;
+  ros::Subscriber vehicle_point_sub;
+  ros::Subscriber vehicle_head_sub;
   ros::Subscriber obj_detected_sub;
   ros::Publisher map_obj_pose_pub;
   ros::Publisher obj_marker_pub;
@@ -75,8 +79,10 @@ private:
 
 public:
   DObjectMapping(){
-      vehicle_pose_sub = nh.subscribe<sensor_msgs::NavSatFix>\
-              ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this);
+      vehicle_point_sub = nh.subscribe<sensor_msgs::NavSatFix>\
+              ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePointCb, this);
+      vehicle_head_sub = nh.subscribe<ublox_msgs::NavPVT>\
+              ("/ublox_gps/navpvt", 10, &DObjectMapping::VehicleHeadCb, this);
       obj_detected_sub = nh.subscribe<darknet_ros_msgs::BoundingBoxes>\
               ("/darknet_ros/yolo_object_bboxes", 10, &DObjectMapping::ObjectDetectedCb, this);
 
@@ -108,11 +114,27 @@ public:
   }
 
   // Callback
-  void VehiclePoseCb(const sensor_msgs::NavSatFixConstPtr& msg){
+  void VehiclePointCb(const sensor_msgs::NavSatFixConstPtr& msg){
+//      if(!vehicle_pose_exist) vehicle_pose_exist = true;
+//      _vehicle_pose.position.x = msg->longitude;
+//      _vehicle_pose.position.y = msg->latitude;
+//      _vehicle_pose.position.z = msg->altitude;
+  }
+  void VehicleHeadCb(const ublox_msgs::NavPVTConstPtr& msg){
       if(!vehicle_pose_exist) vehicle_pose_exist = true;
-      _vehicle_pose.position.x = msg->longitude;
-      _vehicle_pose.position.y = msg->latitude;
-      _vehicle_pose.position.z = msg->altitude;
+
+      _vehicle_pose.position.x = msg->lon * pow(0.1, 7);
+      _vehicle_pose.position.y = msg->lat * pow(0.1, 7);
+      _vehicle_pose.position.z = 0.5;
+
+      double heading = (msg->heading * pow(0.1, 5) -90) * -1;
+
+      tf::Quaternion _vehicle_quat;
+      _vehicle_quat.setRPY(0, 0, heading*d2r);
+      _vehicle_pose.orientation.x = _vehicle_quat[0];
+      _vehicle_pose.orientation.y = _vehicle_quat[1];
+      _vehicle_pose.orientation.z = _vehicle_quat[2];
+      _vehicle_pose.orientation.w = _vehicle_quat[3];
 
       vehicle_pose = enuConversion(_vehicle_pose);
       tf::Transform transform;
@@ -135,7 +157,8 @@ public:
 
       local_pose.position.x = (lon_rad - origin_lon_rad)*(NormalRadius(m_a, m_b, lat_rad)*cos(lat_rad));
       local_pose.position.y = (lat_rad - origin_lat_rad)*MeridionalRadius(m_a, m_b, lat_rad);
-      local_pose.orientation.w = 1.0;
+      //local_pose.position.z = global_pose.position.z;
+      local_pose.orientation = global_pose.orientation;
 
       return local_pose;
   }
@@ -199,7 +222,7 @@ public:
 
       //normal coordinate to ned
       //_normal = (cv::Mat_<double>(3,1) << normal.z, -normal.x, -normal.y);
-      _normal = (cv::Mat_<double>(3,1) << normal.z, normal.x, normal.y);
+      _normal = (cv::Mat_<double>(3,1) << normal.z, normal.x, -normal.y);
       return _normal;
   }
   geometry_msgs::Point Dimension_transform(cv::Mat _normal){

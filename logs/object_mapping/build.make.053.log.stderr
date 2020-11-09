@@ -1,0 +1,7 @@
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:39:31:[m[K [01;31m[Kerror: [m[Kunable to find numeric literal operator '[01m[Koperator""sensor_msgs7.54239766728354[m[K'
+ const double origin_lat_deg = [01;31m[K3sensor_msgs7.54239766728354[m[K;
+                               [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:39:31:[m[K [01;36m[Knote: [m[Kuse -std=gnu++11 or -fext-numeric-literals to enable more built-in suffixes
+make[2]: *** [CMakeFiles/object_mapping.dir/src/object_mapping.cpp.o] Error 1
+make[1]: *** [CMakeFiles/object_mapping.dir/all] Error 2
+make: *** [all] Error 2

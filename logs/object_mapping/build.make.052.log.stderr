@@ -1,0 +1,132 @@
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:111:41:[m[K [01;31m[Kerror: [m[K'[01m[KNavSatFixConstPtr[m[K' in namespace '[01m[Ksensor_msgs[m[K' does not name a type
+   void VehiclePoseCb(const sensor_msgs::[01;31m[KNavSatFixConstPtr[m[K& msg){
+                                         [01;31m[K^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:[m[K In constructor '[01m[KDObjectMapping::DObjectMapping()[m[K':
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:78:52:[m[K [01;31m[Kerror: [m[K'[01m[KNavSatFix[m[K' is not a member of '[01m[Ksensor_msgs[m[K'
+       vehicle_pose_sub = nh.subscribe<sensor_msgs::[01;31m[KNavSatFix[m[K>\
+                                                    [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:78:52:[m[K [01;31m[Kerror: [m[K'[01m[KNavSatFix[m[K' is not a member of '[01m[Ksensor_msgs[m[K'
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:79:74:[m[K [01;31m[Kerror: [m[Kno matching function for call to '[01m[Kros::NodeHandle::subscribe<<expression error> >(const char [15], int, void (DObjectMapping::*)(const int&), DObjectMapping*)[m[K'
+               ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this[01;31m[K)[m[K;
+                                                                          [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:6[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:402:14:[m[K [01;36m[Knote: [m[Kcandidate: template<class M, class T> ros::Subscriber ros::NodeHandle::subscribe(const string&, uint32_t, void (T::*)(M), T*, const ros::TransportHints&)
+   Subscriber [01;36m[Ksubscribe[m[K(const std::string& topic, uint32_t queue_size, void(T::*fp)(M), T* obj,
+              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:402:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:79:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+               ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this[01;31m[K)[m[K;
+                                                                          [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:6[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:413:14:[m[K [01;36m[Knote: [m[Kcandidate: template<class M, class T> ros::Subscriber ros::NodeHandle::subscribe(const string&, uint32_t, void (T::*)(M) const, T*, const ros::TransportHints&)
+   Subscriber [01;36m[Ksubscribe[m[K(const std::string& topic, uint32_t queue_size, void(T::*fp)(M) const, T* obj,
+              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:413:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:79:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+               ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this[01;31m[K)[m[K;
+                                                                          [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:6[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:465:14:[m[K [01;36m[Knote: [m[Kcandidate: template<class M, class T> ros::Subscriber ros::NodeHandle::subscribe(const string&, uint32_t, void (T::*)(const boost::shared_ptr<const M>&), T*, const ros::TransportHints&)
+   Subscriber [01;36m[Ksubscribe[m[K(const std::string& topic, uint32_t queue_size,
+              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:465:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:79:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+               ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this[01;31m[K)[m[K;
+                                                                          [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:6[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:475:14:[m[K [01;36m[Knote: [m[Kcandidate: template<class M, class T> ros::Subscriber ros::NodeHandle::subscribe(const string&, uint32_t, void (T::*)(const boost::shared_ptr<const M>&) const, T*, const ros::TransportHints&)
+   Subscriber [01;36m[Ksubscribe[m[K(const std::string& topic, uint32_t queue_size,
+              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:475:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:79:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+               ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this[01;31m[K)[m[K;
+                                                                          [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:6[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:529:14:[m[K [01;36m[Knote: [m[Kcandidate: template<class M, class T> ros::Subscriber ros::NodeHandle::subscribe(const string&, uint32_t, void (T::*)(M), const boost::shared_ptr<U>&, const ros::TransportHints&)
+   Subscriber [01;36m[Ksubscribe[m[K(const std::string& topic, uint32_t queue_size, void(T::*fp)(M),
+              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:529:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:79:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+               ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this[01;31m[K)[m[K;
+                                                                          [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:6[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:540:14:[m[K [01;36m[Knote: [m[Kcandidate: template<class M, class T> ros::Subscriber ros::NodeHandle::subscribe(const string&, uint32_t, void (T::*)(M) const, const boost::shared_ptr<U>&, const ros::TransportHints&)
+   Subscriber [01;36m[Ksubscribe[m[K(const std::string& topic, uint32_t queue_size, void(T::*fp)(M) const,
+              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:540:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:79:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+               ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this[01;31m[K)[m[K;
+                                                                          [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:6[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:594:14:[m[K [01;36m[Knote: [m[Kcandidate: template<class M, class T> ros::Subscriber ros::NodeHandle::subscribe(const string&, uint32_t, void (T::*)(const boost::shared_ptr<const M>&), const boost::shared_ptr<U>&, const ros::TransportHints&)
+   Subscriber [01;36m[Ksubscribe[m[K(const std::string& topic, uint32_t queue_size,
+              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:594:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:79:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+               ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this[01;31m[K)[m[K;
+                                                                          [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:6[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:605:14:[m[K [01;36m[Knote: [m[Kcandidate: template<class M, class T> ros::Subscriber ros::NodeHandle::subscribe(const string&, uint32_t, void (T::*)(const boost::shared_ptr<const M>&) const, const boost::shared_ptr<U>&, const ros::TransportHints&)
+   Subscriber [01;36m[Ksubscribe[m[K(const std::string& topic, uint32_t queue_size,
+              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:605:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:79:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+               ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this[01;31m[K)[m[K;
+                                                                          [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:6[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:656:14:[m[K [01;36m[Knote: [m[Kcandidate: template<class M> ros::Subscriber ros::NodeHandle::subscribe(const string&, uint32_t, void (*)(M), const ros::TransportHints&)
+   Subscriber [01;36m[Ksubscribe[m[K(const std::string& topic, uint32_t queue_size, void(*fp)(M), const TransportHints& transport_hints = TransportHints())
+              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:656:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:79:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+               ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this[01;31m[K)[m[K;
+                                                                          [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:6[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:704:14:[m[K [01;36m[Knote: [m[Kcandidate: template<class M> ros::Subscriber ros::NodeHandle::subscribe(const string&, uint32_t, void (*)(const boost::shared_ptr<const M>&), const ros::TransportHints&)
+   Subscriber [01;36m[Ksubscribe[m[K(const std::string& topic, uint32_t queue_size, void(*fp)(const boost::shared_ptr<M const>&), const TransportHints& transport_hints = TransportHints())
+              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:704:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:79:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+               ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this[01;31m[K)[m[K;
+                                                                          [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:6[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:750:14:[m[K [01;36m[Knote: [m[Kcandidate: template<class M> ros::Subscriber ros::NodeHandle::subscribe(const string&, uint32_t, const boost::function<void(const boost::shared_ptr<const M>&)>&, const VoidConstPtr&, const ros::TransportHints&)
+   Subscriber [01;36m[Ksubscribe[m[K(const std::string& topic, uint32_t queue_size, const boost::function<void (const boost::shared_ptr<M const>&)>& callback,
+              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:750:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:79:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+               ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this[01;31m[K)[m[K;
+                                                                          [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/melodic/include/ros/ros.h:45:0[m[K,
+                 from [01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:6[m[K:
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:799:14:[m[K [01;36m[Knote: [m[Kcandidate: template<class M, class C> ros::Subscriber ros::NodeHandle::subscribe(const string&, uint32_t, const boost::function<void(C)>&, const VoidConstPtr&, const ros::TransportHints&)
+   Subscriber [01;36m[Ksubscribe[m[K(const std::string& topic, uint32_t queue_size, const boost::function<void (C)>& callback,
+              [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/ros/node_handle.h:799:14:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:79:74:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+               ("/ublox_gps/fix", 10, &DObjectMapping::VehiclePoseCb, this[01;31m[K)[m[K;
+                                                                          [01;31m[K^[m[K
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:[m[K In member function '[01m[Kvoid DObjectMapping::VehiclePoseCb(const int&)[m[K':
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:113:37:[m[K [01;31m[Kerror: [m[Kbase operand of '[01m[K->[m[K' is not a pointer
+       _vehicle_pose.position.x = msg[01;31m[K->[m[Klongitude;
+                                     [01;31m[K^~[m[K
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:114:37:[m[K [01;31m[Kerror: [m[Kbase operand of '[01m[K->[m[K' is not a pointer
+       _vehicle_pose.position.y = msg[01;31m[K->[m[Klatitude;
+                                     [01;31m[K^~[m[K
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:115:37:[m[K [01;31m[Kerror: [m[Kbase operand of '[01m[K->[m[K' is not a pointer
+       _vehicle_pose.position.z = msg[01;31m[K->[m[Kaltitude;
+                                     [01;31m[K^~[m[K
+make[2]: *** [CMakeFiles/object_mapping.dir/src/object_mapping.cpp.o] Error 1
+make[1]: *** [CMakeFiles/object_mapping.dir/all] Error 2
+make: *** [all] Error 2
