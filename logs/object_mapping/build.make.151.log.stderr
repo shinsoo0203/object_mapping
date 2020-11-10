@@ -1,7 +1,0 @@
-[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:[m[K In member function '[01m[Kvoid DObjectMapping::Quaternion2RotMat()[m[K':
-[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:184:28:[m[K [01;31m[Kerror: [m[Kunable to find string literal operator '[01m[Koperator""success[m[K' with '[01m[Kconst char [16][m[K', '[01m[Klong unsigned int[m[K' arguments
-       std::cout<<"lookupTra[01;31m[Knsform"<<std::end[m[Kl;
-                            [01;31m[K^~~~~~~~~~~~~~~~~[m[K
-make[2]: *** [CMakeFiles/object_mapping.dir/src/object_mapping.cpp.o] Error 1
-make[1]: *** [CMakeFiles/object_mapping.dir/all] Error 2
-make: *** [all] Error 2
