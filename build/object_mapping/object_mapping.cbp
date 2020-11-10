@@ -345,6 +345,54 @@
 					<DistClean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/object_mapping/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="object_recognition">
+				<Option output="/home/soo/object_mapping/devel/.private/object_mapping/lib/object_mapping/object_recognition" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/soo/object_mapping/devel/.private/object_mapping/lib/object_mapping"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
+					<Add option="-DROS_PACKAGE_NAME=&quot;object_mapping&quot;"/>
+					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
+					<Add directory="/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include"/>
+					<Add directory="/opt/ros/melodic/include"/>
+					<Add directory="/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/object_mapping/Makefile&quot;  VERBOSE=1 object_recognition"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/object_mapping/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/object_mapping/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/object_mapping/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="object_recognition/fast">
+				<Option output="/home/soo/object_mapping/devel/.private/object_mapping/lib/object_mapping/object_recognition" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/soo/object_mapping/devel/.private/object_mapping/lib/object_mapping"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DROS_BUILD_SHARED_LIBS=1"/>
+					<Add option="-DROS_PACKAGE_NAME=&quot;object_mapping&quot;"/>
+					<Add option="-DROSCONSOLE_BACKEND_LOG4CXX"/>
+					<Add directory="/home/soo/object_mapping/devel/.private/darknet_ros_msgs/include"/>
+					<Add directory="/opt/ros/melodic/include"/>
+					<Add directory="/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"/>
+					<Add directory="/usr/include/opencv"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/include/opencv"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/object_mapping/Makefile&quot;  VERBOSE=1 object_recognition/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/object_mapping/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/object_mapping/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/soo/object_mapping/build/object_mapping/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="rosgraph_msgs_generate_messages_cpp">
 				<Option working_dir="/home/soo/object_mapping/build/object_mapping"/>
 				<Option type="4"/>
@@ -840,6 +888,9 @@
 		</Build>
 		<Unit filename="/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp">
 			<Option target="object_mapping"/>
+		</Unit>
+		<Unit filename="/home/soo/object_mapping/src/object_mapping/src/object_recognition.cpp">
+			<Option target="object_recognition"/>
 		</Unit>
 		<Unit filename="/usr/src/googletest/googlemock/src/gmock-all.cc">
 			<Option target="gmock_main"/>

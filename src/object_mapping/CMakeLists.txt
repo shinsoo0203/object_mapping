@@ -130,6 +130,10 @@ add_executable(object_recognition src/object_recognition.cpp)
 target_link_libraries(object_recognition ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_dependencies(object_recognition ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+add_executable(object_mapping src/object_mapping.cpp)
+target_link_libraries(object_mapping ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+add_dependencies(object_mapping ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/example.cpp

@@ -248,11 +248,16 @@ public:
               obj_pixel.x = (obj_box.xmin + obj_box.xmax)/2;
               obj_pixel.y = obj_box.ymax;
               obj_ground = getTransformed(obj_pixel);
-              objMarker(obj_ground);
 
               obj.Class = obj_box.Class;
               obj.probability = obj_box.probability;
+
+              //object location
+              obj_ground.x = 2.8;
+              obj_ground.y = 19.2;
+
               obj.point = obj_ground;
+              objMarker(obj_ground);
               //decision width, height via Class
               obj.distance = getDistance(vehicle_pose.position, obj.point);
               std::cout<<vehicle_pose.position<<std::endl;

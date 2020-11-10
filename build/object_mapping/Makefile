@@ -168,6 +168,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named object_mapping
+
+# Build rule for target.
+object_mapping: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 object_mapping
+.PHONY : object_mapping
+
+# fast build rule for target.
+object_mapping/fast:
+	$(MAKE) -f CMakeFiles/object_mapping.dir/build.make CMakeFiles/object_mapping.dir/build
+.PHONY : object_mapping/fast
+
+#=============================================================================
 # Target rules for targets named darknet_ros_msgs_generate_messages_py
 
 # Build rule for target.
@@ -947,6 +960,33 @@ gtest/fast:
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
+src/object_mapping.o: src/object_mapping.cpp.o
+
+.PHONY : src/object_mapping.o
+
+# target to build an object file
+src/object_mapping.cpp.o:
+	$(MAKE) -f CMakeFiles/object_mapping.dir/build.make CMakeFiles/object_mapping.dir/src/object_mapping.cpp.o
+.PHONY : src/object_mapping.cpp.o
+
+src/object_mapping.i: src/object_mapping.cpp.i
+
+.PHONY : src/object_mapping.i
+
+# target to preprocess a source file
+src/object_mapping.cpp.i:
+	$(MAKE) -f CMakeFiles/object_mapping.dir/build.make CMakeFiles/object_mapping.dir/src/object_mapping.cpp.i
+.PHONY : src/object_mapping.cpp.i
+
+src/object_mapping.s: src/object_mapping.cpp.s
+
+.PHONY : src/object_mapping.s
+
+# target to generate assembly for a file
+src/object_mapping.cpp.s:
+	$(MAKE) -f CMakeFiles/object_mapping.dir/build.make CMakeFiles/object_mapping.dir/src/object_mapping.cpp.s
+.PHONY : src/object_mapping.cpp.s
+
 src/object_recognition.o: src/object_recognition.cpp.o
 
 .PHONY : src/object_recognition.o
@@ -983,6 +1023,7 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... edit_cache"
+	@echo "... object_mapping"
 	@echo "... darknet_ros_msgs_generate_messages_py"
 	@echo "... darknet_ros_msgs_generate_messages_eus"
 	@echo "... darknet_ros_msgs_generate_messages_cpp"
@@ -1047,6 +1088,9 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... src/object_mapping.o"
+	@echo "... src/object_mapping.i"
+	@echo "... src/object_mapping.s"
 	@echo "... src/object_recognition.o"
 	@echo "... src/object_recognition.i"
 	@echo "... src/object_recognition.s"

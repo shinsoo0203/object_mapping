@@ -252,6 +252,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/object_mapping.dir/DependInfo.cmake"
   "CMakeFiles/darknet_ros_msgs_generate_messages_py.dir/DependInfo.cmake"
   "CMakeFiles/darknet_ros_msgs_generate_messages_eus.dir/DependInfo.cmake"
   "CMakeFiles/darknet_ros_msgs_generate_messages_cpp.dir/DependInfo.cmake"
