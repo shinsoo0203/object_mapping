@@ -54,8 +54,9 @@ private:
   tf::TransformBroadcaster br;
   tf::TransformListener ls;
 
-  tf::StampedTransform tf_gps; //gps
-  tf::Transform tf_cam;
+  bool camera_tf_exist = false;
+  tf::StampedTransform tf_gps; //gps(vehicle)
+  tf::StampedTransform tf_cam;
   tf::Quaternion q;     //camera
   tf::Vector3 t;        //camera
   cv::Mat R, T;
@@ -64,9 +65,9 @@ private:
   double origin_lat_rad;
   double origin_lon_rad;
   double d2r = M_PI/180; //degree to radian
-  double x_gap = 1;
-  double y_gap = 0;
-  double z_gap = 0;
+  double x_gap = 1; //E(north)
+  double y_gap = 0; //N(west)
+  double z_gap = 0; //U(upper)
 
   darknet_ros_msgs::BoundingBoxes _obj_boxes;
   darknet_ros_msgs::ObjectArray obj_boxes; //**
@@ -99,16 +100,17 @@ public:
 
       ROS_INFO("[Mapping] Waiting for local pose...");
       while(ros::ok()){
+          ros::spinOnce();
           if(vehicle_pose_exist){
               ROS_INFO("[Mapping] Received local pose. Start object mapping.");
               break;
           }
-          ros::spinOnce();
           rate.sleep();
       }
 
-      ls.waitForTransform("map","vehicle",ros::Time::now(),ros::Duration(0.1));
-      ls.waitForTransform("map","camera",ros::Time::now(),ros::Duration(0.1));
+      ls.waitForTransform("map","vehicle",ros::Time(0),ros::Duration(0.1));
+      ls.waitForTransform("vehicle","camera",ros::Time(0),ros::Duration(0.1));
+      ls.waitForTransform("map","camera",ros::Time(0),ros::Duration(0.1));
   }
 
   // Callback
@@ -123,9 +125,9 @@ public:
 
       _vehicle_pose.position.x = msg->lon * pow(0.1, 7);
       _vehicle_pose.position.y = msg->lat * pow(0.1, 7);
-      _vehicle_pose.position.z = 0.5;
+      _vehicle_pose.position.z = 1; //gps hegith
 
-      double heading = (msg->heading * pow(0.1, 5) -90) * -1;
+      double heading = (msg->heading * pow(0.1, 5) - 90) * -1;
 
       tf::Quaternion _vehicle_quat;
       _vehicle_quat.setRPY(0, 0, heading*d2r);
@@ -135,19 +137,17 @@ public:
       _vehicle_pose.orientation.w = _vehicle_quat[3];
 
       vehicle_pose = enuConversion(_vehicle_pose);
-      tf::Transform transform;
-      tf::poseMsgToTF(vehicle_pose, transform);
-      br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "vehicle"));
+      tf::Transform _tf_gps;
+      tf::poseMsgToTF(vehicle_pose, _tf_gps);
+      br.sendTransform(tf::StampedTransform(_tf_gps, ros::Time(0), "map", "vehicle"));
 
-      getTFvalue(heading);
-      tf_cam.setOrigin(t);
-      tf_cam.setRotation(q);
-      br.sendTransform(tf::StampedTransform(tf_cam, ros::Time::now(), "map", "camera"));
-
+      tf::Transform _tf_cam;
+      _tf_cam.setOrigin(tf::Vector3(x_gap, y_gap, z_gap));
+      _tf_cam.setRotation(tf::Quaternion(0,0,0,1));
+      br.sendTransform(tf::StampedTransform(_tf_cam, ros::Time(0), "vehicle", "camera"));
   }
   void ObjectDetectedCb(const darknet_ros_msgs::BoundingBoxesConstPtr& msg){
       _obj_boxes = *msg;
-      core();
   }
 
   // Definition
@@ -172,36 +172,18 @@ public:
   }
 
   // Coordinate Transform
-  void getTFvalue(double heading){
-      //camera location from gps
-      t[0] = tf_gps.getOrigin().x() + (x_gap * sin(heading));
-      t[1] = tf_gps.getOrigin().y() + (y_gap * cos(heading));
-      t[2] = tf_gps.getOrigin().z() + z_gap;
+  void Quaternion2RotMat(){ //camera pose from map
+      ls.lookupTransform("map", "camera", ros::Time(0), tf_cam);
 
-      q[0] = tf_gps.getRotation().x();
-      q[1] = tf_gps.getRotation().y();
-      q[2] = tf_gps.getRotation().z();
-      q[3] = tf_gps.getRotation().w();
-  }
-  tf::Vector3 getRPY(tf::Quaternion q){
-      tf::Vector3 rpy;
+      t[0] = tf_cam.getOrigin().x();
+      t[1] = tf_cam.getOrigin().y();
+      t[2] = tf_cam.getOrigin().z();
 
-      double sinr_cosp = 2*(q[3]*q[0]+q[1]*q[2]);
-      double cosr_cosp = 1- 2*(q[0]*q[0] + q[1]*q[1]);
-      rpy[0] = atan2(sinr_cosp, cosr_cosp);
+      q[0] = tf_cam.getRotation().x();
+      q[1] = tf_cam.getRotation().y();
+      q[2] = tf_cam.getRotation().z();
+      q[3] = tf_cam.getRotation().w();
 
-      double sinp = 2*(q[3]*q[1]-q[2]*q[0]);
-      if(std::abs(sinp)>=1) rpy[1] = std::copysign(M_PI/2,sinp);
-      else rpy[1] = asin(sinp);
-
-      double siny_cosp = 2*(q[3]*q[2]+q[0]*q[1]);
-      double cosy_cosp = 1- 2*(q[1]*q[1]+q[2]*q[2]);
-      rpy[2] = atan2(siny_cosp, cosy_cosp);
-
-      return rpy;
-  }
-  void Quaternion2RotMat(){
-      //homogeneous
       R = (cv::Mat_<double>(3,3)
            <<pow(q[3],2)+pow(q[0],2)-pow(q[1],2)-pow(q[2],2), 2*(q[0]*q[1]-q[3]*q[2]), 2*(q[3]*q[1]+q[0]*q[2]),
              2*(q[3]*q[2]+q[0]*q[1]), pow(q[3],2)-pow(q[0],2)+pow(q[1],2)-pow(q[2],2), 2*(q[1]*q[2]-q[3]*q[0]),
@@ -219,7 +201,7 @@ public:
 
       //normal coordinate to ned
       //_normal = (cv::Mat_<double>(3,1) << normal.z, -normal.x, -normal.y);
-      _normal = (cv::Mat_<double>(3,1) << normal.z, normal.x, -normal.y);
+      _normal = (cv::Mat_<double>(3,1) << normal.z, -normal.x, -normal.y);
       return _normal;
   }
   geometry_msgs::Point Dimension_transform(cv::Mat _normal){
@@ -265,8 +247,9 @@ public:
       for(int i=0; i<_obj_boxes.bounding_boxes.size(); i++){ //obj_boxes.bounding_boxes.size()
           obj_box = _obj_boxes.bounding_boxes[i];
           if(obj_box.probability>0.5){
+              //2D ground pixel
               obj_pixel.x = (obj_box.xmin + obj_box.xmax)/2;
-              obj_pixel.y = (obj_box.ymin + obj_box.ymax)/2;
+              obj_pixel.y = obj_box.ymax;
               obj_ground = getTransformed(obj_pixel);
               objMarker(obj_ground);
 
@@ -300,13 +283,13 @@ public:
 
         try{
             ls.lookupTransform("map","vehicle",ros::Time(0),tf_gps);
-        }
-        catch(tf::TransformException &ex){
+        } catch(tf::TransformException &ex){
             ROS_ERROR("[Transform] %s",ex.what());
             ros::Duration(1.0).sleep();
             continue;
         }
         ROS_INFO_ONCE("[Transform] tf received");
+        core();
 
         ros::spinOnce();
         rate.sleep();
@@ -347,7 +330,7 @@ public:
 
 int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "point_transform");
+    ros::init(argc, argv, "object_mapping");
     DObjectMapping dom;
     dom.main();
     return 0;

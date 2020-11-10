@@ -94,11 +94,13 @@ darknet_ros_EXTERNAL_OBJECTS =
 /home/soo/object_mapping/devel/.private/darknet_ros/lib/darknet_ros/darknet_ros: /usr/lib/x86_64-linux-gnu/libICE.so
 /home/soo/object_mapping/devel/.private/darknet_ros/lib/darknet_ros/darknet_ros: /usr/lib/x86_64-linux-gnu/libX11.so
 /home/soo/object_mapping/devel/.private/darknet_ros/lib/darknet_ros/darknet_ros: /usr/lib/x86_64-linux-gnu/libXext.so
+/home/soo/object_mapping/devel/.private/darknet_ros/lib/darknet_ros/darknet_ros: /usr/local/cuda-11.0/lib64/libcudart.so
 /home/soo/object_mapping/devel/.private/darknet_ros/lib/darknet_ros/darknet_ros: /home/soo/object_mapping/devel/.private/darknet_ros/lib/libdarknet_ros_lib.so
 /home/soo/object_mapping/devel/.private/darknet_ros/lib/darknet_ros/darknet_ros: /usr/lib/x86_64-linux-gnu/libSM.so
 /home/soo/object_mapping/devel/.private/darknet_ros/lib/darknet_ros/darknet_ros: /usr/lib/x86_64-linux-gnu/libICE.so
 /home/soo/object_mapping/devel/.private/darknet_ros/lib/darknet_ros/darknet_ros: /usr/lib/x86_64-linux-gnu/libX11.so
 /home/soo/object_mapping/devel/.private/darknet_ros/lib/darknet_ros/darknet_ros: /usr/lib/x86_64-linux-gnu/libXext.so
+/home/soo/object_mapping/devel/.private/darknet_ros/lib/darknet_ros/darknet_ros: /usr/local/cuda-11.0/lib64/libcudart.so
 /home/soo/object_mapping/devel/.private/darknet_ros/lib/darknet_ros/darknet_ros: /usr/local/lib/libopencv_stitching.so.3.4.0
 /home/soo/object_mapping/devel/.private/darknet_ros/lib/darknet_ros/darknet_ros: /usr/local/lib/libopencv_superres.so.3.4.0
 /home/soo/object_mapping/devel/.private/darknet_ros/lib/darknet_ros/darknet_ros: /usr/local/lib/libopencv_videostab.so.3.4.0
