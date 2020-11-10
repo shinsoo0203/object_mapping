@@ -54,7 +54,6 @@ private:
   tf::TransformBroadcaster br;
   tf::TransformListener ls;
 
-  bool camera_tf_exist = false;
   tf::StampedTransform tf_gps; //gps(vehicle)
   tf::StampedTransform tf_cam;
   tf::Quaternion q;     //camera
@@ -65,9 +64,9 @@ private:
   double origin_lat_rad;
   double origin_lon_rad;
   double d2r = M_PI/180; //degree to radian
-  double x_gap = 1; //E(north)
+  double x_gap = 1.5; //E(north)
   double y_gap = 0; //N(west)
-  double z_gap = 0; //U(upper)
+  double z_gap = 0.3; //U(upper)
 
   darknet_ros_msgs::BoundingBoxes _obj_boxes;
   darknet_ros_msgs::ObjectArray obj_boxes; //**
@@ -115,17 +114,17 @@ public:
 
   // Callback
   void VehiclePointCb(const sensor_msgs::NavSatFixConstPtr& msg){
-//      if(!vehicle_pose_exist) vehicle_pose_exist = true;
-//      _vehicle_pose.position.x = msg->longitude;
-//      _vehicle_pose.position.y = msg->latitude;
-//      _vehicle_pose.position.z = msg->altitude;
+      if(!vehicle_pose_exist) vehicle_pose_exist = true;
+      _vehicle_pose.position.x = msg->longitude;
+      _vehicle_pose.position.y = msg->latitude;
+      _vehicle_pose.position.z = msg->altitude;
   }
   void VehicleHeadCb(const ublox_msgs::NavPVTConstPtr& msg){
       if(!vehicle_pose_exist) vehicle_pose_exist = true;
 
-      _vehicle_pose.position.x = msg->lon * pow(0.1, 7);
-      _vehicle_pose.position.y = msg->lat * pow(0.1, 7);
-      _vehicle_pose.position.z = 1; //gps hegith
+//      _vehicle_pose.position.x = msg->lon * pow(0.1, 7);
+//      _vehicle_pose.position.y = msg->lat * pow(0.1, 7);
+//      _vehicle_pose.position.z = 0.5; //gps hegith
 
       double heading = (msg->heading * pow(0.1, 5) - 90) * -1;
 
@@ -192,7 +191,7 @@ public:
   }
   cv::Mat Pixel2Normal(geometry_msgs::Point pixel){//Normal
       geometry_msgs::Point normal;
-      cv::Mat _normal;
+      cv::Mat camera;
 
       normal.x = (pixel.x-cx)/fx;
       normal.y = (pixel.y-cy)/fy;
@@ -201,8 +200,8 @@ public:
 
       //normal coordinate to ned
       //_normal = (cv::Mat_<double>(3,1) << normal.z, -normal.x, -normal.y);
-      _normal = (cv::Mat_<double>(3,1) << normal.z, -normal.x, -normal.y);
-      return _normal;
+      camera = (cv::Mat_<double>(3,1) << normal.z, -normal.x, -normal.y);
+      return camera;
   }
   geometry_msgs::Point Dimension_transform(cv::Mat _normal){
       cv::Mat _ground;
@@ -228,12 +227,10 @@ public:
   geometry_msgs::Point getTransformed(geometry_msgs::Point pixel){
       cv::Mat _normal = Pixel2Normal(pixel);
       geometry_msgs::Point ground = Dimension_transform(_normal);
-
-      //ground_point_pub.publish(ground);
       return ground;
   }
   double getDistance(geometry_msgs::Point prev, geometry_msgs::Point cur){
-    double d = sqrt(pow(cur.x-prev.x,2)+pow(cur.y-prev.y,2));
+    double d = sqrt(pow(abs(cur.x-prev.x),2)+pow(abs(cur.y-prev.y),2));
     return d;
   }
 
@@ -246,7 +243,7 @@ public:
 
       for(int i=0; i<_obj_boxes.bounding_boxes.size(); i++){ //obj_boxes.bounding_boxes.size()
           obj_box = _obj_boxes.bounding_boxes[i];
-          if(obj_box.probability>0.5){
+          if(obj_box.probability>=0.65 && obj_box.Class =="person"){
               //2D ground pixel
               obj_pixel.x = (obj_box.xmin + obj_box.xmax)/2;
               obj_pixel.y = obj_box.ymax;
@@ -258,6 +255,7 @@ public:
               obj.point = obj_ground;
               //decision width, height via Class
               obj.distance = getDistance(vehicle_pose.position, obj.point);
+              std::cout<<vehicle_pose.position<<std::endl;
               std::cout<<obj<<std::endl;
               obj_boxes.objects.push_back(obj);
               msgPub(obj.point);
@@ -323,7 +321,6 @@ public:
       marker.color.b = 0.0f;
 
       marker.lifetime = ros::Duration();
-
       obj_marker_pub.publish(marker);
   }
 };

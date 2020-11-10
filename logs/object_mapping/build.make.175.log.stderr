@@ -1,0 +1,18 @@
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:[m[K In member function '[01m[Kvoid DObjectMapping::core()[m[K':
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:245:1:[m[K [01;31m[Kerror: [m[K'[01m[K_normal[m[K' was not declared in this scope
+ [01;31m[K_normal[m[K = (cv::Mat_<double>(3,1) << normal.y, -normal.z, normal.x);
+ [01;31m[K^~~~~~~[m[K
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:245:1:[m[K [01;36m[Knote: [m[Ksuggested alternative: '[01m[K__fmal[m[K'
+ [01;36m[K_normal[m[K = (cv::Mat_<double>(3,1) << normal.y, -normal.z, normal.x);
+ [01;36m[K^~~~~~~[m[K
+ [32m[K__fmal[m[K
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:245:37:[m[K [01;31m[Kerror: [m[K'[01m[Knormal[m[K' was not declared in this scope
+ _normal = (cv::Mat_<double>(3,1) << [01;31m[Knormal[m[K.y, -normal.z, normal.x);
+                                     [01;31m[K^~~~~~[m[K
+[01m[K/home/soo/object_mapping/src/object_mapping/src/object_mapping.cpp:245:37:[m[K [01;36m[Knote: [m[Ksuggested alternative: '[01m[K__fmal[m[K'
+ _normal = (cv::Mat_<double>(3,1) << [01;36m[Knormal[m[K.y, -normal.z, normal.x);
+                                     [01;36m[K^~~~~~[m[K
+                                     [32m[K__fmal[m[K
+make[2]: *** [CMakeFiles/object_mapping.dir/src/object_mapping.cpp.o] Error 1
+make[1]: *** [CMakeFiles/object_mapping.dir/all] Error 2
+make: *** [all] Error 2
