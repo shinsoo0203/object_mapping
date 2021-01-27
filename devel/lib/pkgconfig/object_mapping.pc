@@ -1,1 +1,0 @@
-/home/soo/object_mapping/devel/.private/object_mapping/lib/pkgconfig/object_mapping.pc

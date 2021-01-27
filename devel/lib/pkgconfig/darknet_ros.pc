@@ -1,1 +1,0 @@
-/home/soo/object_mapping/devel/.private/darknet_ros/lib/pkgconfig/darknet_ros.pc
