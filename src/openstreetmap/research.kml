@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>research</name>
+	<gx:CascadingStyle kml:id="__managed_style_28E1FAFAE61877F12D06">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>6</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_136A50A3801877F12D06">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/rpc/cc/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_065E80BC7B1877F12D06">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_136A50A3801877F12D06</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_28E1FAFAE61877F12D06</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="0AA18BEF611877F12D06">
+		<name>student_hall</name>
+		<LookAt>
+			<longitude>127.0793428007476</longitude>
+			<latitude>37.54076250004927</latitude>
+			<altitude>20.08422006418969</altitude>
+			<heading>106.2492167222527</heading>
+			<tilt>45.00000000055534</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>816.9560491389714</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_065E80BC7B1877F12D06</styleUrl>
+		<Point>
+			<coordinates>127.0783901401523,37.54122961301297,17.30977249962079</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="0E46A191441877FA3FC7">
+		<name>car1</name>
+		<LookAt>
+			<longitude>127.0787011657343</longitude>
+			<latitude>37.54105634602757</latitude>
+			<altitude>18.17626103583626</altitude>
+			<heading>102.7568986956932</heading>
+			<tilt>12.15020433172055</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>244.885545104371</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_065E80BC7B1877F12D06</styleUrl>
+		<Point>
+			<coordinates>127.078436747951,37.54162166562278,17.6128045845632</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark id="090B5C91411877FA649B">
+		<name>car2</name>
+		<LookAt>
+			<longitude>127.0785634604124</longitude>
+			<latitude>37.54149552352543</latitude>
+			<altitude>17.77647126672997</altitude>
+			<heading>106.7879380682286</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>239.9721489936928</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_065E80BC7B1877F12D06</styleUrl>
+		<Point>
+			<coordinates>127.0784909771976,37.5420472070032,17.64349873977641</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>
