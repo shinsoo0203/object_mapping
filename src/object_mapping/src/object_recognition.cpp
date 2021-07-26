@@ -1,10 +1,17 @@
 /**
  * @file object_mapping.cpp
  * @author IDPLab sooyeon Shin
+ *
+ * Function to Ground Location Estimation by detected object pixel projection
+   using Mono camera, RTK-GPS
+ * Development Part for the 2020 Autumn Automative Engineering Association
  */
+
+//Estimate object ground point
 
 #include <ros/ros.h>
 #include <iostream>
+/*
 #include <cv_bridge/cv_bridge.h>
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -328,12 +335,12 @@ public:
       marker.lifetime = ros::Duration();
       obj_marker_pub.publish(marker);
   }
-};
+};*/
 
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "object_mapping");
-    DObjectRecognition dor;
-    dor.main();
+    //DObjectRecognition dor;
+    //dor.main();
     return 0;
 }
