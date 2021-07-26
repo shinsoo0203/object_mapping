@@ -1,9 +1,13 @@
 /**
  * @file object_mapping.cpp
  * @author IDPLab sooyeon Shin
+ *
+ * Function to Ground Location Estimation by detected object pixel projection
+   using Mono camera, RTK-GPS
+ * Development Part for the 2020 Autumn Automative Engineering Association
  */
 
-//ObjectPoint 재생성
+//Estimate object ground point
 
 #include <ros/ros.h>
 #include <iostream>

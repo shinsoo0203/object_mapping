@@ -1,12 +1,14 @@
 /**
  * @file grid_mapping.cpp
  * @author IDPLab sooyeon Shin
- * Occupancy Grid Mapping with 3d object
+ * Occupancy Grid Mapping with 3d object information
  *
- * Function to convert 2D pixel point to 3D point by extracting point
-   from PointCloud2 corresponding to input pixel coordinate. This function
-   can be used to get the X,Y,Z coordinates of a feature using an
-   RGBD camera, e.g., Kinect.
+ * Function to creates a grid map in a particular region
+   and finding the grid in which the collected dynamic objects are located.
+   Also, the module runs on bigdata platform and handles all object information that is collect.
+ *
+ * input: Descriptors, including 3d bounding boxes
+ * output: Send to Spark via Kafka
  */
 
 #include <ros/ros.h>

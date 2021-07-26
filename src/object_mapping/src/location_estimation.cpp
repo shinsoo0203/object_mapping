@@ -1,12 +1,18 @@
 /**
  * @file location_estimation.cpp
  * @author IDPLab sooyeon Shin
- * Object location estimation with stereo image and darknet_ros
  *
  * Function to convert 2D pixel point to 3D point by extracting point
    from PointCloud2 corresponding to input pixel coordinate. This function
    can be used to get the X,Y,Z coordinates of a feature using an
-   RGBD camera, e.g., Kinect.
+   stereo camera, e.g., zed2.
+   Also, generate data to send finally with the big data platform
+ *
+ * input: 2d bounding boxes via YOLO algorithm
+ * output: Descriptors, including 3d bounding boxes
+ *
+ * Written with reference to IntelligentRoboticsLabs/gb_visual_detection_3d
+ * Author: Francisco Martín fmrico@gmail.com
  */
 
 #include <ros/ros.h>
