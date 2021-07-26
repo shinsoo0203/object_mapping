@@ -3,8 +3,11 @@
  * @author IDPLab sooyeon Shin
  */
 
+//ObjectPoint 재생성
+
 #include <ros/ros.h>
 #include <iostream>
+/*
 #include <cv_bridge/cv_bridge.h>
 #include <opencv2/opencv.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -328,12 +331,12 @@ public:
       marker.lifetime = ros::Duration();
       obj_marker_pub.publish(marker);
   }
-};
+};*/
 
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "object_mapping");
-    DObjectRecognition dor;
-    dor.main();
+    //DObjectRecognition dor;
+    //dor.main();
     return 0;
 }

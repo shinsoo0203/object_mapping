@@ -134,6 +134,10 @@ add_executable(location_estimation src/location_estimation.cpp)
 target_link_libraries(location_estimation ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_dependencies(location_estimation ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+add_executable(grid_mapping src/grid_mapping.cpp)
+target_link_libraries(grid_mapping ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+add_dependencies(grid_mapping ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/example.cpp
