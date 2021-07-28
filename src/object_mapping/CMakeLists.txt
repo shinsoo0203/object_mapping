@@ -108,7 +108,7 @@ find_package(OpenCV REQUIRED)
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
+  INCLUDE_DIRS include
 #  LIBRARIES test
   CATKIN_DEPENDS cv_bridge image_transport roscpp std_msgs sensor_msgs darknet_ros_msgs
 #  DEPENDS system_lib
@@ -121,7 +121,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  include
   ${catkin_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
 )
