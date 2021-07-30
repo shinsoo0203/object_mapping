@@ -1,0 +1,9 @@
+[submodule "src/darknet_ros"]
+	path = src/darknet_ros
+	url = https://github.com/shinsoo0203/darknet_ros.git
+[submodule "src/gb_visual_detection_3d"]
+	path = src/gb_visual_detection_3d
+	url = https://github.com/shinsoo0203/gb_visual_detection_3d.git
+[submodule "src/gb_visual_detection_3d_msgs"]
+	path = src/gb_visual_detection_3d_msgs
+	url = https://github.com/IntelligentRoboticsLabs/gb_visual_detection_3d_msgs.git
