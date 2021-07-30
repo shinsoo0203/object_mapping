@@ -12,6 +12,9 @@ Extract dynamic object information from autonomous vehicle sensor data
 $ cd ~/src
 $ git clone --recursive http://github.com/shinsoo0203/object_mapping.git
 $ git submodule update --init --recursive
+$ catkin clean
+$ catkin build darknet_ros -DCMAKE_BUILD_TYPE=Release
+$ catkin build -DCMAKE_BUILD_TYPE=Release
 ```
 
 ## Submodules
@@ -24,7 +27,6 @@ $ git checkout melodic
 ```
 $ git clone --recursive git@github.com:leggedrobotics/darknet_ros.git
 $ catkin_make -DCMAKE_BUILD_TYPE=Release
-$ sudo gedit CMAKELists.txt
--gencode arch=compute_75,code=sm_75
+$ sudo gedit CMAKELists.txt #-gencode arch=compute_75,code=sm_75
 ```
 - gb_visual_detection_3d / gb_visual_detection_3d_msgs
