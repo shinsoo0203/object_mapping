@@ -25,7 +25,7 @@
 #include <visualization_msgs/Marker.h>
 
 #include "enu_conversion/enu_conversion.cpp"
-#include "pose_marker.h"
+#include "visualization/marker.cpp"
 
 // konkuk reference
 const double origin_lat_deg = 37.5413302340118;
@@ -43,6 +43,7 @@ private:
   ros::Publisher ref_marker_pub;
 
   ENU_Conversion enu_conversion;
+  Marker marker;
 
 public:
   LocationEstimation()
@@ -73,7 +74,7 @@ public:
 
     geometry_msgs::Pose local_vehicle; //local ENU
     local_vehicle = enu_conversion.enuConversion(geo_vehicle);
-    vehicle_marker_pub.publish(pose_marker(local_vehicle));
+    vehicle_marker_pub.publish(marker.pose_marker(local_vehicle));
   }
 
   void main()
@@ -82,7 +83,6 @@ public:
 
     while(ros::ok()){
       ros::spinOnce();
-
       rate.sleep();
     }
   }
