@@ -37,7 +37,6 @@ private:
   ros::Publisher gps_marker_pub;
 
   darknet_ros_msgs::BoundingBoxes object_bboxes;
-  geometry_msgs::Pose vehicle;
 
 public:
   LocationEstimation(){
@@ -46,7 +45,6 @@ public:
       vehicle_gps_sub = nh.subscribe<sensor_msgs::NavSatFix>\
               ("/ublox_gps/fix",10, &LocationEstimation::VehicleGPSCb,this);
       gps_marker_pub = nh.advertise<visualization_msgs::Marker>("/vehicle_gps/marker", 10);
-
   }
   ~LocationEstimation(){}
 
@@ -55,10 +53,15 @@ public:
   }
 
   void VehicleGPSCb(const sensor_msgs::NavSatFixConstPtr& msg){
-      vehicle.position.x = msg->longitude;
-      vehicle.position.y = msg->latitude;
-      vehicle.position.z = 0; //msg->altitude;
-      gps_marker_pub.publish(pose_marker(vehicle));
+      geometry_msgs::Pose geo_vehicle; //geodetic
+      geo_vehicle.position.x = msg->longitude;
+      geo_vehicle.position.y = msg->latitude;
+      geo_vehicle.position.z = 0; //msg->altitude;
+
+      geometry_msgs::Pose local_vehicle; //local ENU
+      local_vehicle = enuConversion(geo_vehicle);
+
+      gps_marker_pub.publish(pose_marker(local_vehicle));
   }
 
   void main(){
