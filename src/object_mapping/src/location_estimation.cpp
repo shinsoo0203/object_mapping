@@ -22,53 +22,67 @@
 #include <sensor_msgs/PointCloud2.h>
 #include <darknet_ros_msgs/BoundingBoxes.h>
 #include <darknet_ros_msgs/BoundingBox.h>
-
 #include <visualization_msgs/Marker.h>
 
-#include "enu_conversion.h"
+#include "enu_conversion/enu_conversion.cpp"
 #include "pose_marker.h"
+
+// konkuk reference
+const double origin_lat_deg = 37.5413302340118;
+const double origin_lon_deg = 127.0761387792444;
 
 class LocationEstimation{
 
 private:
   ros::NodeHandle nh;
+
   ros::Subscriber object_bboxes_sub;
   ros::Subscriber vehicle_gps_sub;
-  ros::Publisher gps_marker_pub;
 
-  darknet_ros_msgs::BoundingBoxes object_bboxes;
+  ros::Publisher vehicle_marker_pub;
+  ros::Publisher ref_marker_pub;
+
+  ENU_Conversion enu_conversion;
 
 public:
-  LocationEstimation(){
-      object_bboxes_sub = nh.subscribe<darknet_ros_msgs::BoundingBoxes>\
-            ("/darknet_ros/bounding_boxes", 10, &LocationEstimation::ObjectBBoxCb, this);
-      vehicle_gps_sub = nh.subscribe<sensor_msgs::NavSatFix>\
-              ("/ublox_gps/fix",10, &LocationEstimation::VehicleGPSCb,this);
-      gps_marker_pub = nh.advertise<visualization_msgs::Marker>("/vehicle_gps/marker", 10);
+  LocationEstimation()
+  {
+    object_bboxes_sub = nh.subscribe<darknet_ros_msgs::BoundingBoxes>\
+        ("/darknet_ros/bounding_boxes", 10, &LocationEstimation::ObjectBBoxCb, this);
+    vehicle_gps_sub = nh.subscribe<sensor_msgs::NavSatFix>\
+        ("/ublox_gps/fix",10, &LocationEstimation::VehicleGPSCb,this);
+
+    vehicle_marker_pub = nh.advertise<visualization_msgs::Marker>("/vehicle_marker", 10);
+
+    enu_conversion.setOrigin(origin_lat_deg, origin_lon_deg);
   }
   ~LocationEstimation(){}
 
-  void ObjectBBoxCb(const darknet_ros_msgs::BoundingBoxesConstPtr& msg){
-      object_bboxes=*msg;
+  void ObjectBBoxCb(const darknet_ros_msgs::BoundingBoxesConstPtr& msg)
+  {
+    darknet_ros_msgs::BoundingBoxes object_bboxes;
+    object_bboxes=*msg;
   }
 
-  void VehicleGPSCb(const sensor_msgs::NavSatFixConstPtr& msg){
-      geometry_msgs::Pose geo_vehicle; //geodetic
-      geo_vehicle.position.x = msg->longitude;
-      geo_vehicle.position.y = msg->latitude;
-      geo_vehicle.position.z = 0; //msg->altitude;
+  void VehicleGPSCb(const sensor_msgs::NavSatFixConstPtr& msg)
+  {
+    geometry_msgs::Pose geo_vehicle; //geodetic, global
+    geo_vehicle.position.x = msg->longitude;
+    geo_vehicle.position.y = msg->latitude;
+    //geo_vehicle.position.z = 0;
 
-      geometry_msgs::Pose local_vehicle; //local ENU
-      local_vehicle = enuConversion(geo_vehicle);
-
-      gps_marker_pub.publish(pose_marker(local_vehicle));
+    geometry_msgs::Pose local_vehicle; //local ENU
+    local_vehicle = enu_conversion.enuConversion(geo_vehicle);
+    vehicle_marker_pub.publish(pose_marker(local_vehicle));
   }
 
-  void main(){
+  void main()
+  {
     ros::Rate rate(10.0);
 
     while(ros::ok()){
       ros::spinOnce();
+
       rate.sleep();
     }
   }
@@ -77,7 +91,9 @@ public:
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "location_estimation");
+
     LocationEstimation le;
     le.main();
+
     return 0;
 }
