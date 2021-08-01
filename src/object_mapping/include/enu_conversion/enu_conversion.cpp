@@ -23,7 +23,7 @@ geometry_msgs::Point ENU_Conversion::enuConversion(const geometry_msgs::Point gl
   local_point.y = (temp_lat - m_origin_lat_rad)*MeridionalRadius(m_a, m_b, temp_lat);
   //local_point.z = global_point.z;
 
-  ROS_INFO("[ENU Conversion] east : %f, north : %f", local_point.x, local_point.y);
+  //ROS_INFO("[ENU Conversion] east : %f, north : %f", local_point.x, local_point.y);
 
   return local_point;
 }
@@ -43,7 +43,7 @@ geometry_msgs::Pose ENU_Conversion::enuConversion(const geometry_msgs::Pose glob
   //local_pose.position.z = global_pose.position.z;
   local_pose.orientation.w = 1.0;
 
-  ROS_INFO("[ENU Conversion] east : %f, north : %f", local_pose.position.x, local_pose.position.y);
+  //ROS_INFO("[ENU Conversion] east : %f, north : %f", local_pose.position.x, local_pose.position.y);
 
   return local_pose;
 }
@@ -58,7 +58,7 @@ geometry_msgs::PoseArray ENU_Conversion::enuConversion(const geometry_msgs::Pose
     local_pose = enuConversion(globalArr.poses[i_point]);
     localArr.poses.push_back(local_pose);
 
-    ROS_INFO("east : %f, north : %f", local_pose.position.x, local_pose.position.y);
+    //ROS_INFO("east : %f, north : %f", local_pose.position.x, local_pose.position.y);
   }
   return localArr;
 }

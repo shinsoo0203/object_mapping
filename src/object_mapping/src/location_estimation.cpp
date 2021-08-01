@@ -40,10 +40,11 @@ private:
   ros::Subscriber vehicle_gps_sub;
 
   ros::Publisher vehicle_marker_pub;
-  ros::Publisher ref_marker_pub;
+  ros::Publisher vehicle_markerArray_pub;
 
   ENU_Conversion enu_conversion;
   Marker marker;
+  int mark_num = 0;
 
 public:
   LocationEstimation()
@@ -54,8 +55,11 @@ public:
         ("/ublox_gps/fix",10, &LocationEstimation::VehicleGPSCb,this);
 
     vehicle_marker_pub = nh.advertise<visualization_msgs::Marker>("/vehicle_marker", 10);
+    //vehicle_markerArray_pub = nh.advertise<visualization_msgs::MarkerArray>("/vehicle_markerArray", 10);
 
     enu_conversion.setOrigin(origin_lat_deg, origin_lon_deg);
+
+    ROS_INFO("[Location Estimation]: node working.");
   }
   ~LocationEstimation(){}
 
@@ -74,7 +78,14 @@ public:
 
     geometry_msgs::Pose local_vehicle; //local ENU
     local_vehicle = enu_conversion.enuConversion(geo_vehicle);
-    vehicle_marker_pub.publish(marker.pose_marker(local_vehicle));
+
+    visualization_msgs::Marker vehicle_mark = marker.pose_marker(local_vehicle, mark_num);
+    vehicle_marker_pub.publish(vehicle_mark);
+    mark_num ++;
+
+    //Check the entire ROSBAG Path
+    //vehicle_markArray.markers.push_back(vehicle_mark);
+    //vehicle_markerArray_pub.publish(vehicle_markArray);
   }
 
   void main()
