@@ -23,6 +23,9 @@
 #include <darknet_ros_msgs/BoundingBoxes.h>
 #include <darknet_ros_msgs/BoundingBox.h>
 #include <visualization_msgs/Marker.h>
+//#include <visualization_msgs/MarkerArray.h>
+#include <tf/transform_broadcaster.h>
+#include <tf/transform_listener.h>
 
 #include "enu_conversion/enu_conversion.cpp"
 #include "visualization/marker.cpp"
@@ -35,12 +38,15 @@ class LocationEstimation{
 
 private:
   ros::NodeHandle nh;
+  tf::TransformBroadcaster br;
+  tf::TransformListener ls;
 
   ros::Subscriber object_bboxes_sub;
   ros::Subscriber vehicle_gps_sub;
 
+  ros::Publisher vehicle_local_pub;
   ros::Publisher vehicle_marker_pub;
-  ros::Publisher vehicle_markerArray_pub;
+  //ros::Publisher vehicle_markerArray_pub;
 
   ENU_Conversion enu_conversion;
   Marker marker;
@@ -54,15 +60,18 @@ public:
     vehicle_gps_sub = nh.subscribe<sensor_msgs::NavSatFix>\
         ("/ublox_gps/fix",10, &LocationEstimation::VehicleGPSCb,this);
 
+    vehicle_local_pub = nh.advertise<geometry_msgs::Pose>("/vehicle_local", 10);
     vehicle_marker_pub = nh.advertise<visualization_msgs::Marker>("/vehicle_marker", 10);
     //vehicle_markerArray_pub = nh.advertise<visualization_msgs::MarkerArray>("/vehicle_markerArray", 10);
 
-    enu_conversion.setOrigin(origin_lat_deg, origin_lon_deg);
-
     ROS_INFO("[Location Estimation]: node working.");
+
+    enu_conversion.setOrigin(origin_lat_deg, origin_lon_deg);
+    ls.waitForTransform("map", "vehicle", ros::Time::now(), ros::Duration(4,0));
   }
   ~LocationEstimation(){}
 
+  //Callback
   void ObjectBBoxCb(const darknet_ros_msgs::BoundingBoxesConstPtr& msg)
   {
     darknet_ros_msgs::BoundingBoxes object_bboxes;
@@ -78,21 +87,28 @@ public:
 
     geometry_msgs::Pose local_vehicle; //local ENU
     local_vehicle = enu_conversion.enuConversion(geo_vehicle);
+    vehicle_local_pub.publish(local_vehicle);
 
     visualization_msgs::Marker vehicle_mark = marker.pose_marker(local_vehicle, mark_num);
     vehicle_marker_pub.publish(vehicle_mark);
     mark_num ++;
 
-    //Check the entire ROSBAG Path
+    //Check multiple ROSBAG Paths
     //vehicle_markArray.markers.push_back(vehicle_mark);
     //vehicle_markerArray_pub.publish(vehicle_markArray);
+
+    tf::Transform transform;
+    tf::poseMsgToTF(local_vehicle, transform);
+    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "vehicle"));
   }
 
+  //Main
   void main()
   {
     ros::Rate rate(10.0);
 
-    while(ros::ok()){
+    while(ros::ok())
+    {
       ros::spinOnce();
       rate.sleep();
     }
