@@ -1,7 +1,7 @@
 /**
- * @file grid_matching.cpp
+ * @file grid_mapping.cpp
  * @author IDPLab sooyeon Shin
- * Occupancy Grid Matching with 3d object information
+ * Occupancy Grid Mapping with 3d object information
  *
  * Function to creates a grid map in a particular region
    and finding the grid in which the collected dynamic objects are located.
@@ -14,14 +14,14 @@
 #include <ros/ros.h>
 #include <iostream>
 
-class GridMatching{
+class GridMapping{
 
 private:
 
 public:
-  GridMatching(){
+  GridMapping(){
   }
-  ~GridMatching(){}
+  ~GridMapping(){}
 
   void main(){
   }
@@ -29,8 +29,8 @@ public:
 
 int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "grid_matching");
-    GridMatching gm;
+    ros::init(argc, argv, "grid_mapping");
+    GridMapping gm;
     gm.main();
     return 0;
 }
