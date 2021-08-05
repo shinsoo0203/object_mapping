@@ -39,7 +39,7 @@ $ roslaunch darknet_ros_3d darknet_ros_3d.launch
 - grid_matching
 
 ```
-$ sudo apt-get install ros-$ROS_DISTRO-grid-Mapping
+$ sudo apt-get install ros-$ROS_DISTRO-grid-map
 $ sudo apt-get install libeigen3-dev
 $ git clone https://github.com/ANYbotics/grid_map.git
 $ cd grid_map && git checkout melodic-devel
