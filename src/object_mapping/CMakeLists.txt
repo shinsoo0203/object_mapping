@@ -16,6 +16,8 @@ find_package(catkin REQUIRED COMPONENTS
   tf
   darknet_ros_msgs
   geometry_msgs
+  grid_map_ros
+  grid_map_msgs
 )
 
 find_package(OpenCV REQUIRED)
