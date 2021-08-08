@@ -64,7 +64,7 @@ public:
     vehicle_marker_pub = nh.advertise<visualization_msgs::Marker>("/vehicle_marker", 10);
     //vehicle_markerArray_pub = nh.advertise<visualization_msgs::MarkerArray>("/vehicle_markerArray", 10);
 
-    ROS_INFO("[Location Estimation]: node working.");
+    ROS_INFO("[Location Estimation]: START");
 
     enu_conversion.setOrigin(origin_lat_deg, origin_lon_deg);
     ls.waitForTransform("map", "vehicle", ros::Time::now(), ros::Duration(4,0));

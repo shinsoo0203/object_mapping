@@ -26,6 +26,8 @@ private:
 public:
   GridMapping(){
     grid_mapper = nh.advertise<grid_map_msgs::GridMap>("grid_map", 1, true);
+
+    ROS_INFO("[Grid Mapping]: START");
   }
   ~GridMapping(){}
 
@@ -37,7 +39,7 @@ public:
     map.setGeometry(Length(500, 500), 3.0, Position(0.0, 0.0));
     ROS_INFO("Created map with size %f x %f m (%i x %i cells).\n The center of the map is located at (%f, %f) in the %s frame.",
       map.getLength().x(), map.getLength().y(),
-      map.getSize()(0), map.getSize()(1),
+      map.getSize()(0), map.getSize()(0.5),//1
       map.getPosition().x(), map.getPosition().y(), map.getFrameId().c_str());
 
     ros::Rate rate(30.0);
@@ -62,7 +64,7 @@ public:
       grid_map_msgs::GridMap message;
       GridMapRosConverter::toMessage(map, message);
       grid_mapper.publish(message);
-      ROS_INFO_THROTTLE(1.0, "Grid map (timestamp %f) published.", message.info.header.stamp.toSec());
+      //ROS_INFO_THROTTLE(1.0, "Grid map (timestamp %f) published.", message.info.header.stamp.toSec());
 
       rate.sleep();
     }

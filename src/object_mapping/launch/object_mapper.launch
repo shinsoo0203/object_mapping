@@ -1,0 +1,15 @@
+<launch>
+  <!-- Launch the location estimation node -->
+  <node pkg="object_mapping" type="location_estimation" name="location_estimation" output="screen" />
+
+  <!-- Launch the grid map tutorial demo node -->
+  <node pkg="object_mapping" type="grid_mapping" name="grid_mapping" output="screen" />
+
+  <!-- Launch the grid map visualizer -->
+  <node pkg="grid_map_visualization" type="grid_map_visualization" name="grid_map_visualization" output="screen">
+    <rosparam command="load" file="$(find grid_map_demos)/config/tutorial_demo.yaml" />
+  </node>
+
+  <!-- Launch RViz with the demo configuration -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find object_mapping)/rviz/object_mapping.rviz" />
+</launch>
