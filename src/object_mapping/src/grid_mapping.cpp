@@ -27,7 +27,7 @@ public:
   GridMapping(){
     grid_mapper = nh.advertise<grid_map_msgs::GridMap>("grid_map", 1, true);
 
-    ROS_INFO("[Grid Mapping]: START");
+    ROS_INFO("[Grid Mapping]: started.");
   }
   ~GridMapping(){}
 

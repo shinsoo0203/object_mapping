@@ -18,6 +18,7 @@ find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   grid_map_ros
   grid_map_msgs
+  grid_map_visualization
 )
 
 find_package(OpenCV REQUIRED)
