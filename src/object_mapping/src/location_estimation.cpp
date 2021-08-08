@@ -17,15 +17,19 @@
 
 #include <ros/ros.h>
 #include <iostream>
+
 #include <geometry_msgs/Pose.h>
+#include <ublox_msgs/NavPVT.h>
 #include <sensor_msgs/NavSatFix.h>
 #include <sensor_msgs/PointCloud2.h>
 #include <darknet_ros_msgs/BoundingBoxes.h>
 #include <darknet_ros_msgs/BoundingBox.h>
 #include <visualization_msgs/Marker.h>
 //#include <visualization_msgs/MarkerArray.h>
+
 #include <tf/transform_broadcaster.h>
 #include <tf/transform_listener.h>
+#include <tf/tf.h>
 
 #include "enu_conversion/enu_conversion.cpp"
 #include "visualization/marker.cpp"
@@ -43,10 +47,14 @@ private:
 
   ros::Subscriber object_bboxes_sub;
   ros::Subscriber vehicle_gps_sub;
+  ros::Subscriber vehicle_head_sub;
 
   ros::Publisher vehicle_local_pub;
   ros::Publisher vehicle_marker_pub;
   //ros::Publisher vehicle_markerArray_pub;
+
+  geometry_msgs::Pose geo_vehicle; //geodetic, global
+  geometry_msgs::Pose local_vehicle; //local ENU
 
   ENU_Conversion enu_conversion;
   Marker marker;
@@ -59,6 +67,8 @@ public:
         ("/darknet_ros/bounding_boxes", 10, &LocationEstimation::ObjectBBoxCb, this);
     vehicle_gps_sub = nh.subscribe<sensor_msgs::NavSatFix>\
         ("/ublox_gps/fix",10, &LocationEstimation::VehicleGPSCb,this);
+    vehicle_head_sub = nh.subscribe<ublox_msgs::NavPVT>\
+            ("/ublox_gps/navpvt", 10, &LocationEstimation::VehicleHeadCb, this);
 
     vehicle_local_pub = nh.advertise<geometry_msgs::Pose>("/vehicle_local", 10);
     vehicle_marker_pub = nh.advertise<visualization_msgs::Marker>("/vehicle_marker", 10);
@@ -80,26 +90,41 @@ public:
 
   void VehicleGPSCb(const sensor_msgs::NavSatFixConstPtr& msg)
   {
-    geometry_msgs::Pose geo_vehicle; //geodetic, global
     geo_vehicle.position.x = msg->longitude;
     geo_vehicle.position.y = msg->latitude;
-    //geo_vehicle.position.z = 0;
+    geo_vehicle.position.z = msg->altitude;
+  }
 
-    geometry_msgs::Pose local_vehicle; //local ENU
-    local_vehicle = enu_conversion.enuConversion(geo_vehicle);
-    vehicle_local_pub.publish(local_vehicle);
+  void VehicleHeadCb(const ublox_msgs::NavPVTConstPtr& msg)
+  {
+      double heading = (msg->heading * pow(0.1, 5)) * -1;
+      double d2r = M_PI/180;
 
-    visualization_msgs::Marker vehicle_mark = marker.pose_marker(local_vehicle, mark_num);
-    vehicle_marker_pub.publish(vehicle_mark);
-    mark_num ++;
+//      geo_vehicle.position.x = msg->lon * pow(0.1, 7);
+//      geo_vehicle.position.y = msg->lat * pow(0.1, 7);
+//      geo_vehicle.position.z = 0.5; //gps hegith
 
-    //Check multiple ROSBAG Paths
-    //vehicle_markArray.markers.push_back(vehicle_mark);
-    //vehicle_markerArray_pub.publish(vehicle_markArray);
+      tf::Quaternion vehicle_q;
+      vehicle_q.setRPY(0, 0, heading*d2r);
+      geo_vehicle.orientation.x = vehicle_q[0];
+      geo_vehicle.orientation.y = vehicle_q[1];
+      geo_vehicle.orientation.z = vehicle_q[2];
+      geo_vehicle.orientation.w = vehicle_q[3];
 
-    tf::Transform transform;
-    tf::poseMsgToTF(local_vehicle, transform);
-    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "vehicle"));
+      local_vehicle = enu_conversion.enuConversion(geo_vehicle);
+      vehicle_local_pub.publish(local_vehicle);
+
+      visualization_msgs::Marker vehicle_mark = marker.pose_marker(local_vehicle, mark_num);
+      vehicle_marker_pub.publish(vehicle_mark);
+      mark_num ++;
+
+      //Check multiple ROSBAG Paths
+      //vehicle_markArray.markers.push_back(vehicle_mark);
+      //vehicle_markerArray_pub.publish(vehicle_markArray);
+
+      tf::Transform transform;
+      tf::poseMsgToTF(local_vehicle, transform);
+      br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "vehicle"));
   }
 
   //Main

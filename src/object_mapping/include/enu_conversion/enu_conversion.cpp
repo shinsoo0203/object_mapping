@@ -40,8 +40,9 @@ geometry_msgs::Pose ENU_Conversion::enuConversion(const geometry_msgs::Pose glob
 
   local_pose.position.x = (temp_lon - m_origin_lon_rad)*(NormalRadius(m_a, m_b, temp_lat)*cos(temp_lat));
   local_pose.position.y = (temp_lat - m_origin_lat_rad)*MeridionalRadius(m_a, m_b, temp_lat);
-  //local_pose.position.z = global_pose.position.z;
-  local_pose.orientation.w = 1.0;
+  local_pose.position.z = global_pose.position.z;
+  local_pose.orientation=global_pose.orientation;
+  //local_pose.orientation.w = 1.0;
 
   //ROS_INFO("[ENU Conversion] east : %f, north : %f", local_pose.position.x, local_pose.position.y);
 
