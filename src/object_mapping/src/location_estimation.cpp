@@ -74,10 +74,12 @@ public:
     vehicle_marker_pub = nh.advertise<visualization_msgs::Marker>("/vehicle_marker", 10);
     //vehicle_markerArray_pub = nh.advertise<visualization_msgs::MarkerArray>("/vehicle_markerArray", 10);
 
-    ROS_INFO("[Location Estimation]: started");
-
-    enu_conversion.setOrigin(origin_lat_deg, origin_lon_deg);
     ls.waitForTransform("map", "vehicle", ros::Time::now(), ros::Duration(4,0));
+    ls.waitForTransform("vehicle", "stereo", ros::Time::now(), ros::Duration(4,0));
+    //ls.waitForTransform("map", "stereo", ros::Time::now(), ros::Duration(4,0));
+
+    ROS_INFO("[Location Estimation]: started");
+    enu_conversion.setOrigin(origin_lat_deg, origin_lon_deg);
   }
   ~LocationEstimation(){}
 
@@ -92,20 +94,19 @@ public:
   {
     geo_vehicle.position.x = msg->longitude;
     geo_vehicle.position.y = msg->latitude;
-    geo_vehicle.position.z = msg->altitude;
+    geo_vehicle.position.z = 1.2; //msg->altitude;
   }
 
   void VehicleHeadCb(const ublox_msgs::NavPVTConstPtr& msg)
   {
-      double heading = (msg->heading * pow(0.1, 5)) * -1;
-      double d2r = M_PI/180;
+      double heading = (msg->heading * pow(0.1, 5) - 90) * -1;
 
 //      geo_vehicle.position.x = msg->lon * pow(0.1, 7);
 //      geo_vehicle.position.y = msg->lat * pow(0.1, 7);
 //      geo_vehicle.position.z = 0.5; //gps hegith
 
       tf::Quaternion vehicle_q;
-      vehicle_q.setRPY(0, 0, heading*d2r);
+      vehicle_q.setRPY(0, 0, heading* M_PI/180); //d2r
       geo_vehicle.orientation.x = vehicle_q[0];
       geo_vehicle.orientation.y = vehicle_q[1];
       geo_vehicle.orientation.z = vehicle_q[2];
@@ -122,12 +123,16 @@ public:
       //vehicle_markArray.markers.push_back(vehicle_mark);
       //vehicle_markerArray_pub.publish(vehicle_markArray);
 
-      tf::Transform transform;
-      tf::poseMsgToTF(local_vehicle, transform);
-      br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "map", "vehicle"));
+      tf::Transform tf_vehicle;
+      tf::poseMsgToTF(local_vehicle, tf_vehicle);
+      br.sendTransform(tf::StampedTransform(tf_vehicle, ros::Time::now(), "map", "vehicle"));
+
+      tf::Transform tf_cam;
+      tf_cam.setOrigin(tf::Vector3(0.6, 0, 0));
+      tf_cam.setRotation(tf::Quaternion(0,0,0,1));
+      br.sendTransform(tf::StampedTransform(tf_cam, ros::Time(0), "vehicle", "stereo"));
   }
 
-  //Main
   void main()
   {
     ros::Rate rate(10.0);
