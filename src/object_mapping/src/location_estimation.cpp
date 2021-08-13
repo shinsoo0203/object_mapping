@@ -74,10 +74,6 @@ public:
     vehicle_marker_pub = nh.advertise<visualization_msgs::Marker>("/vehicle_marker", 10);
     //vehicle_markerArray_pub = nh.advertise<visualization_msgs::MarkerArray>("/vehicle_markerArray", 10);
 
-    ls.waitForTransform("map", "vehicle", ros::Time::now(), ros::Duration(4,0));
-    ls.waitForTransform("vehicle", "stereo", ros::Time::now(), ros::Duration(4,0));
-    //ls.waitForTransform("map", "stereo", ros::Time::now(), ros::Duration(4,0));
-
     ROS_INFO("[Location Estimation]: started");
     enu_conversion.setOrigin(origin_lat_deg, origin_lon_deg);
   }
@@ -128,9 +124,9 @@ public:
       br.sendTransform(tf::StampedTransform(tf_vehicle, ros::Time::now(), "map", "vehicle"));
 
       tf::Transform tf_cam;
-      tf_cam.setOrigin(tf::Vector3(0.6, 0, 0));
+      tf_cam.setOrigin(tf::Vector3(0.06, 0, 0));
       tf_cam.setRotation(tf::Quaternion(0,0,0,1));
-      br.sendTransform(tf::StampedTransform(tf_cam, ros::Time(0), "vehicle", "stereo"));
+      br.sendTransform(tf::StampedTransform(tf_cam, ros::Time(0), "vehicle", "zed2_left_camera_frame"));
   }
 
   void main()

@@ -1,4 +1,7 @@
 <launch>
+  <!-- Launch the location_estimation node -->
+  <node pkg="object_mapping" type="location_estimation" name="location_estimation" output="screen" />
+
   <!-- Launch the grid map tutorial demo node -->
   <node pkg="object_mapping" type="grid_mapping" name="grid_mapping" output="screen" />
 
@@ -8,5 +11,5 @@
   </node>
 
   <!-- Launch RViz with the demo configuration -->
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find grid_map_demos)/rviz/grid_map_demo.rviz" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find object_mapping)/rviz/object_mapping.rviz" />
 </launch>
