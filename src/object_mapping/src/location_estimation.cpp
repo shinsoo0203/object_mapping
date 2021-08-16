@@ -123,10 +123,10 @@ public:
       tf::poseMsgToTF(local_vehicle, tf_vehicle);
       br.sendTransform(tf::StampedTransform(tf_vehicle, ros::Time::now(), "map", "vehicle"));
 
-      tf::Transform tf_cam;
-      tf_cam.setOrigin(tf::Vector3(0.06, 0, 0));
-      tf_cam.setRotation(tf::Quaternion(0,0,0,1));
-      br.sendTransform(tf::StampedTransform(tf_cam, ros::Time(0), "vehicle", "zed2_left_camera_frame"));
+      tf::Transform tf_zed2;
+      tf_zed2.setOrigin(tf::Vector3(0.06, 0, 0));
+      tf_zed2.setRotation(tf::Quaternion(0,0,0,1));
+      br.sendTransform(tf::StampedTransform(tf_zed2, ros::Time::now(), "vehicle", "zed2_left_camera_frame"));
   }
 
   void main()
