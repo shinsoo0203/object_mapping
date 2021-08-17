@@ -22,8 +22,8 @@
 #include <ublox_msgs/NavPVT.h>
 #include <sensor_msgs/NavSatFix.h>
 #include <sensor_msgs/PointCloud2.h>
-#include <darknet_ros_msgs/BoundingBoxes.h>
-#include <darknet_ros_msgs/BoundingBox.h>
+//#include <darknet_ros_msgs/BoundingBoxes.h>
+//#include <darknet_ros_msgs/BoundingBox.h>
 #include <visualization_msgs/Marker.h>
 //#include <visualization_msgs/MarkerArray.h>
 
@@ -34,9 +34,18 @@
 #include "enu_conversion/enu_conversion.cpp"
 #include "visualization/marker.cpp"
 
-// konkuk reference
+// google earth RP(Reference Point)
 const double origin_lat_deg = 37.5413302340118;
 const double origin_lon_deg = 127.0761387792444;
+
+// konkuk GCP(Ground Control Point)
+// student hall
+//const double origin_lat_deg = 37.3231268;
+//const double origin_lon_deg = 127.442329;
+
+// ilgam gate
+//const double origin_lat_deg = 37.3222650;
+//const double origin_lon_deg = 127.427406;
 
 class LocationEstimation{
 
@@ -45,7 +54,7 @@ private:
   tf::TransformBroadcaster br;
   tf::TransformListener ls;
 
-  ros::Subscriber object_bboxes_sub;
+//  ros::Subscriber object_bboxes_sub;
   ros::Subscriber vehicle_gps_sub;
   ros::Subscriber vehicle_head_sub;
 
@@ -63,8 +72,8 @@ private:
 public:
   LocationEstimation()
   {
-    object_bboxes_sub = nh.subscribe<darknet_ros_msgs::BoundingBoxes>\
-        ("/darknet_ros/bounding_boxes", 10, &LocationEstimation::ObjectBBoxCb, this);
+//    object_bboxes_sub = nh.subscribe<darknet_ros_msgs::BoundingBoxes>\
+//        ("/darknet_ros/bounding_boxes", 10, &LocationEstimation::ObjectBBoxCb, this);
     vehicle_gps_sub = nh.subscribe<sensor_msgs::NavSatFix>\
         ("/ublox_gps/fix",10, &LocationEstimation::VehicleGPSCb,this);
     vehicle_head_sub = nh.subscribe<ublox_msgs::NavPVT>\
@@ -80,11 +89,11 @@ public:
   ~LocationEstimation(){}
 
   //Callback
-  void ObjectBBoxCb(const darknet_ros_msgs::BoundingBoxesConstPtr& msg)
-  {
-    darknet_ros_msgs::BoundingBoxes object_bboxes;
-    object_bboxes=*msg;
-  }
+//  void ObjectBBoxCb(const darknet_ros_msgs::BoundingBoxesConstPtr& msg)
+//  {
+//    darknet_ros_msgs::BoundingBoxes object_bboxes;
+//    object_bboxes=*msg;
+//  }
 
   void VehicleGPSCb(const sensor_msgs::NavSatFixConstPtr& msg)
   {

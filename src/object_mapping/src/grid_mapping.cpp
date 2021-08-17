@@ -13,7 +13,15 @@
 
 #include <ros/ros.h>
 #include <iostream>
+
+#include <tf/tf.h>
+#include <tf/transform_listener.h>
+#include <visualization_msgs/Marker.h>
+#include "visualization/marker.cpp"
+
 #include <grid_map_ros/grid_map_ros.hpp>
+#include <gb_visual_detection_3d_msgs/BoundingBox3d.h>
+#include <gb_visual_detection_3d_msgs/BoundingBoxes3d.h>
 
 using namespace grid_map;
 
@@ -21,15 +29,90 @@ class GridMapping{
 
 private:
   ros::NodeHandle nh;
+
   ros::Publisher grid_mapper;
+  ros::Publisher obj_local_pub;
+  ros::Publisher obj_marker_pub;
+  ros::Subscriber obj_3Dbboxes_sub;
+
+  tf::TransformListener ls;
+  tf::StampedTransform tf_zed; //transform zed2_left_camera_frame from map
+  gb_visual_detection_3d_msgs::BoundingBoxes3d bboxes_3d;
+
+  tf::Quaternion q;
+  tf::Vector3 t;
+  cv::Mat R, T;
+
+  geometry_msgs::Pose local_obj; //local ENU
+  Marker marker;
+  int mark_num = 0;
 
 public:
   GridMapping(){
     grid_mapper = nh.advertise<grid_map_msgs::GridMap>("grid_map", 1, true);
+    obj_3Dbboxes_sub = nh.subscribe<gb_visual_detection_3d_msgs::BoundingBoxes3d>\
+        ("/darknet_ros_3d/bounding_boxes", 10, &GridMapping::Object3DBBoxesCb, this);
+
+    obj_local_pub = nh.advertise<geometry_msgs::Pose>("/obj_local", 10);
+    obj_marker_pub = nh.advertise<visualization_msgs::Marker>("/obj_marker", 10);
 
     ROS_INFO("[Grid Mapping]: started.");
   }
   ~GridMapping(){}
+
+  void Object3DBBoxesCb(const gb_visual_detection_3d_msgs::BoundingBoxes3dConstPtr& msg){
+    bboxes_3d = *msg;
+    std::cout<<"*"<<std::endl;
+    std::cout<<bboxes_3d<<std::endl;
+  }
+
+  void getTransform(){
+
+    ls.lookupTransform("map","zed2_left_camera_frame",ros::Time::now(),tf_zed);
+    geometry_msgs::Transform transform; //translation, rotation
+
+    t[0] = tf_zed.getOrigin().x();
+    t[1] = tf_zed.getOrigin().y();
+    t[2] = tf_zed.getOrigin().z();
+
+    q[0] = tf_zed.getRotation().x();
+    q[1] = tf_zed.getRotation().y();
+    q[2] = tf_zed.getRotation().z();
+    q[3] = tf_zed.getRotation().w();
+
+    R = (cv::Mat_<double>(3,3)
+         <<pow(q[3],2)+pow(q[0],2)-pow(q[1],2)-pow(q[2],2), 2*(q[0]*q[1]-q[3]*q[2]), 2*(q[3]*q[1]+q[0]*q[2]),
+           2*(q[3]*q[2]+q[0]*q[1]), pow(q[3],2)-pow(q[0],2)+pow(q[1],2)-pow(q[2],2), 2*(q[1]*q[2]-q[3]*q[0]),
+           2*(q[0]*q[2]-q[3]*q[1]), 2*(q[3]*q[0]+q[1]*q[2]), pow(q[3],2)-pow(q[0],2)-pow(q[1],2)+pow(q[2],2));
+    T = (cv::Mat_<double>(3,1) << t[0], t[1], t[2]);
+  }
+
+  void objFiltering(){
+
+    for(int i=0; i<bboxes_3d.bounding_boxes.size(); i++){
+      std::cout<<"***"<<std::endl;
+      gb_visual_detection_3d_msgs::BoundingBox3d bbox = bboxes_3d.bounding_boxes[i];
+
+      if(bbox.xmax!=INFINITY && bbox.ymax!=INFINITY){
+        std::cout<<"******"<<std::endl;
+
+        getTransform();
+        cv::Mat obj_zed2_M = (cv::Mat_<double>(3, 1) << (bbox.xmin+bbox.xmax)/2, (bbox.ymin+bbox.ymax)/2, -1.2);
+        cv::Mat obj_map_M = (R*obj_zed2_M)+T;
+
+        geometry_msgs::Pose obj_map;
+        obj_map.position.x = obj_map_M.at<double>(0,0);
+        obj_map.position.y = obj_map_M.at<double>(1,0);
+        obj_map.position.z = obj_map_M.at<double>(2,0);
+
+        obj_local_pub.publish(obj_map);
+
+        visualization_msgs::Marker obj_mark = marker.pose_marker(local_obj, mark_num);
+        obj_marker_pub.publish(obj_mark);
+        mark_num ++;
+      }
+    }
+  }
 
   void main()
   {
@@ -42,9 +125,13 @@ public:
       map.getSize()(0), map.getSize()(0.5),//1
       map.getPosition().x(), map.getPosition().y(), map.getFrameId().c_str());
 
+    // main loop
     ros::Rate rate(30.0);
     while(nh.ok()){
       ros::Time time = ros::Time::now();
+
+      objFiltering();
+      //objMapping();
 
       // iterating through grid map and adding data
       for (GridMapIterator it(map); !it.isPastEnd(); ++it) {
@@ -64,7 +151,7 @@ public:
       grid_map_msgs::GridMap message;
       GridMapRosConverter::toMessage(map, message);
       grid_mapper.publish(message);
-      //ROS_INFO_THROTTLE(1.0, "Grid map (timestamp %f) published.", message.info.header.stamp.toSec());
+      ROS_INFO_THROTTLE(1.0, "Grid map (timestamp %f) published.", message.info.header.stamp.toSec());
 
       rate.sleep();
     }
