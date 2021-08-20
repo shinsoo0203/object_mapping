@@ -20,6 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
   grid_map_msgs
   grid_map_visualization
   gb_visual_detection_3d_msgs
+  message_generation
 )
 
 find_package(OpenCV REQUIRED)
@@ -114,7 +115,7 @@ find_package(OpenCV REQUIRED)
 catkin_package(
   INCLUDE_DIRS include
 #  LIBRARIES test
-  CATKIN_DEPENDS cv_bridge image_transport roscpp std_msgs sensor_msgs darknet_ros_msgs gb_visual_detection_3d_msgs
+  CATKIN_DEPENDS cv_bridge image_transport roscpp std_msgs sensor_msgs darknet_ros_msgs gb_visual_detection_3d_msgs message_runtime
 #  DEPENDS system_lib
 )
 
@@ -141,6 +142,10 @@ add_dependencies(location_estimation ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catki
 add_executable(grid_mapping src/grid_mapping.cpp)
 target_link_libraries(grid_mapping ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_dependencies(grid_mapping ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(msg_callback_test src/msg_callback_test.cpp)
+target_link_libraries(msg_callback_test ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+add_dependencies(msg_callback_test ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
