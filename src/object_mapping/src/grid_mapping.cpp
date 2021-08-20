@@ -43,7 +43,6 @@ private:
   tf::Vector3 t;
   cv::Mat R, T;
 
-  geometry_msgs::Pose local_obj; //local ENU
   Marker marker;
   int mark_num = 0;
 
@@ -106,7 +105,7 @@ public:
 
         obj_local_pub.publish(obj_map);
 
-        visualization_msgs::Marker obj_mark = marker.pose_marker(local_obj, mark_num);
+        visualization_msgs::Marker obj_mark = marker.pose_marker(obj_map, mark_num, "red");
         obj_marker_pub.publish(obj_mark);
         mark_num ++;
       }
