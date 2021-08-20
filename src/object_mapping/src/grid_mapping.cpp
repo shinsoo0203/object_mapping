@@ -56,7 +56,6 @@ public:
     obj_marker_pub = nh.advertise<visualization_msgs::Marker>("/obj_marker", 10);
 
     ls.waitForTransform("zed2_left_camera_frame","map",ros::Time::now(),ros::Duration(3.0));
-
     ROS_INFO("[Grid Mapping]: started.");
   }
   ~GridMapping(){}
