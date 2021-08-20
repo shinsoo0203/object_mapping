@@ -20,6 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
   grid_map_msgs
   grid_map_visualization
   gb_visual_detection_3d_msgs
+  message_generation
 )
 
 find_package(OpenCV REQUIRED)
@@ -114,7 +115,7 @@ find_package(OpenCV REQUIRED)
 catkin_package(
   INCLUDE_DIRS include
 #  LIBRARIES test
-  CATKIN_DEPENDS cv_bridge image_transport roscpp std_msgs sensor_msgs darknet_ros_msgs gb_visual_detection_3d_msgs
+  CATKIN_DEPENDS cv_bridge image_transport roscpp std_msgs sensor_msgs darknet_ros_msgs gb_visual_detection_3d_msgs message_runtime
 #  DEPENDS system_lib
 )
 

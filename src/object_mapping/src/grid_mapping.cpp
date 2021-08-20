@@ -56,19 +56,18 @@ public:
     obj_local_pub = nh.advertise<geometry_msgs::Pose>("/obj_local", 10);
     obj_marker_pub = nh.advertise<visualization_msgs::Marker>("/obj_marker", 10);
 
+    ls.waitForTransform("zed2_left_camera_frame","map",ros::Time::now(),ros::Duration(3.0));
     ROS_INFO("[Grid Mapping]: started.");
   }
   ~GridMapping(){}
 
   void Object3DBBoxesCb(const gb_visual_detection_3d_msgs::BoundingBoxes3dConstPtr& msg){
     bboxes_3d = *msg;
-    std::cout<<"*"<<std::endl;
-    std::cout<<bboxes_3d<<std::endl;
   }
 
   void getTransform(){
 
-    ls.lookupTransform("map","zed2_left_camera_frame",ros::Time::now(),tf_zed);
+    ls.lookupTransform("zed2_left_camera_frame","map",ros::Time(0),tf_zed);
     geometry_msgs::Transform transform; //translation, rotation
 
     t[0] = tf_zed.getOrigin().x();
@@ -90,11 +89,9 @@ public:
   void objFiltering(){
 
     for(int i=0; i<bboxes_3d.bounding_boxes.size(); i++){
-      std::cout<<"***"<<std::endl;
       gb_visual_detection_3d_msgs::BoundingBox3d bbox = bboxes_3d.bounding_boxes[i];
 
       if(bbox.xmax!=INFINITY && bbox.ymax!=INFINITY){
-        std::cout<<"******"<<std::endl;
 
         getTransform();
         cv::Mat obj_zed2_M = (cv::Mat_<double>(3, 1) << (bbox.xmin+bbox.xmax)/2, (bbox.ymin+bbox.ymax)/2, -1.2);
@@ -104,6 +101,8 @@ public:
         obj_map.position.x = obj_map_M.at<double>(0,0);
         obj_map.position.y = obj_map_M.at<double>(1,0);
         obj_map.position.z = obj_map_M.at<double>(2,0);
+
+        std::cout<<obj_map<<std::endl;
 
         obj_local_pub.publish(obj_map);
 
@@ -153,6 +152,7 @@ public:
       grid_mapper.publish(message);
       ROS_INFO_THROTTLE(1.0, "Grid map (timestamp %f) published.", message.info.header.stamp.toSec());
 
+      ros::spinOnce();
       rate.sleep();
     }
   }
