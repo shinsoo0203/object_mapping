@@ -71,7 +71,7 @@ public:
 
     t[0] = tf_zed.getOrigin().x();
     t[1] = tf_zed.getOrigin().y();
-    t[2] = tf_zed.getOrigin().z();
+    t[2] = 0; //tf_zed.getOrigin().z();
 
     q[0] = tf_zed.getRotation().x();
     q[1] = tf_zed.getRotation().y();
@@ -90,10 +90,10 @@ public:
     for(int i=0; i<bboxes_3d.bounding_boxes.size(); i++){
       gb_visual_detection_3d_msgs::BoundingBox3d bbox = bboxes_3d.bounding_boxes[i];
 
-      if(bbox.xmax!=INFINITY && bbox.ymax!=INFINITY){
+      if(bbox.xmax!=INFINITY && bbox.ymax!=INFINITY && bbox.probability>=0.95){
 
         getTransform();
-        cv::Mat obj_zed2_M = (cv::Mat_<double>(3, 1) << (bbox.xmin+bbox.xmax)/2, (bbox.ymin+bbox.ymax)/2, -1.2);
+        cv::Mat obj_zed2_M = (cv::Mat_<double>(3, 1) << (bbox.xmin+bbox.xmax)/2, bbox.ymin, 0);
         cv::Mat obj_map_M = (R*obj_zed2_M)+T;
 
         geometry_msgs::Pose obj_map;
@@ -117,10 +117,10 @@ public:
     // Create grid map
     GridMap map({"elevation", "normal_x", "normal_y", "normal_z"});
     map.setFrameId("map");
-    map.setGeometry(Length(500, 500), 3.0, Position(0.0, 0.0));
+    map.setGeometry(Length(500, 500), 4.0, Position(0.0, 0.0));
     ROS_INFO("Created map with size %f x %f m (%i x %i cells).\n The center of the map is located at (%f, %f) in the %s frame.",
       map.getLength().x(), map.getLength().y(),
-      map.getSize()(0), map.getSize()(0.5),//1
+      map.getSize()(0), map.getSize()(1),
       map.getPosition().x(), map.getPosition().y(), map.getFrameId().c_str());
 
     // main loop
