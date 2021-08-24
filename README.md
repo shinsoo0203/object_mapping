@@ -34,6 +34,21 @@ $ sudo gedit CMAKELists.txt #-gencode arch=compute_75,code=sm_75
 ```
 $ roslaunch darknet_ros_3d darknet_ros_3d.launch
 ```
+- ros-kafka-connector
+
+```
+$ git checkout edge
+
+[ERROR] kafka.errors.NoBrokersAvailable: NoBrokersAvailable
+[python error] in check version raise Errors.NoBrokersAvailable()
+$ pip install kafka
+$ sudo apt-get install ros-melodic-rospy-message-converter
+$ pip install kafka-python
+
+[ERROR] kafka.errors.UnrecognizedBrokerVersion: UnrecognizedBrokerVersion
+[python error] in check version raise Error.UnrecognizedBrokerVersion()
+
+```
 
 ## Custom source
 - grid_matching
