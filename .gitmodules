@@ -7,6 +7,3 @@
 [submodule "src/gb_visual_detection_3d_msgs"]
 	path = src/gb_visual_detection_3d_msgs
 	url = https://github.com/IntelligentRoboticsLabs/gb_visual_detection_3d_msgs.git
-[submodule "src/ros-kafka-connector"]
-	path = src/ros-kafka-connector
-	url = https://github.com/isakdiaz/ros-kafka-connector.git

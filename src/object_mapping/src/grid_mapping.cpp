@@ -66,7 +66,8 @@ public:
 
   void getTransform(){
 
-    ls.lookupTransform("zed2_left_camera_frame","map",ros::Time(0),tf_zed);
+    //ls.lookupTransform("zed2_left_camera_frame","map",ros::Time(0),tf_zed);
+    ls.lookupTransform("map","zed2_left_camera_frame",ros::Time(0),tf_zed);
     geometry_msgs::Transform transform; //translation, rotation
 
     t[0] = tf_zed.getOrigin().x();
@@ -101,8 +102,7 @@ public:
         obj_map.position.y = obj_map_M.at<double>(1,0);
         obj_map.position.z = obj_map_M.at<double>(2,0);
 
-        std::cout<<obj_map<<std::endl;
-
+        //std::cout<<obj_map<<std::endl;
         obj_local_pub.publish(obj_map);
 
         visualization_msgs::Marker obj_mark = marker.pose_marker(obj_map, mark_num, "red");
@@ -124,7 +124,9 @@ public:
       map.getPosition().x(), map.getPosition().y(), map.getFrameId().c_str());
 
     // main loop
-    ros::Rate rate(30.0);
+    ros::Rate rate(1);
+
+    ROS_INFO("[Grid Mapping] Loop Start.");
     while(nh.ok()){
       ros::Time time = ros::Time::now();
 
