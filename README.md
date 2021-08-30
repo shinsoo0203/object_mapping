@@ -52,13 +52,11 @@ $ pip install kafka
 $ sudo apt-get install ros-melodic-rospy-message-converter
 $ pip install kafka-python
 
-[ERROR] kafka.errors.UnrecognizedBrokerVersion: UnrecognizedBrokerVersion
-[python error] in check version raise Error.UnrecognizedBrokerVersion()
-
+$ roslaunch ros_kafka_connector kafka_publish.launch
 ```
 
 ## Custom source
-- grid_matching
+- grid_mapping
 
 ```
 $ sudo apt-get install ros-$ROS_DISTRO-grid-map
