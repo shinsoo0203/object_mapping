@@ -29,6 +29,13 @@ $ git clone --recursive git@github.com:leggedrobotics/darknet_ros.git
 $ catkin_make -DCMAKE_BUILD_TYPE=Release
 $ sudo gedit CMAKELists.txt #-gencode arch=compute_75,code=sm_75
 ```
+- darknet
+```
+$ git clone --recursive https://github.com/pjreddie/darknet.git
+$ git remote update
+$ git branch -a
+$ git checkout origin/yolov3
+```
 - gb_visual_detection_3d / gb_visual_detection_3d_msgs
 
 ```
@@ -45,13 +52,11 @@ $ pip install kafka
 $ sudo apt-get install ros-melodic-rospy-message-converter
 $ pip install kafka-python
 
-[ERROR] kafka.errors.UnrecognizedBrokerVersion: UnrecognizedBrokerVersion
-[python error] in check version raise Error.UnrecognizedBrokerVersion()
-
+$ roslaunch ros_kafka_connector kafka_publish.launch
 ```
 
 ## Custom source
-- grid_matching
+- grid_mapping
 
 ```
 $ sudo apt-get install ros-$ROS_DISTRO-grid-map
