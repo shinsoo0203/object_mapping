@@ -79,9 +79,9 @@ public:
     vehicle_head_sub = nh.subscribe<ublox_msgs::NavPVT>\
             ("/ublox_gps/navpvt", 10, &LocationEstimation::VehicleHeadCb, this);
 
-    vehicle_local_pub = nh.advertise<geometry_msgs::Pose>("/vehicle_local", 10);
-    vehicle_marker_pub = nh.advertise<visualization_msgs::Marker>("/vehicle_marker", 10);
-    //vehicle_markerArray_pub = nh.advertise<visualization_msgs::MarkerArray>("/vehicle_markerArray", 10);
+    vehicle_local_pub = nh.advertise<geometry_msgs::Pose>("/local/vehicle", 10);
+    vehicle_marker_pub = nh.advertise<visualization_msgs::Marker>("/marker/vehicle_map", 10);
+    //vehicle_markerArray_pub = nh.advertise<visualization_msgs::MarkerArray>("/markerArray/vehicle_map", 10);
 
     ROS_INFO("[Location Estimation]: started");
     enu_conversion.setOrigin(origin_lat_deg, origin_lon_deg);

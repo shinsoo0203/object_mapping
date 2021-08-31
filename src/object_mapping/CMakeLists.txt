@@ -59,9 +59,11 @@ find_package(OpenCV REQUIRED)
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-#add_message_files(
-#   FILES
-# )
+add_message_files(
+   FILES
+   ObjectInfo.msg
+   ObjectArray.msg
+ )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -78,10 +80,11 @@ find_package(OpenCV REQUIRED)
 # )
 
 ## Generate added messages and services with any dependencies listed here
-#generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+generate_messages(
+   DEPENDENCIES
+   std_msgs
+   geometry_msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -114,7 +117,7 @@ find_package(OpenCV REQUIRED)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-#  LIBRARIES test
+  LIBRARIES object_mapping
   CATKIN_DEPENDS cv_bridge image_transport roscpp std_msgs sensor_msgs darknet_ros_msgs gb_visual_detection_3d_msgs message_runtime
 #  DEPENDS system_lib
 )
