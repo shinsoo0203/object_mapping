@@ -83,3 +83,35 @@ visualization_msgs::Marker Marker::pose_marker(geometry_msgs::Pose target_pose, 
     marker.lifetime = ros::Duration();
     return marker;
 }
+
+visualization_msgs::Marker Marker::pose_marker(geometry_msgs::Pose target_pose, int id, string color){
+    visualization_msgs::Marker marker;
+    marker.header.frame_id = "map";
+    marker.header.stamp = ros::Time::now();
+    marker.ns="";
+    marker.id= id;
+    marker.type=visualization_msgs::Marker::SPHERE;
+    marker.action=visualization_msgs::Marker::ADD;
+
+    marker.pose = target_pose;
+    marker.pose.orientation.x = 0.0;
+    marker.pose.orientation.y = 0.0;
+    marker.pose.orientation.z = 0.0;
+    marker.pose.orientation.w = 1.0;
+
+    marker.scale.x = 2;
+    marker.scale.y = 2;
+    marker.scale.z = 2;
+
+    marker.color.a = 1.0; //visible
+    marker.color.r = 0.0f;
+    marker.color.g = 0.0f;
+    marker.color.b = 0.0f;
+
+    if(color=="red") marker.color.r = 1.0f;
+    else if(color=="green") marker.color.g = 1.0f;
+    else if(color=="blue") marker.color.b = 1.0f;
+
+    marker.lifetime = ros::Duration();
+    return marker;
+}
