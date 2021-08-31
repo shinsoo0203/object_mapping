@@ -47,6 +47,7 @@ __pycache__/
 .project
 .pydevproject
 .settings/
+.pyc
 
 # Visual Studio Code
 .vscode/

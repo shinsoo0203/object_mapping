@@ -36,12 +36,14 @@ private:
   ros::Publisher grid_mapper;
   ros::Publisher obj_local_pub;
   ros::Publisher obj_marker_pub;
+  ros::Publisher obj_grid_pub;
   ros::Subscriber obj_3Dbboxes_sub;
 
   tf::TransformListener ls;
   tf::StampedTransform tf_zed; //transform zed2_left_camera_frame from map
   gb_visual_detection_3d_msgs::BoundingBoxes3d bboxes_3d;
   object_mapping::ObjectArray objectArray_map;
+  object_mapping::ObjectArray objectArray_grid;
 
   tf::Quaternion q;
   tf::Vector3 t;
@@ -60,6 +62,7 @@ public:
 
     obj_local_pub = nh.advertise<geometry_msgs::Pose>("/local/obj", 10);
     obj_marker_pub = nh.advertise<visualization_msgs::Marker>("/marker/obj_map", 10);
+    obj_grid_pub = nh.advertise<object_mapping::ObjectArray>("/grid/obj", 10);
 
     ls.waitForTransform("zed2_left_camera_frame","map",ros::Time::now(),ros::Duration(3.0));
     ROS_INFO("[Grid Mapping]: started.");
@@ -73,6 +76,10 @@ public:
     objectArray_map.header = msg->header;
     objectArray_map.header.frame_id = "map";
     objectArray_map.object_info.clear();
+
+    objectArray_grid.header = msg->header;
+    objectArray_grid.header.frame_id = "map";
+    objectArray_grid.object_info.clear();
   }
 
   void getTransform(){
@@ -160,13 +167,19 @@ public:
         // object mapping
         for(int i=0; i<objectArray_map.object_info.size(); i++){
           object_mapping::ObjectInfo obj = objectArray_map.object_info[i];
+          object_mapping::ObjectInfo obj_grid;
 
           geometry_msgs::Point idx;
           idx.x = position[0];
           idx.y = position[1];
 
           if(int(obj.position.x/cell_size)==int(idx.x/cell_size) && int(obj.position.y/cell_size)==int(idx.y/cell_size)){
-            //std::cout<<"HORRAY"<<std::endl;
+            ROS_INFO("[Grid Mapping] Found %s", obj.Class.c_str());
+            obj_grid.Class = obj.Class;
+            obj_grid.probability = obj.probability;
+            obj_grid.position.x = idx.x;
+            obj_grid.position.y = idx.y;
+            objectArray_grid.object_info.push_back(obj_grid);
           }
         }
 
@@ -176,6 +189,9 @@ public:
         map.at("normal_y", *it) = normal.y();
         map.at("normal_z", *it) = normal.z();
       }
+
+      // Publish obj_grid info
+      if(objectArray_grid.object_info.size()>0){ obj_grid_pub.publish(objectArray_grid); }
 
       // Publish grid map.
       map.setTimestamp(time.toNSec());
