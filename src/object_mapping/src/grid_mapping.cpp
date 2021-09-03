@@ -37,6 +37,7 @@ private:
   ros::Publisher obj_local_pub;
   ros::Publisher obj_marker_pub;
   ros::Publisher obj_grid_pub;
+  ros::Publisher obj_pub;
   ros::Subscriber obj_3Dbboxes_sub;
 
   tf::TransformListener ls;
@@ -62,7 +63,8 @@ public:
 
     obj_local_pub = nh.advertise<geometry_msgs::Pose>("/local/obj", 10);
     obj_marker_pub = nh.advertise<visualization_msgs::Marker>("/marker/obj_map", 10);
-    obj_grid_pub = nh.advertise<object_mapping::ObjectArray>("/grid/obj", 10);
+    obj_grid_pub = nh.advertise<object_mapping::ObjectArray>("/grid/objArray", 10);
+    obj_pub = nh.advertise<object_mapping::ObjectInfo>("/grid/obj",10);
 
     ls.waitForTransform("zed2_left_camera_frame","map",ros::Time::now(),ros::Duration(3.0));
     ROS_INFO("[Grid Mapping]: started.");
@@ -180,6 +182,9 @@ public:
             obj_grid.position.x = idx.x;
             obj_grid.position.y = idx.y;
             objectArray_grid.object_info.push_back(obj_grid);
+
+
+            obj_pub.publish(obj_grid);
           }
         }
 
