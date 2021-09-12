@@ -99,9 +99,9 @@ visualization_msgs::Marker Marker::pose_marker(geometry_msgs::Pose target_pose, 
     marker.pose.orientation.z = 0.0;
     marker.pose.orientation.w = 1.0;
 
-    marker.scale.x = 2;
-    marker.scale.y = 2;
-    marker.scale.z = 2;
+    marker.scale.x = 5;
+    marker.scale.y = 5;
+    marker.scale.z = 5;
 
     marker.color.a = 1.0; //visible
     marker.color.r = 0.0f;

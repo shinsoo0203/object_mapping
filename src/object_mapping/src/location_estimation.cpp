@@ -35,8 +35,10 @@
 #include "visualization/marker.cpp"
 
 // google earth RP(Reference Point)
-const double origin_lat_deg = 37.5413302340118;
-const double origin_lon_deg = 127.0761387792444;
+//const double origin_lat_deg = 37.5413302340118;
+//const double origin_lon_deg = 127.0761387792444;
+const double origin_lat_deg = 37.5413888889;
+const double origin_lon_deg = 127.0758333333;
 
 // konkuk GCP(Ground Control Point)
 // student hall

@@ -55,6 +55,8 @@ private:
 
   double cell_size = 4.0;
 
+  geometry_msgs::Point position_m;
+
 public:
   GridMapping(){
     grid_mapper = nh.advertise<grid_map_msgs::GridMap>("grid_map", 1, true);
@@ -136,6 +138,10 @@ public:
         object_map.position.x = int(obj_map.position.x);
         object_map.position.y = int(obj_map.position.y);
         objectArray_map.object_info.push_back(object_map);
+
+        //obj_grid
+        position_m.x = obj_map.position.x;
+        position_m.y = obj_map.position.y;
       }
     }
   }
@@ -160,11 +166,16 @@ public:
 
       objFiltering();
 
+      int grid_id = 0;
+
       // iterating through grid map and adding data
       for (GridMapIterator it(map); !it.isPastEnd(); ++it) {
+        ++grid_id;
         Position position;
         map.getPosition(*it, position);
         map.at("elevation", *it) = 0;
+
+        int seq = 0;
 
         // object mapping
         for(int i=0; i<objectArray_map.object_info.size(); i++){
@@ -177,12 +188,14 @@ public:
 
           if(int(obj.position.x/cell_size)==int(idx.x/cell_size) && int(obj.position.y/cell_size)==int(idx.y/cell_size)){
             ROS_INFO("[Grid Mapping] Found %s", obj.Class.c_str());
+            //obj_grid.grid_id = grid_id;
+            //obj_grid.seq = ++seq;
             obj_grid.Class = obj.Class;
             obj_grid.probability = obj.probability;
             obj_grid.position.x = idx.x;
             obj_grid.position.y = idx.y;
+            obj_grid.position_m = position_m;
             objectArray_grid.object_info.push_back(obj_grid);
-
 
             obj_pub.publish(obj_grid);
           }
